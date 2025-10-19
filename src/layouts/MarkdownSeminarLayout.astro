@@ -9,3 +9,9 @@ const { frontmatter } = Astro.props;
 <BaseLayout pageTitle={frontmatter.title}>
   <slot />
 </BaseLayout>
+
+{!frontmatter.showToc && (
+  <style is:global>
+    .toc { display: none; }
+  </style>
+)}

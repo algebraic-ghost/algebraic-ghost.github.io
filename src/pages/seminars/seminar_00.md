@@ -1,6 +1,7 @@
 ---
 layout: "../../layouts/MarkdownSeminarLayout.astro"
 title: "古代教会スラヴ語［2024/1/26–4/14］"
+showToc: true
 ---
 
 ## 実施要項

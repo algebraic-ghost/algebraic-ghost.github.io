@@ -1,6 +1,7 @@
 ---
 layout: "../../layouts/MarkdownSeminarLayout.astro"
 title: "2024 年秋:ドストエフスキー『悪霊』「労多き夜」［2024/10/7–2025/1/20］"
+showToc: true
 ---
 
 ## 実施要項

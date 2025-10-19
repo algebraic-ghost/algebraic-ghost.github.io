@@ -1,6 +1,7 @@
 ---
 layout: "../../layouts/MarkdownSeminarLayout.astro"
 title: "2024 年春：ドストエフスキー『カラマーゾフの兄弟』「大審問官」［2024/4/11–7/26］"
+showToc: true
 ---
 
 ## 実施要項

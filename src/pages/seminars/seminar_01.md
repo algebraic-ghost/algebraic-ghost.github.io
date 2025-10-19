@@ -1,6 +1,7 @@
 ---
 layout:  "../../layouts/MarkdownSeminarLayout.astro"
 title: "逆数学［2024/2/9–2025/4/20］"
+showToc: true
 ---
 
 ## 実施要項

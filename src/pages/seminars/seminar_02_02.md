@@ -1,6 +1,7 @@
 ---
 layout: "../../layouts/MarkdownSeminarLayout.astro"
 title: "2025 年春：ドストエフスキー『おかしな人間の夢』［2025/4/8–7/15］"
+showToc: true
 ---
 
 ## 実施要項
