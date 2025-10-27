@@ -58,6 +58,7 @@ const macros = {
 export default defineConfig({
   site: "https://algebraic-ghost.github.io",
   integrations: [preact(), mdx({
+    smartypants: false,
     remarkPlugins: [remarkMath, remarkGfm],
       rehypePlugins: [
         [rehypeKatex, { macros }],
@@ -76,6 +77,7 @@ export default defineConfig({
       ],
   })], 
   markdown: {
+    smartypants: false,
     remarkPlugins: [remarkMath],
     rehypePlugins: [[
       rehypeKatex, { macros }],
