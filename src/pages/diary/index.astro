@@ -6,5 +6,5 @@ const pageTitle = "日記";
 ---
 <BaseLayout pageTitle={pageTitle}>
   全く推敲していない文章です．
-  <ul>{allPosts.map((post: any) => <li><a href={post.url}>{post.frontmatter.pubYear.toString()} 年 {post.frontmatter.pubMonth.toString()} 月</a></li>)}</ul>
+  <ul>{allPosts.map((post: any) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}</ul>
 </BaseLayout>

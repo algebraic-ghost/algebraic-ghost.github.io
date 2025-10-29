@@ -1,0 +1,19 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+const { frontmatter } = Astro.props;
+---
+<head>
+  <meta charset="UTF-8" />
+</head>
+
+<BaseLayout pageTitle={frontmatter.title}>
+  <a href="#page-bottom">末尾に移動する</a>
+  <slot />
+  <div id="page-bottom"></div>
+</BaseLayout>
+
+{!frontmatter.showToc && (
+  <style is:global>
+    .toc { display: none; }
+  </style>
+)}
