@@ -42,7 +42,7 @@ a[href$=".pdf"]::after {
 blockquote{
   background-color: oklch(0.30 0.1 280);
   border-left: 5px solid rgb(220, 220, 220);
-  margin-left: 5pt;
+  margin: 0 0 0 0pt;
   padding: 10pt;
 }
 
