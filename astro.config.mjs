@@ -18,6 +18,7 @@ const macros = {
   "\\cat": "\\mathbf{#1}",
   "\\sheaf": "\\mathcal{#1}",
   "\\id": "\\mathrm{id}",
+  "\\eff": "\\mathrm{eff}",
   "\\uncommon": "\\textsuperscript{\\textdagger}",
   "\\opp": "\\mathrm{op}",
   "\\epsilon": "\\varepsilon",
