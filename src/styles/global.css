@@ -1,7 +1,7 @@
 html {
   background-color: oklch(0.20 0.1 280);
   color: rgb(220, 220, 220);
-  font-family: palatino, "Cormorant Garamond", "Noto Serif JP", "Noto Serif Armenian", serif;
+  font-family: palatino, "Cormorant Garamond", "Noto Serif JP", "Noto Serif Armenian", "Libertinus Serif", serif;
 }
 
 body {
