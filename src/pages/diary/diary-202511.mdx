@@ -127,3 +127,41 @@ $$
 最近読み返している『罪と罰』も『地下室の手記』を踏まえると色々と思うところが少なくない．
 
 Mathematics Genealogy Project を漫然と眺めていたら [Abu Mansur al-Hasan ibn Nuh al-Qumri](https://mathgenealogy.org/id.php?id=316873) という10世紀のペルシアの物理学者まで遡れることを発見してちょっと興奮していた．
+
+## 11/11（火）
+[11/8](diary-202511#118土)の日記で書いた edge の問題は解決出来そうな気がする（まだ間違いがあるかもしれない，というかこれ自体が全て勘違いかもしれない）．適当な $X \supseteq Y \supseteq Z$ と $A \supseteq B$ に対して $\mathrm{VGood}^\eff$ の辺 
+$$
+\begin{align*}
+(Y \times A \cup X \times B, X \times B \cup Z \times A) \to (Y \times A, Y \times B \cup Z \times A)
+\end{align*}
+$$
+が定まるが，切除定理よりこれらの singular realization は同型になる（従って特に右側の組は very good である）．にこのような形をした辺を逆向きにしたものを $\mathrm{VGood}^\eff$ に追加して得られるグラフを $\mathrm{VGood}^{\eff+}$ とし，新たに追加された辺を
+$$
+\begin{align*}
+\gamma^{X,Y,Z}_{A,B} \colon (Y \times A, Y \times B \cup Z \times A) \to (Y \times A \cup X \times B, X \times B \cup Z \times A) 
+\end{align*}
+$$
+と名付ける．$\gamma^{X,Y,Z}_{A,B}$ に対して前述の同型の逆を対応させることで sinigular realization による $\mathrm{VGood}^\eff$ の表現を $\mathrm{VGood}^{\eff+}$ に拡張することができ，これらの表現が同値な diagram category を定めることは簡単に示せる．また，$\mathrm{VGood}^{\eff+}$ には product structure が入る．例えば，very good pair $(X, Y)$, $(Y, Z)$, $(A, B)$, $(C, D)$ に対して
+$$
+\begin{align*}
+&(\gamma^{X,Y,Z}_{A,B}, \id_{(C,D)}) \colon (Y \times A, Y \times B \cup Z \times A) \times (C, D) \\
+&\quad \to (Y \times A \cup X \times B, X \times B \cup Z \times A) \times (C,D)
+\end{align*}
+$$
+は
+$$
+\begin{align*}
+&\gamma^{X,Y,Z}_{A\times C,A\times D\cup B\times C} \colon (Y, Z) \times (A\times C,A\times D\cup B\times C) \\
+&\quad \to (Y\times A \times C \cup X \times A \times D \cup X \times B \times C, X \times A \times D \cup X \times B \times C \cup Z \times A \times C)
+\end{align*}
+$$
+と閉移入が誘導する辺
+$$
+\begin{align*}
+&(Y\times A \times C \cup X \times A \times D \cup X \times B \times C, X \times A \times D \cup X \times B \times C \cup Z \times A \times C)\\
+&\quad \to (Y\times A \times C \cup X \times B \times C, Y \times A \times D \cup X \times B \times C \cup Z \times A \times C)
+\end{align*}
+$$
+の合成とすれば良い．
+
+ちょうど私が先日騙されたようなことに関する質問と回答を見つけた：[Why not define triangulated categories using a mapping cone functor?](https://mathoverflow.net/q/57904/549263)
