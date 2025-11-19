@@ -207,14 +207,13 @@ h3:hover .heading-anchor {
   list-style: none;
   counter-reset: toc;
   padding-left: 32px;
+  list-style-type: circle; 
 }
 
 .toc ol li {
   counter-increment: toc;
-}
-
-.toc ol li:before {
-  content: counters(toc, ".") " ";
+  list-style-type: none; 
+  list-style: circle;
 }
 
 .wrap{
