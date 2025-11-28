@@ -232,6 +232,32 @@ h3:hover .heading-anchor {
   padding-bottom: 0pt;
 }
 
+.ref-table {
+  width: 100%;
+  table-layout: fixed;       /* ★重要：列幅を固定計算モードにする */
+  border-collapse: collapse;
+}
+
+.ref-table th {
+  width: 80px;               /* 見出し幅 */
+  vertical-align: top;
+  padding-right: 10px;
+  white-space: nowrap;
+}
+
+.ref-table td {
+  vertical-align: top;
+  
+  /* ▼▼ 以前の break-all は削除または normal に戻す ▼▼ */
+  word-break: normal; 
+
+  /* ▼▼ 今回の主役：長い単語だけ折り返す設定 ▼▼ */
+  overflow-wrap: break-word; 
+  
+  /* ※念のため古いブラウザ互換用にも書いておくなら以下も追加 */
+  word-wrap: break-word; 
+}
+
 .thm {
   border-color: rgb(220, 220, 220);
   border-style: dotted;
