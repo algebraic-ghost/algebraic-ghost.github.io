@@ -12,6 +12,7 @@
     "@astrojs/mdx": "^4.3.7",
     "@astrojs/preact": "^4.1.1",
     "@astrojs/rss": "^4.0.12",
+    "abcjs": "^6.5.2",
     "astro": "^5.14.1",
     "astro-breadcrumbs": "^3.3.1",
     "preact": "^10.27.2",
