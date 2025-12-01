@@ -15,7 +15,7 @@ import rehypeToc from 'rehype-toc';
 const macros = {
   "\\cover": "\\mathfrak{#1}",
   "\\ideal": "\\mathfrak{#1}",
-  "\\cat": "\\mathbf{#1}",
+  "\\cat": "\\text{\\textbf{#1}}",
   "\\sheaf": "\\mathcal{#1}",
   "\\id": "\\mathrm{id}",
   "\\eff": "\\mathrm{eff}",
@@ -34,6 +34,8 @@ const macros = {
   "\\coeq": "\\mathop{\\mathrm{Coeq}}\\nolimits",
   "\\coeqmor": "\\mathop{\\mathrm{coeq}}\\nolimits",
   "\\spec": "\\mathop{\\mathrm{Spec}}\\nolimits",
+  "\\sq": "\\mathop{\\mathrm{Sq}}",
+  "\\homo": "\\mathop{\\mathrm{H}}",
   "\\gal": "\\mathop{\\mathrm{Gal}}\\nolimits",
   "\\aut": "\\mathop{\\mathrm{Aut}}\\nolimits",
   "\\conn": "\\mathop{\\mathrm{Conn}}\\nolimits",

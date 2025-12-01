@@ -239,8 +239,9 @@ h3:hover .heading-anchor {
 }
 
 .ref-table th {
-  width: 80px;               /* 見出し幅 */
+  width: 90px;               /* 見出し幅 */
   vertical-align: top;
+  text-align: left;
   padding-right: 10px;
   white-space: nowrap;
 }
