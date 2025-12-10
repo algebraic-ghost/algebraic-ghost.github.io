@@ -64,3 +64,10 @@ Ayoub の論文はかなりしっかり書かれているので，腰を据え�
 層理論の授業で漸く mocrolocal sheaf theory が始まった．microsupport の定義は以前に何となく見たことがあり，その時は意味不明ですぐに投げ出してしまったのだが，気持ちを説明されると別に難しい話ではないしうまく出来ていて面白いと思った．
 
 Ayoub の Les six opérations ... の 4.4 節を読んでいた．結局この辺りは全部必要になってくるのか？
+
+## 12/10（水）
+Milnor fiber について少し考えていた．非自明な例を考えるとなると少なくとも複素次元が 2 以上になってしまうので，なかなか形が想像しにくいなと思っていたのだが，例えば $f(x,y)=x^N + y^2\ (N \geq 2)$ のような関数の Milnor fiber は次のように考えれば分かることに気がついた．この関数の Milnor fiber は適当な $0 < \delta \ll \epsilon \ll 1$ に対する $\{x^N + y^2 = \delta\} \cap B(0; \epsilon)$ という集合だが，これは $x^N + y^2 = \delta$ の Riemann 面から無限遠点の近傍を除いたものだと思える．よく知られているように，$x^N + y^2 = \delta$ の Riemann 面は，二つの複素平面に $\lceil N/2 \rceil$ 本の切れ込みを入れてそこで貼り合わせて得られる種数 $\lceil N/2 \rceil$ の閉曲面 $\Sigma_{\lceil N/2 \rceil}$ で，$N$ が奇数の場合には無限遠点が分岐点なのでこの Riemann 面上の無限遠点は一つだが，$N$ が偶数の場合には無限遠点が二つある．従って求める Milnor fiber は，$N$ が奇数の場合には $\Sigma_{\lceil N/2 \rceil}\setminus\{\infty\} \simeq \bigvee_{N-1} S^1$であり，$N$ が偶数の場合にも $\Sigma_{\lceil N/2 \rceil}\setminus\{\infty_1, \infty_2\} \simeq \bigvee_{N-1} S^1$ となる．これは Milnor の定理の結果と整合的．より次元が高い場合にはどう考えれば良いのかまだよく分からない（というか考えていない）．
+
+Ayoub の Une version relative ... の 2.3 節を一応読み終えた（ブラックボックスは大量にあり，まだ証明が詰められていないところも少しある）．リジッド幾何的な直感が未熟なので $\cat{QUDM}(k)$ と $\cat{RigDM}(K)$ が圏同値になることが不思議に思える．多分 Milnor fiber だとかその monodromy だとかに関連する話なのだろうが，よく分かっていない（その関連で上述のことを考えていたのだが......）．
+
+表現可能関手を表現している対象は英語だと representing object というまどろっこしい言い方をするが，フランス語だと単に représentant と言えば良いらしい．一応英語にも representant という単語はあるようだが，あまり使われないみたいだ．
