@@ -151,3 +151,22 @@ Voevodsky は写真も撮っていたらしい：https://vividha.livejournal.com
 4 日連続のアルバイトが終わったので，多忙な一週間が終わった．帰りにふらっと池袋のジュンク堂に立ち寄ったのだが，入った時は 2000 円分くらいの本を買うつもりだったのに気が付いたら平積みされていたエーコの『薔薇の名前』を衝動買いしてしまって 7000 円近く使っていた．恐ろしい話だ．
 
 Ayoub の Une version relative ... の motivic Galois group のところを読み始めたが，motivic Hopf algebra に Hopf 代数の構造を入れる方法すら書いていなかったので，結局 L’algèbre de Hopf ..., I を参照する必要があった．この論文の最初の方に monoidal category の随伴関手（+ α）から Hopf algebra を作る方法が書いてある．この構成は全く抽象的な formalism なので追えば追えるし全く難しくはないのだが，ずっと続くと段々嫌になってくる．最初は楽しかったが読んでいるうちに飽きてしまったので，結果だけ読んで証明は雑に目を通すだけで済ませてしまった．しかし Ayoub の論文には diagram chase がそれなりに律儀に書かれていてとてもありがたい．
+
+## 12/30（火）
+通常の淡中圏においては fiber functor が右随伴を持つということは少ない（淡中圏の fiber functor は bialgebra $\sheaf{O}(G)$ の coaction を忘却する関手なのでその右随伴は cofree functor であり，これは $-\otimes \sheaf{O}(G)$ で与えられるので，$G$ が有限群でない限りこの関手の送り先は元の圏に入らない）のだが，Voevodsky motive の fiber functor にあたる Betti realisation functor $\bti^\ast \colon \cat{DM}(k) \to \cat{D}(\Q)$ はその表記が示唆する通り右随伴 $\bti_\ast$ を持つので，一見少々不思議な感じがする．恐らくこれのトリックは次の点にあるのだろう：Betti realisation functor は complex analytification functor
+$$
+\begin{align*}
+\mathrm{An}^\ast \colon \cat{DM}(k) \to \cat{AnDM}
+\end{align*}
+$$
+と global section functor
+$$
+\begin{align*}
+\cat{R}\Gamma(\mathrm{pt}, -) \colon \cat{AnDM} \to \cat{D}(\Q)
+\end{align*}
+$$
+の合成として定義されている．前者は左随伴関手であるのに対して後者は右随伴関手であるので，これらの合成である $\bti^\ast$ がさらに随伴を持つということはあまり期待できないが，実は $\cat{R}\Gamma(\mathrm{pt}, -)$ は圏同値であることが示せるので，$\bti^\ast$ は右随伴を持つ．
+
+ところで Nori の motivic Hopf algebra の構成と Ayoub のそれの構成は見かけはかなり違うように思えるのだが，実はどちらも coend を用いて同様の方法で書けるということに気が付いた（というか Gemini に聞いたらそう言われたので，実際に考えてみたら確かにそうだった）．今日はもう遅いので明日以降纏めておきたい．
+
+実は私は数学を勉強するときに AI にお伺いを立てることがしばしばある．知的退廃の誹りを免れないかもしれないが，Grothendieck も分からないことを頻繁に Serre に聞いていたということなので，もしも Grothendieck が現代に生きていたら，AI にも色々と聞いていたのではないだろうか...... と思って AI の使用を正当化している．

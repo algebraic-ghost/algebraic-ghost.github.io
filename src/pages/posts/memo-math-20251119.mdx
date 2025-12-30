@@ -8,9 +8,11 @@ showToc: true
 
 読んでいる途中で思ったことなどを粗雑に書き留めたものなので，誤りや不足などを多く含み得ます．
 
+## 目次 
+
 ## メモ
 ### 2.1. Rappels sur les motifs des schémas.
-- 概説的な内容として [Ayo14] が読みやすく参考になる．
+- 概説的な内容として [Ayo14d] が読みやすく参考になる．
 - Voevodsky motive に関しては [VSF00] の第 5 章や [MVW06] などを参照すると良い．
 - モデル圏に関して．
   - [Ayo07] の 4.1–3 節で Ayoub 自身が必要なモデル圏論について詳しく解説している．
@@ -35,7 +37,19 @@ showToc: true
 
 ### 2.5. La réalisation de Betti tangentielle.
 - fortement dualisables の定義は例えば [HMS17, 8.3.1] を参照．
+- 複素解析空間 $V$ に対して，
+  - $\sheaf{F} \in \cat{Shv}(V, \Lambda)$ が fortement dualisable  $\Leftrightarrow$ $\sheaf{F}$ は local system [Ayo14c, 2.45]．
+  - $\sheaf{F}^\bullet \in \cat{D}(\cat{Shv}(V, \Lambda))$ が fortement dualisable  $\Leftrightarrow$ $\displaystyle \bigoplus_{n\in\mathbb{Z}}  \homo^q(\sheaf{F}^\bullet)$ は local system [Ayo14c, 2.46]．
 
+### 2.6. Un modèle explicite du foncteur $\mathrm{TgB}^\ast$, première partie.
+- pro-object の Hom は例えば [$n$Lab s.v. "pro-object"](https://ncatlab.org/nlab/show/pro-object#HomSetsOfProObjectsAsLimitsOfColimitsOfHomoSetsInC) を参照．
+- 定理 2.24 の証明．
+  - Étape 2. $\{\mathbb{Q}_{\mathrm{tr}}(X) \mid X \in \cat{Sm}/k\}$ は $\cat{DM}^\mathrm{eff}(k)$ の生成系 [CD19, 11.1.b]．
+### 2.7. Un modèle explicite du foncteur $\mathrm{TgB}^\ast$, deuxième partie.
+
+### 3.1. Les algèbres de Hopf motiviques de $k$ et $F$.
+- monoidal functor から Hopf 代数を構成する方法は [Ayo14a] の第 1 節を参照．
+- produit tensoriel semi-direct は [Ayo14b] の 2.1.1 節を参照．
 ## 参考文献
 
 <table class="ref-table">
@@ -45,7 +59,22 @@ showToc: true
     https://www.numdam.org/item/AST_2007__315__1_0/</td>
   </tr>
   <tr>
-    <th>[Ayo14]</th>
+    <th>[Ayo14a]</th>
+    <td>———. "L'algèbre de Hopf et le groupe de Galois motiviques d'un corps de caractéristique nulle, I." J. Reine Angew. Math. **693** (2014), 1-149.<br />
+    https://user.math.uzh.ch/ayoub/PDF-Files/GaloisMotivic-1.pdf</td>
+  </tr>
+  <tr>
+    <th>[Ayo14b]</th>
+    <td>———. "L'algèbre de Hopf et le groupe de Galois motiviques d'un corps de caractéristique nulle, II." J. Reine Angew. Math. **693** (2014), 151-226.<br />
+    https://user.math.uzh.ch/ayoub/PDF-Files/GaloisMotivic-2.pdf</td>
+  </tr>
+  <tr>
+    <th>[Ayo14c]</th>
+    <td>———. "La réalisation étale et les opérations de Grothendieck." Ann. Sci. Éc. Norm. Supér. (4) **47** (2014), no. 1, 1-145.<br />
+    https://user.math.uzh.ch/ayoub/PDF-Files/Realisation-Etale.pdf</td>
+  </tr>
+  <tr>
+    <th>[Ayo14d]</th>
     <td>———. "A guide to (étale) motivic sheaves." In S. Y. Jang (Ed.), *Proceedings of the International Congress of Mathematicians*, Seoul 2014 (Vol. 2; Issue Vol. 2, pp. 1102–1124).<br />
     https://user.math.uzh.ch/ayoub/PDF-Files/ICM2014.pdf</td>
   </tr>
@@ -58,6 +87,11 @@ showToc: true
     <th>[Ber96]</th>
     <td>Berthelot, Pierre. *Cohomologie rigide et cohomologie rigide à supports propres Première partie*. prépublication. 1996.<br />
     https://www.wstein.org/people/berthelo/publis/Cohomologie_Rigide_I.pdf</td>
+  </tr>
+   <tr>
+    <th>[CD19]</th>
+    <td>Cisinski, Denis-Charles, Déglise, Frédéric. *Triangulated categories of mixed motives.* Vol. 6. Cham: Springer, 2019.<br />
+    https://link.springer.com/book/10.1007/978-3-030-33242-6</td>
   </tr>
   <tr>
     <th>[CM02]</th>

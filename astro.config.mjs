@@ -10,7 +10,7 @@ import mdx from '@astrojs/mdx';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeToc from 'rehype-toc';
-
+import remarkToc from 'remark-toc';
 
 const macros = {
   "\\cover": "\\mathfrak{#1}",
@@ -29,6 +29,8 @@ const macros = {
   "\\Q": "\\mathbb{Q}",
   "\\R": "\\mathbb{R}",
   "\\C": "\\mathbb{C}",
+  "\\bti": "\\mathop{\\mathrm{Bti}}\\nolimits",
+  "\\tgb": "\\mathop{\\mathrm{TgB}}\\nolimits",
   "\\obj": "\\mathop{\\mathrm{Obj}}\\nolimits",
   "\\mor": "\\mathop{\\mathrm{Mor}}\\nolimits",
   "\\coeq": "\\mathop{\\mathrm{Coeq}}\\nolimits",
@@ -64,7 +66,6 @@ export default defineConfig({
     smartypants: false,
     remarkPlugins: [remarkMath, remarkGfm],
       rehypePlugins: [
-        [rehypeKatex, { macros }],
         rehypeSlug,
         [rehypeAutolinkHeadings, {
           behavior: "append",
@@ -77,13 +78,13 @@ export default defineConfig({
           },
         }],
         [rehypeToc, { headings: ["h2", "h3"], ordered: false }],
+        [rehypeKatex, { macros }],
       ],
   })], 
   markdown: {
     smartypants: false,
     remarkPlugins: [remarkMath],
-    rehypePlugins: [[
-      rehypeKatex, { macros }],
+    rehypePlugins: [
       "rehype-slug",
       [
         "rehype-autolink-headings",
@@ -99,10 +100,10 @@ export default defineConfig({
           },
         },
       ],
-      ["rehype-toc", { headings: ["h2", "h3"] }],
       ["rehype-toc", { headings: ["h2", "h3"],
         ordered: false,
        }],
+       [rehypeKatex, { macros }]
     ],
   },
 });
