@@ -1,0 +1,138 @@
+---
+layout: "../../layouts/MarkdownPostLayout.astro"
+title: "Nori と Ayoub のモチーフ論的 Galois 群の構成"
+pubDate: 2025-12-31
+tags: ["数学", "モチーフ", "モチーフ論的 Galois 群"]
+showToc: true
+---
+
+## モチーフ論的 Galois 群
+（混合モチーフの）モチーフ論的 Galois 群（motivic Galois group）の構成は主に二つのものが知られている．一つは Nori によるものであり，もう一つは Ayoub によるものである．Nori のモチーフ論的 Galois 群は Nori モチーフの理論に基づいており，古典的な淡中圏の理論により近い形をしている．Ayoub のモチーフ論的 Galois 群は Voevodsky モチーフの理論に基づいている．これら二つのモチーフ論的 Galois 群は同型であるということが [CdS17] で示されているが，両者の構成は見かけ上はさして似ていない．しかしながら，実はこれらの構成はどちらも coend として統一的な形で定式化することができる．
+
+## Nori の formalism
+[HMS17] の記述に従って Nori の formalism による余代数の構成を述べる．モチーフ論的 Hopf 代数はこの構成の特殊な場合として得られる．
+
+これ以降，$R$ を固定された体あるいは Dedekind 整域とし，$R\cat{-proj}$ を有限生成射影的 $R$ 加群のなす圏とする．また，$R$ 加群 $M$ に対してその双対を $M^\vee := \hom_R(M, R)$ と定める．$M$ が有限生成無捻 $R$ 加群であれば標準的な同型 $M \cong M^{\vee\vee}$ が存在する（逆も成立する；Dedekind 整域上の有限生成加群について，射影的 $\Leftrightarrow$ 無捻 $\Leftrightarrow$ 反映的）．また，有限生成射影的 $R$ 加群 $M, N$ に対して $(M \otimes_R N)^\vee \cong M^\vee \otimes_R N^\vee$ である．
+
+$Q$ を小圏とする（Nori の formalism は一般に quiver でも成り立つが，簡単の為にここでは圏を考えることにする．結局 quiver とその path category を考えればどちらを使っても同じである）．関手 $T \colon Q \to R\cat{-proj}$ が与えられているとする．このとき $R$ 双代数 $A(T)$ を定義する．
+
+対象の数が有限個である圏 $Q'$ と関手 $T' \colon Q' \to R\cat{-proj}$ に対して，$T'$ の自己射環を
+$$
+\endo(T') = \left\{(e_q)_{q} \in\prod_{q \in \obj Q'} \endo_R(T'q) \ \middle\vert\ 
+\begin{array}{l}
+\forall (p\xrightarrow{m} q) \in \mor Q',\\
+ e_q\circ T'm = T'm \circ e_p
+\end{array}
+\right\}
+$$
+と定義する．これは有限 $R$ 代数であり，有限生成射影的加群の部分加群であるため射影的である．$\endo(T')$ の双対 $\endo(T')^\vee$ は $R$ 余代数であり，$R$ 加群として有限生成かつ射影的である．
+
+対象の数が有限個であるような $Q$ の充満部分圏 $Q' \subseteq Q'' \subseteq Q$ が与えられたときに，射影によって $R$ 代数の射 $\endo(T|_{Q''}) \to \endo(T|_{Q'})$ が定義されることに注意する．これの双対として $R$ 余代数の射 $\endo(T|_{Q'})^\vee \to \endo(T|_{Q''})^\vee$ が定まる．これを推移射として余極限を取ることで $R$ 余代数
+$$
+A(T) = \colim_{Q' \subseteq Q \text{: finite}} \endo(T|_{Q'})^\vee
+$$
+を定める．$Q$ に更なる構造が入っている場合には $A(T)$ が双代数や Hopf 代数になることが示せる．モチーフ論的 Hopf 代数はこの特殊な場合として定まる．詳しくは [HMS17] の 7–9 章を参照のこと．
+
+## Nori の余代数の coend による表示
+前節で構成した $A(T)$ は coend を用いて記述することができる．end, coend の定義などは [ML98] の IX 章を参照のこと．
+
+まず $Q$ の対象の数が有限個の場合を考える．この場合，$A(T) = \endo(T)^\vee$ であり，これは $R$ 加群として有限生成かつ射影的である．このとき $A(T)$ は双関手
+$$
+\hom_R(T(-), T(-)) \colon Q^\opp \times Q \to R\cat{-proj}
+$$
+の coend $\displaystyle \int^{q \in Q} \hom_R(Tq, Tq)$ と同型になる．これを確かめる為には $\displaystyle \int_{q \in Q} \hom_R(Tq, Tq)$ が $\endo(T)$ と同型になることを示せば良い（ここで現れる加群は全て有限生成射影的 $R$ 加群なので普遍性は双対で保たれる）が，$\endo(T)$ の定義からこれが end の満たすべき普遍性を満たすことが直接確かめられる（$(p\xrightarrow{f}q) \in \mor Q$ に対する次の図式を参照せよ）．
+$$
+\begin{CD}
+\endo(T) @>>> \hom_R(Tq, Tq)\\
+@VVV @VV{-\circ Tf}V\\
+\hom_R(Tp, Tp) @>>{Tf\circ -}> \hom(Tp, Tq)\\
+\end{CD}
+$$
+
+続いて一般の $Q$ について考える．$A(T)$ の定義と先ほど示したことから
+$$
+\begin{align*}
+A(T) &= \colim_{Q' \subseteq Q \text{: finite}} \endo(T|_{Q'})^\vee\\
+&\cong \colim_{Q' \subseteq Q \text{: finite}} \int^{q \in Q'} \hom_R(Tq, Tq)\\
+&\cong \int^{q \in Q} \hom_R(Tq, Tq)\\
+&\cong \int^{q \in Q} Tq^\vee \otimes_R Tq
+\end{align*}
+$$
+となる．
+
+## Ayoub の formalism
+[Ayo14] に従って Ayoub の formalism による余代数の構成を述べる．Nori の場合と同様に，モチーフ論的 Hopf 代数はこの構成の特殊な場合として得られる．引き続き $R$ は体あるいは Dedekind 整域とする．
+
+$(\cat{M}, \otimes_{\cat{M}}, \mathbf{1}_{\cat{M}}), (\cat{E}, \otimes_{\cat{E}}, \mathbf{1}_{\cat{E}})$ を $R$ 線型対称モノイダル圏とし，$f \colon \cat{M} \to \cat{E}$ をモノイダル関手とする．$f$ は右随伴関手 $g\colon \cat{E} \to \cat{M}$ を持つことを仮定する．$g$ はモノイダル関手であるとは限らないが，少なくとも擬モノイダル関手（pseudo-monoidal functor）であることが示せる．このとき $\cat{E}$ の対象 $g(\mathbf{1}_{\cat{E}})$ は $\cat{M}$ の単位的可換代数対象であり，その乗法と単位は
+$$
+\begin{align*}
+&\mathrm{m} \colon g(\mathbf{1}_{\cat{E}}) \otimes_{\cat{M}} g(\mathbf{1}_{\cat{E}}) \xrightarrow{\text{adj.}} gf(g(\mathbf{1}_{\cat{E}}) \otimes_{\cat{M}} g(\mathbf{1}_{\cat{E}}))\\
+&\qquad \cong g(fg(\mathbf{1}_{\cat{E}})\otimes_{\cat{E}} fg(\mathbf{1}_{\cat{E}}))
+\xrightarrow{\text{adj.}} g(\mathbf{1}_{\cat{E}}\otimes_{\cat{E}} \mathbf{1}_{\cat{E}}) \cong \mathbf{1}_{\cat{E}},\\
+&\mathrm{u} \colon \mathbf{1}_{\cat{E}} \xrightarrow{\text{adj.}} gf(\mathbf{1}_{\cat{E}}) \cong g(\mathbf{1}_{\cat{E}})
+\end{align*}
+$$
+で与えられる [Ayo14, 1.14]．特に $H := fg(\mathbf{1}_{\cat{E}})$ は $\cat{E}$ の単位的可換代数対象である．
+
+更に幾つかの仮定を追加すると $H$ に双代数や Hopf 代数の構造が入ることが示せる．モチーフ論的 Hopf 代数はこの特殊な場合として定まる．詳しくは [Ayo14] の 1–2 節を参照のこと．
+
+## Ayoub の代数の coend による表示
+従前の仮定に加えて，$\cat{E}$ は余冪（copower）を持つものとする．即ち双関手
+$$
+\otimes_R \colon R\cat{-Mod} \times \cat{E} \to \cat{E}
+$$
+が存在して，$R$ 加群 $M$ と $\cat{E}$ の対象 $X, Y$ について自然な $R$ 加群の同型
+$$
+\hom_{\cat{E}}(M\otimes_R X, Y) \cong \hom_{R}(M, \hom_{\cat{E}}(X,Y))
+$$
+が存在する．
+
+[ML, X.7.2] により $f \colon \cat{M} \to \cat{E}$ の右随伴関手 $g$ は $f$ に沿った $\id_{\cat{M}}$ の左 Kan 拡張 $\cat{Lan}_f (\id_{\cat{M}})$ に等しく，また [ML, X.4.1] によって左 Kan 拡張は coend として記述することが出来る．即ち，
+$$
+g(X) \cong \int^{Y \in \cat{M}} \hom_{\cat{E}}(f(Y), X)\otimes_R Y
+$$
+となる[^1]．従って先ほどの $H$ は
+$$
+fg(\mathbf{1}_{\cat{E}}) = \int^{Y \in \cat{M}} \hom_{\cat{E}}(f(Y), \mathbf{1}_{\cat{E}})\otimes_R f(Y)
+$$
+と表せるが，これは先ほど示した Nori の余代数と本質的に同じ形をしている．
+
+[^1]: これを直接確かめることも出来る．任意の $Z \in \obj \cat{M}$ に対して
+    $$
+    \begin{align*}
+      &\hom_{\cat{M}}\left(\int^{Y \in \cat{M}} \hom_{\cat{E}}(f(Y), X)\otimes_R Y, Z\right)\\
+      &\qquad\cong \int_{Y \in \cat{M}}\hom_{\cat{M}}( \hom_{\cat{E}}(f(Y), X)\otimes_R Y, Z)\\
+      &\qquad\cong \int_{Y \in \cat{M}}\hom_{R}( \hom_{\cat{E}}(f(Y), X), \hom_{\cat{M}}(Y, Z))\\
+      &\qquad\cong \int_{Y \in \cat{M}}\hom_{R}( \hom_{\cat{M}}(Y, g(X)), \hom_{\cat{M}}(Y, Z))\\
+      &\qquad\cong \mathrm{Nat}(\hom_{\cat{M}}(-, g(X)), \hom_{\cat{M}}(-, Z))\\
+      &\qquad\cong \hom_{\cat{M}}(g(X), Z)
+    \end{align*}
+    $$
+    が成立するので，米田の補題より
+    $$
+      g(X) \cong \int^{Y \in \cat{M}} \hom_{\cat{E}}(f(Y), X)\otimes_R Y
+    $$
+    である．
+
+## 参考文献
+
+<table class="ref-table">
+  <tr>
+    <th>[Ayo14]</th>
+    <td>———. "L'algèbre de Hopf et le groupe de Galois motiviques d'un corps de caractéristique nulle, I." J. Reine Angew. Math. **693** (2014), 1-149.<br />
+    https://user.math.uzh.ch/ayoub/PDF-Files/GaloisMotivic-1.pdf</td>
+  </tr>
+  <tr>
+    <th>[CdS17]</th>
+    <td>Choudhury, Utsav, de Souza, Martin Gallauer Alves. "An isomorphism of motivic Galois groups." *Advances in Mathematics* 313 (2017): 470-536.<br />
+    https://arxiv.org/abs/1410.6104</td>
+  </tr>
+  <tr>
+    <th>[HMS17]</th>
+    <td>Huber, Annette, and Stefan Müller-Stach. *Periods and Nori motives.* Vol. 65. Springer (2017).</td>
+  </tr>
+  <tr>
+    <th>[ML98]</th>
+    <td>Mac Lane, Saunders. *Categories for the working mathematician.* Vol. 5. Springer Science & Business Media, 1998.</td>
+  </tr>
+</table>

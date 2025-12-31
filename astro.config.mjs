@@ -34,6 +34,7 @@ const macros = {
   "\\obj": "\\mathop{\\mathrm{Obj}}\\nolimits",
   "\\mor": "\\mathop{\\mathrm{Mor}}\\nolimits",
   "\\coeq": "\\mathop{\\mathrm{Coeq}}\\nolimits",
+  "\\endo": "\\mathop{\\mathrm{End}}\\nolimits",
   "\\coeqmor": "\\mathop{\\mathrm{coeq}}\\nolimits",
   "\\spec": "\\mathop{\\mathrm{Spec}}\\nolimits",
   "\\sq": "\\mathop{\\mathrm{Sq}}",
