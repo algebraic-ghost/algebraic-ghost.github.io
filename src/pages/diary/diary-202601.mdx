@@ -10,3 +10,6 @@ showToc: True
 ピリオドを六つ入力すると勝手に三点リーダ一つに変換されてしまうのが嫌で今まで smartypants を無効にしていたのだが，Mac では `cmd + ;` で三点リーダを入力でき，これはそのまま出力されるということに気が付いたので，先ほど smartypants を復活させた．
 
 Ayoub の Note sur les opérations de Grothendieck et la réalisation de Betti を読んで $\mathbf{AnDM}$ の Tate object を具体的に計算しようと思ったのだが，よく分からなかった．モデル圏の修行が足りない．
+
+## 1/2（金）
+Tate object の計算で用いる Riemann 球面の hypercovering を最初は $\{|z| < 2\}$ と $\{|z| > 1\}$ のような被覆を用いて作ろうとしていたのだが，これを用いると次の段階で円環が出てきてしまうので hypercovering をまともに扱わないといけなくなる．他方で $S^2$ を前後左右上下の 6 つの半球で覆う被覆を用いれば，これらのどの intersection も contractible になるから，考えるべき hypercovering は単なる Čech nerve であり，従って Dold–Kan 対応なを通して考えれば普通の Čech complex を考えれば良いということになる．これを用いれば Tate object が計算できそうだ．
