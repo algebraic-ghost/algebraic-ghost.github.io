@@ -57,6 +57,7 @@ const macros = {
   "\\ker": "\\mathop{\\mathrm{Ker}}\\nolimits",
   "\\lie": "\\mathop{\\mathrm{Lie}}\\nolimits",
   "\\colie": "\\mathop{\\mathrm{coLie}}\\nolimits",
+  "\\tensor": "\\mathop{\\otimes}\\limits",
 };
 
 
