@@ -19,6 +19,7 @@ showToc: true
   - モデル圏における spectra や Bousfield 局所化については [Hov01] に書かれている．但し function complex については詳しく書かれていないので [Hov99] の第 5 章などを参照すると良い．
   - function complex と holim, hocolim は可換 [Hir03, 19.4.4]．
   - 非有界複体の圏に入る projective model structure については [CM02] を参照．
+  - $\cat{DM}^{\mathrm{eff}}(S)$ に入る monoidal structure は $\mathbb{Q}\cat{-Vect}$ の monoidal structure から誘導されるものではなく，[Day convolution](https://ncatlab.org/nlab/show/Day+convolution) というテンソル積によって定まるものであることに注意．この symmetric monoidal structure では米田埋め込みが monoidal functor になる．cf. [enriched Yoneda lemma](https://ncatlab.org/nlab/show/enriched+Yoneda+lemma)
 
 ### 2.2. Rappels sur les motifs des variétés rigides.
 - リジッド幾何学に関しては [Ber96] の 0 章を読んで，後は使いながら慣れていけば良いだろうと先生に言われた．
@@ -44,8 +45,10 @@ showToc: true
 ### 2.6. Un modèle explicite du foncteur $\mathrm{TgB}^\ast$, première partie.
 - pro-object の Hom は例えば [$n$Lab s.v. "pro-object"](https://ncatlab.org/nlab/show/pro-object#HomSetsOfProObjectsAsLimitsOfColimitsOfHomoSetsInC) を参照．
 - 定理 2.24 の証明．
-  - Étape 2. $\{\mathbb{Q}_{\mathrm{tr}}(X) \mid X \in \cat{Sm}/k\}$ は $\cat{DM}^\mathrm{eff}(k)$ の生成系 [CD19, 11.1.b]．
+  - Étape 2. $\{\mathbb{Q}_{\mathrm{tr}}(X) \mid X \in \cat{Sm}/k\}$ は $\cat{DM}^\mathrm{eff}(k)$ の生成系 [CD19, 11.1.b], [MVW, 9.4]．
+  - Étape 5. 式 (47) の左辺と右辺で $-$ の使い方が違うことに注意．左辺は自由変数だが右辺は束縛変数である．
 ### 2.7. Un modèle explicite du foncteur $\mathrm{TgB}^\ast$, deuxième partie.
+—
 
 ### 3.1. Les algèbres de Hopf motiviques de $k$ et $F$.
 - monoidal functor から Hopf 代数を構成する方法は [Ayo14a] の第 1 節を参照．
