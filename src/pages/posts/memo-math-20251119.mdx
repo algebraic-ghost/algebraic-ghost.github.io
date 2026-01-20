@@ -53,6 +53,15 @@ showToc: true
 ### 3.1. Les algèbres de Hopf motiviques de $k$ et $F$.
 - monoidal functor から Hopf 代数を構成する方法は [Ayo14a] の第 1 節を参照．
 - produit tensoriel semi-direct は [Ayo14b] の 2.1.1 節を参照．
+- $B$ が dualisable ならば [Ayo14b] の仮定 1.40 は満たされる．
+- Betti 実現を計算するときに $\cat{D}(\mathbb{Q})$ における simplicial object の homotopy colimit を取る必要がある（[Ayo10, Remarque 1.9]）が，実用上出てくる複体は殆どが下に有界な（どころか 0 次に concentrate している）ものなので，Dold–Kan 対応で $\mathbb{Q}\cat{-Vect}_{\Delta}$ の対象と見做し，bisimplicial set の homotopy colimit が diagonal になること（例えば [$n$Lab](https://ncatlab.org/nlab/show/bisimplicial+set#DiagonalAsSimplicialHomotopyColimit)）を使えば計算できる．
+- Tate object の Betti 実現は球面を 6 つの開半球によって覆う開被覆の Čech nerve で計算すれば良い．
+- $\cat{quDM}(k) \hookrightarrow \cat{DM}(\mathbb{G}_{\mathrm{m}, k})$ が右随伴を持つことは [Nee01, 8.4.4] などから分かる．
+
+### 3.2. Les groupes de Galois motiviques de $k$ et $F$.
+
+### 3.3. Reformulation d’un résultat de [5].
+- proalgebraic completion については [BLMM02] を参照．
 ## 参考文献
 
 <table class="ref-table">
@@ -60,6 +69,11 @@ showToc: true
     <th>[Ayo07]</th>
     <td>Ayoub, Joseph. "Les six opérations de Grothendieck et le formalisme des cycles évanescents dans le monde motivique (II)." Astérisque, no. 315 (2007), 370 p. <br />
     https://www.numdam.org/item/AST_2007__315__1_0/</td>
+  </tr>
+    <tr>
+    <th>[Ayo10]</th>
+    <td>–––. "Note sur les opérations de Grothendieck et la réalisation de Betti" *J. Inst. Math. Jussieu* **9** (2010), no. 2, 225-263. <br />
+    https://user.math.uzh.ch/ayoub/PDF-Files/Realisation-Betti.pdf</td>
   </tr>
   <tr>
     <th>[Ayo14a]</th>
@@ -91,6 +105,12 @@ showToc: true
     <td>Berthelot, Pierre. *Cohomologie rigide et cohomologie rigide à supports propres Première partie*. prépublication. 1996.<br />
     https://www.wstein.org/people/berthelo/publis/Cohomologie_Rigide_I.pdf</td>
   </tr>
+<tr>
+    <th>[BLMM02]</th>
+    <td>Bass, H., Lubotzky, A., Magid, A.R. Mozes, S. The Proalgebraic Completion of Rigid Groups. *Geometriae Dedicata* **95**, 19–58 (2002). <br />
+    https://doi.org/10.1023/A:1021221727311</td>
+  </tr>
+  
    <tr>
     <th>[CD19]</th>
     <td>Cisinski, Denis-Charles, Déglise, Frédéric. *Triangulated categories of mixed motives.* Vol. 6. Cham: Springer, 2019.<br />
@@ -123,6 +143,11 @@ showToc: true
     <td>Mazza, Carlo, Voevodsky, Vladimir, and Weibel, Charles A. *Lecture notes on motivic cohomology*. American Mathematical Soc., 2006.<br />
     https://www.claymath.org/library/monographs/cmim02.pdf</td>
   </tr>
+  <tr>
+    <th>[Nee01]</th>
+    <td>Neeman, Amnon. *Triangulated categories.* Vol. 148. Annals of Mathematics Studies. Princeton University Press, 2001.</td>
+  </tr>
+  
   <tr>
     <th>[SV96]</th>
     <td>Suslin, A., Voevodsky, V. Singular homology of abstract algebraic varieties. *Invent Math* 123, 61–94</td>
