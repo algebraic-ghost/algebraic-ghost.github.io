@@ -5,6 +5,6 @@ const allPosts = await Astro.glob("../diary/*.md*");
 const pageTitle = "日記";
 ---
 <BaseLayout pageTitle={pageTitle}>
-  全く推敲していない文章です．
+  全く推敲していない文章です．勿読！
   <ul>{allPosts.map((post: any) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}</ul>
 </BaseLayout>
