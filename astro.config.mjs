@@ -84,6 +84,13 @@ export default defineConfig({
       ],
   })], 
   markdown: {
+    shikiConfig: {
+      // 好きな組み込みテーマを指定します（例: 'dracula', 'github-dark', 'nord' など）
+      theme: 'tokyo-night',
+      
+      // 背景色を透過させたい場合は true にします
+      wrap: true, 
+    },
     smartypants: true,
     remarkPlugins: [remarkMath],
     rehypePlugins: [

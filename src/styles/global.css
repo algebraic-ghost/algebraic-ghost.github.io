@@ -276,3 +276,71 @@ h3:hover .heading-anchor {
 }
 
 
+pre.astro-code {
+  /* 余白と角丸の追加 */
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  
+  /* 横スクロールを可能にする */
+  overflow-x: auto;
+  
+  /* フォントサイズやフォントファミリーの指定 */
+  font-size: 0.9rem;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  
+  /* 余分なマージンをリセット */
+  margin: 1.5em 0;
+}
+
+/* コードブロック内のテキスト（インラインコードなどと区別するため） */
+pre.astro-code code {
+  background-color: transparent;
+  padding: 0;
+}
+
+/* src/styles/global.css など */
+
+/* 折りたたみの全体設定 */
+details {
+  /* 背景色や枠線をつけてまとまり感を出す */
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  margin: 1.5rem 0;
+}
+
+/* クリックする部分のスタイル */
+details > summary {
+  cursor: pointer;
+  font-weight: bold;
+  /* デフォルトの三角形（▶）の横に少し余白を空ける */
+  padding-left: 0.2rem;
+}
+
+/* マウスオーバー時に色を変える */
+details > summary:hover {
+  opacity: 0.8;
+}
+
+/* 開いたときのコードブロックとの間の余白 */
+details[open] > summary {
+  margin-bottom: 1rem;
+}
+
+/* `<details>` の中のコードブロックの余白を調整 */
+details pre.astro-code {
+  margin: 0; 
+}
+
+:not(pre) > code {
+  /* 全体のテーマ（ライト/ダーク）に合わせた色を指定します */
+  background-color: #2d333b; /* 例：少し暗い背景色 */
+  color: #adbac7;            /* 例：少し明るい文字色 */
+  
+  /* 余白と角丸で「タグっぽさ」を出す */
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
+  
+  /* フォントを等幅フォントにする */
+  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  font-size: 0.85em;
+}

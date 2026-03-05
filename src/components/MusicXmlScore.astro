@@ -1,0 +1,44 @@
+---
+// src/components/MusicXmlScore.astro
+const { scoreUrl = "/scores/sample.musicxml", zoom = 0.8, sid = "sss" } = Astro.props;
+---
+
+{/* カスタムタグ（<music-score>）でラップし、必要なデータを data-* 属性で渡します */}
+<music-score data-score={scoreUrl} data-zoom={zoom}>
+  <div id={scoreUrl} class="score-container" style="width: 100%; height: auto;"></div>
+</music-score>
+
+<script>
+  // Viteのバンドル対象になるので、npmパッケージのインポートが正常に機能します
+  import { OpenSheetMusicDisplay } from "opensheetmusicdisplay";
+
+  class MusicScore extends HTMLElement {
+    async connectedCallback() {
+      // this.querySelector でこのコンポーネント内の div だけを取得
+      const container = this.querySelector(".score-container");
+      if (!container) return;
+
+      // data-* 属性から値を取得
+      const scoreUrl = this.dataset.score;
+      const zoomLevel = parseFloat(this.dataset.zoom || "1.0");
+
+      const osmd = new OpenSheetMusicDisplay(container);
+
+      osmd.setOptions({
+        drawTitle: false,
+        drawPartNames: false,
+        defaultColorMusic: "#FFFFFF",
+        defaultColorLabel: "#FFFFFF",
+        newSystemFromXML: true,
+        drawingParameters: "compacttight",
+      });
+
+      await osmd.load(scoreUrl);
+      osmd.zoom = zoomLevel;
+      osmd.render();
+    }
+  }
+
+  // カスタム要素としてブラウザに登録
+  customElements.define("music-score", MusicScore);
+</script>

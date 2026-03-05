@@ -6,6 +6,9 @@ pubMonth: 3
 tags: ["日記"]
 showToc: True
 ---
+import MusicXmlScore from '../../components/MusicXmlScore.astro';
+
+
 ## 3/1（日）
 Carlson–Müller-Stach–Peters の *Period Mappings and Period Domains* の冒頭を読んでいた．$y^2 = (x^2-s)(x-1)$ の local monodromy action が Dehn twist であるということを初めて知った．考えてみれば確かにそうだ．こういう話は楽しい．
 
@@ -73,3 +76,26 @@ Latin Wordle 79 6/6
 🟩🟩🟩🟩🟩  
 
 明日はセミナーなのだが，こんなことをしていたら，準備が少々大変なことになってしまった．埋まらない行間があって困った．
+
+## 3/4（水）
+今日は朝から先生とのセミナーがあった．セミナーが始まる直前に予習の誤りに気が付いたが，ギリギリで修正できた．3.7 節を終わらせた後，4.1 節も終わらせた．$\mathcal{D}$ 加群の話は真面目に勉強している暇はなかったのである程度 fact として認めざるを得なかった（そこまで深い話ではないと思うが）．一つ pro-object に関する議論で怪しいところがあったので，後で考えなければならない．昨日埋まらなかった行間は結局埋まらなかった．
+
+$\mathcal{D}$ 加群に関する事実として，analytification functor 
+$$
+(-)^{\mathrm{an}} = - \tensor_{\mathcal{O}_{X}} \mathcal{O}_{X^\mathrm{an}}\colon \mathcal{O}\cat{-Coh}(\mathcal{D}_{X})\to \mathcal{O}\cat{-Coh}(\mathcal{D}_{X^\mathrm{an}})
+$$
+は圏同値にはならないが，$\mathcal{O}\cat{-Coh}(\mathcal{D}_{X})$ を確定特異点を持つ $\mathcal{D}_X$ 加群の圏 $\mathcal{O}\cat{-Coh}_{\mathrm{rs}}(\mathcal{D}_{X})$ に制限すると $(-)^{\mathrm{an}}$ が圏同値になるというものがあり，一見すると $\mathcal{O}\cat{-Coh}(\mathcal{D}_{X^\mathrm{an}})$ の方が大きそうな気がするのに，寧ろ $\mathcal{O}\cat{-Coh}(\mathcal{D}_{X})$ の方を制限しないと同値にならないというのはどういうことなのかと思っていただのが，これはつまり $\mathcal{O}_{X^\mathrm{an}}$ の方が多くの関数を持っているので，より多くの $\mathcal D$ 加群が自明化されてしまう所為だということを先生に教えてもらった．例えば $\mathcal{D}_{\mathbb{A}^1}/(\partial - 1)\mathcal{D}_{\mathbb{A}^1}$ は $\mathcal{O}_{\mathbb{C}}$ において $\exp$ という解を持つので解析的な状況では自明化されてしまうが，他方で $\exp$ は代数的ではないので代数的な状況ではこれは非自明であり，確定特異点に制限するというのはこのような例を除くことにあたる（実際，$\exp$ は無限遠点で真性特異点を持つ）．
+
+昼は Cisinski のゼミがあった．細かい議論が大変な印象だった．その後さらにヴァイオリンのレッスンがあった．一応一通りヴィヴァルディの g-moll の協奏曲の第三楽章の譜読みを終えた．172 小節以下の部分は見た目の割に意外と弾きやすいので楽しい．
+
+<MusicXmlScore scoreUrl="/scores/20260304_1.musicxml"/>
+
+寧ろ 68 小節（など）に現れる
+
+<MusicXmlScore scoreUrl="/scores/20260304_2.musicxml"/>
+
+というフレーズの方が弾きにくい．
+
+以前から web ページで楽譜を表示させるにはどうすれば良いのか気になっていたので，Gemini に聞きながら（というよりほぼ丸投げだが）試してみたのだが，どうだろうか？　当然ながら，楽譜のデータを入力するのはかなり面倒な作業なのであまりやりたくない．メモ：[MusicXML で楽譜を出力する](../posts/memo-web-20260304_musicxml)
+
+卒業が確定したらしい．良かった！　あとは大学院入学手続きで失敗さえしなければ……
