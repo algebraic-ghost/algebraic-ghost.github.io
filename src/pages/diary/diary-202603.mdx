@@ -171,3 +171,18 @@ Ayoub の論文が急に難しい（というか行間が多く）なってき�
 [3 月 4 日の日記](https://algebraic-ghost.github.io/diary/diary-202603/#34%E6%B0%B4)で言及した pro-object に関することを考えた．つまり symmetric rigid tensor category の ind-object の dual を pro-object として定めた時，$\hom(E, F) \cong \hom(F^\vee, E^\vee)$ に相当する duality が成立するかという話なのだが，少なくとも $\mathrm{Ind}(\mathrm{Pro}(\mathcal{C}))$ でこれらを考えれば成り立つはずだ（これ自体は全く formal な話）．Ayoub の論文で使う上でこれで十分なのかは判然としてないが．しかし ind-object や pro-object に関してはどのような文献を見るのが良いのだろうか．あまりよく分からない．
 
 複素解析は意外と冪級数論だけでも（即ち，線積分やそれに関する定理を導入しなくても）色々なことができる．思い返してみると，B2 の時に受けた坂井先生の複素解析の授業は最初にずっと冪級数論のようなことをやっており，それなりに後の方になってから正則関数が冪級数展開可能であることを示していたような気がする．代数幾何との比較で言うと，基本的に代数での議論では積分に依存した議論は使えないわけだから，代数幾何で言えるようなことは複素解析側でも積分なしに言えて然るべきではあるのだが．
+
+## 3/16（月）
+$f(0)=0$, $f'(0) \neq 0$ となる収束冪級数 $f(z)$ が与えられた時，それの合成に関する逆を形式的に構成するのは単純な計算でできるのだが，それが正の収束半径を持つということを示そうとすると（私が試してみた限りでは）係数の評価が一筋縄ではいかず，普通は陰関数定理なりに訴えて証明しているのだが，Cartan の *Théorie élémentaire des fonctions analytiques* には冪級数論だけで完結した巧みな証明が載っている（Proposition 9.1）．即ち，係数が一番大きくなりうる場合が適当な正則関数の平方根で与えられる場合であることを示し，それの展開は（一般二項定理などを使えば）具体的に分かるから評価できるというように証明している．このことは Gemini に教えてもらった．
+
+Ayoub の論文は少し分かりかけて再び別の分からない箇所に行き当たった．地の文でサラッと $M \in \cat{DM}^\mathrm{eff}(U)$ が $\cat{DM}(U)$ において dualisable ならばその de Rham 実現
+$$
+\mathrm{dR}_U(M) := \hom_{\cat{DM}^\mathrm{eff}}(M, \Omega^\bullet_{/U}) \in \cat{Mod}(\sheaf{O}(U))
+$$
+が $\sheaf{O}_U$ 加群として射影的であると言っているのだが，これがよく分からない．この de Rham 実現の導来版を
+$$
+\widetilde{\mathrm{dR}_U} := \mathbf{R}\mathrm{Hom}_{\cat{DM}^\mathrm{eff}(U)}(-, \Omega^\bullet_{/U}) \colon \cat{DM}^\mathrm{eff}(U) \to \cat{D}(\sheaf{O}(U))^\opp
+$$
+などとすれば，algebraic de Rham cohomology に対する Künneth formula からこれが monoidal functor になることが言えて（変数を一つ固定したものは三角関手なので，表現可能な対象について調べれば良い），しかも Tate object の像が invertible なのでこれは $\widetilde{\mathrm{dR}_U}$ は $\cat{DM}(U)$ を経由し，従って $M \in \cat{DM}^\mathrm{eff}(U)$ が $\cat{DM}(U)$ において dualisable ならば $\widetilde{\mathrm{dR}_U}(M)$ は $ \cat{D}(\sheaf{O}(U))$ の dualisable object 即ち perfect complex であることがわかるのだが，元々考えていた de Rham 実現というのはこれの 0 次コホモロジーなので，それが projective かどうかはすぐには分からないと思う．smooth な場合の relative algebraic de Rham の locally freeness のような類の話だとは思うのだが……　あるいは何か思い違いをしているのだろうか？
+
+Gemini が体上 smooth なスキームに対しては cancellation theorem が成立すると言っていた．これは流石に嘘だと思う．
