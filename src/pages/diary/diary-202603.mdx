@@ -177,12 +177,45 @@ $f(0)=0$, $f'(0) \neq 0$ となる収束冪級数 $f(z)$ が与えられた時�
 
 Ayoub の論文は少し分かりかけて再び別の分からない箇所に行き当たった．地の文でサラッと $M \in \cat{DM}^\mathrm{eff}(U)$ が $\cat{DM}(U)$ において dualisable ならばその de Rham 実現
 $$
-\mathrm{dR}_U(M) := \hom_{\cat{DM}^\mathrm{eff}}(M, \Omega^\bullet_{/U}) \in \cat{Mod}(\sheaf{O}(U))
+\mathrm{dR}_U(M) := \hom_{\cat{DM}^\mathrm{eff}(U)}(M, \Omega^\bullet_{/U}) \in \cat{Mod}(\sheaf{O}(U))
 $$
 が $\sheaf{O}_U$ 加群として射影的であると言っているのだが，これがよく分からない．この de Rham 実現の導来版を
 $$
-\widetilde{\mathrm{dR}_U} := \mathbf{R}\mathrm{Hom}_{\cat{DM}^\mathrm{eff}(U)}(-, \Omega^\bullet_{/U}) \colon \cat{DM}^\mathrm{eff}(U) \to \cat{D}(\sheaf{O}(U))^\opp
+\mathbf{R}\mathrm{dR}_U := \mathbf{R}\mathrm{Hom}_{\cat{DM}^\mathrm{eff}(U)}(-, \Omega^\bullet_{/U}) \colon \cat{DM}^\mathrm{eff}(U) \to \cat{D}(\sheaf{O}(U))^\opp
 $$
-などとすれば，algebraic de Rham cohomology に対する Künneth formula からこれが monoidal functor になることが言えて（変数を一つ固定したものは三角関手なので，表現可能な対象について調べれば良い），しかも Tate object の像が invertible なのでこれは $\widetilde{\mathrm{dR}_U}$ は $\cat{DM}(U)$ を経由し，従って $M \in \cat{DM}^\mathrm{eff}(U)$ が $\cat{DM}(U)$ において dualisable ならば $\widetilde{\mathrm{dR}_U}(M)$ は $ \cat{D}(\sheaf{O}(U))$ の dualisable object 即ち perfect complex であることがわかるのだが，元々考えていた de Rham 実現というのはこれの 0 次コホモロジーなので，それが projective かどうかはすぐには分からないと思う．smooth な場合の relative algebraic de Rham の locally freeness のような類の話だとは思うのだが……　あるいは何か思い違いをしているのだろうか？
+などとすれば，algebraic de Rham cohomology に対する Künneth formula からこれが monoidal functor になることが言えて（変数を一つ固定したものは三角関手なので，表現可能な対象について調べれば良い），しかも Tate object の像が invertible なのでこれは $\mathbf{R}\mathrm{dR}_U$ は $\cat{DM}(U)$ を経由し，従って $M \in \cat{DM}^\mathrm{eff}(U)$ が $\cat{DM}(U)$ において dualisable ならば $\mathbf{R}\mathrm{dR}_U(M)$ は $ \cat{D}(\sheaf{O}(U))$ の dualisable object 即ち perfect complex であることがわかるのだが，元々考えていた de Rham 実現というのはこれの 0 次コホモロジーなので，それが projective かどうかはすぐには分からないと思う．smooth な場合の relative algebraic de Rham の locally freeness のような類の話だとは思うのだが……　あるいは何か思い違いをしているのだろうか？
 
 Gemini が体上 smooth なスキームに対しては cancellation theorem が成立すると言っていた．これは流石に嘘だと思う．
+
+## 3/18（水）
+一昨日書いた projectivity に関する話は，ただ単に $\mathcal{O}_X$ 加群として連接的な $\mathcal{D}_X$ 加群は自動的に局所自由になるというだけだった．$\mathcal{D}$ 加群に慣れていないからこのような話がすぐに分からない．$\mathcal{D}_X$ が作用しているというだけで（有限生成ならば）自動的に局所自由になってしまうというのは聊か不思議な感じがする．因みに，これと同じ理由によって $\mathrm{dR}_U(M)$ のみならず，全ての $\mathbf{R}^q\mathrm{dR}_U(M)$ も projective になるということが分かる（論文には明示的に書かれていなかったが，証明の途中でこの事実が必要な箇所がある）．
+
+今日は午前中に先生とのセミナーがあった．Théorème 4.11 まで終わらせた．
+
+[メモ](http://algebraic-ghost.github.io/posts/memo-math-20251119#42-r%C3%A9alisation-de-betti-et-connexions-de-gaussmanin)を加筆した．
+
+来学期のシラバスが授業カタログで見られるようになっていたので，気になる講義を調べて取り敢えず書き出してみた．
+- 春学期
+  - [大域幾何学概論「最適輸送理論を介した幾何解析」（高津先生，月 2）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-12&year=2026)
+  - [数物先端科学 V「層理論の幾何学への応用」（池先生，火 2）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-113&year=2026)
+  - [数物先端科学 VII「Deligne–Lusztig 理論」（今井先生，水 2）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-115&year=2026)
+  - [リー環論「Springer 対応」（阿部先生，木 3）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-21&year=2026)
+  - [代数幾何学「代数的サイクル」（Kelly 先生，木 4）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-01&year=2026)
+  - [応用数理特別講義 V "Topics on q-Whittaker polynomials and representation theory"（小寺先生，集中）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-54&year=2026)
+  - [数理科学特別講義 II「Clifford–Klein 形の幾何学」（森田先生，集中）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-56&year=2026)
+  - [数理科学特別講義 VI「多重ゼータ値」（山本先生，集中）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-60&year=2026)
+  - [数理科学特別講義 IX「量子アフィン代数の表現論の進展」（大矢先生，集中）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-63&year=2026)
+- 秋学期
+  - [基礎数理特別講義 II「3 次元トポロジーにおけるの量子不変量について」（葉廣先生，月 2）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-43&year=2026)
+  - [数理構造概論「離散可積分系」（Willox 先生，月 3）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-25&year=2026)
+  - [基礎数理特別講義 IV「量子アフィン代数と q-Whittaker 関数」（白石先生，火 3）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-45&year=2026)
+  - [基礎数理特別講義 III「Nevanlinna 理論の微分方程式への応用」（坂井先生，水 2）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-44&year=2026)
+  - [数物先端科学 VIII「傾理論概論」（伊山先生，水 2）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-116&year=2026)
+  - [基礎数理特別講義VIII（小木曽先生，木 2）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-49&year=2026)
+  - [基礎数理特別講義 VI「楕円曲線」（毛塚先生，木 3）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-47&year=2026)
+  - [微分幾何学 I「リー群の基礎」（大島先生，木 3）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-152&year=2026)
+  - [複素多様体「非可換代数幾何学」（植田先生，金 2）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-10&year=2026)
+  - [数理科学特別講義 III「写像の特異点論と数え上げ幾何学」（大本先生，集中）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-57&year=2026)
+  - [数理科学特別講義 IV「Teichmüller 空間の Thurston 距離（大鹿先生，集中）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-58&year=2026)
+  - [数理科学特別講義 X「極小モデル理論に関する特異点の不変量」（中村先生，集中）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-64&year=2026)
+  - [数理科学特別講義 XII「箙 Heisenberg 代数とその周辺」(源先生，集中)](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-66&year=2026)

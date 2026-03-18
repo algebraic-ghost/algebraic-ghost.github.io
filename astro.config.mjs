@@ -53,6 +53,8 @@ const macros = {
   "\\gld": "\\mathop{\\mathrm{gl.dim}}\\nolimits",
   "\\sup": "\\mathop{\\mathrm{sup}}\\limits",
   "\\colim": "\\mathop{\\mathrm{colim}}\\limits",
+  "\\hocolim": "\\mathop{\\mathrm{hocolim}}\\limits",
+  "\\holim": "\\mathop{\\mathrm{holim}}\\limits",
   "\\coker": "\\mathop{\\mathrm{Coker}}\\nolimits",
   "\\ker": "\\mathop{\\mathrm{Ker}}\\nolimits",
   "\\lie": "\\mathop{\\mathrm{Lie}}\\nolimits",

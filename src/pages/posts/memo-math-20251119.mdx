@@ -75,6 +75,97 @@ showToc: true
   - （標数 0 での）de Rham コホモロジーの $\mathbb{A}^1$ 不変性は [[Stacks, 0FUI]](https://stacks.math.columbia.edu/tag/0FUI) を参照．
 - $(K^\bullet[n])_d = K^{n-d}$.
 
+### 4.1. Sur la correspondance de Riemann-Hilbert.
+- この節で定義されている $\mathrm{Sol}$ という関手は通常は水平切断と呼ばれるものであり，解複体の双対になっている．（双対に入れる $\mathcal{D}_U$ 加群の構造から，この作用による水平切断が $\hom_{\mathcal{D}_U}(\mathcal{M}, \mathcal{O}_U)$ と等しい．）
+- regular singularity に制限するのは，$\mathcal{D}_\mathbb{C}/(\partial - 1)\mathcal{D}_\mathbb{C}$ のようなものを除く為．解析的な場合，このようなものも自明化されてしまう．
+- Corollaire 4.5 の右辺は恐らく $\mathrm{Pro}(\widehat{\cat{LS}}(U^\mathrm{an}))$ における hom set を表していると思われる．
+
+### 4.2. Réalisation de Betti et connexions de Gauss–Manin.
+- $\cat{DM}(U)$ において dualisable な $M \in \cat{DM}^{\mathrm{eff}}(U)$ に対して $\mathrm{dR}_U(M)$ が有限生成射影的 $\mathcal{O}(U)$ 加群であることを示すためには次のように議論すれば良い．
+
+  まず，上のように定義した de Rham 実現関手の導来版を derived Hom によって
+  $$
+    \mathbf{R}\mathrm{dR}_U := \mathbf{R}\mathrm{Hom}_{\cat{DM}^\mathrm{eff}(U)}(-, \Omega^\bullet_{/U}) \colon \cat{DM}^\mathrm{eff}(U) \to \cat{D}(\sheaf{O}(U))^\opp
+  $$
+  と定義すると，これは monoidal functor になっている．何故ならば，$X, Y \in \cat{Sm}/U$ に対しては
+  $$
+    \begin{align*}
+    \mathbf{R}\mathrm{dR}_U(X \times Y)
+    &=\mathbf{R}\mathrm{Hom}_{\cat{DM}^\mathrm{eff}(U)}(X \times Y, \Omega^\bullet_{/U})\\
+    &\overset{(1)}{\cong} \mathbf{R}\mathrm{Hom}_{\cat{D}(U)}(X \times Y, \Omega^\bullet_{/U})\\
+    &\cong \mathbf{R}\Gamma(X \times Y, \Omega^\bullet_{/U})\\
+    &\overset{(2)}{\cong} \mathbf{R}\Gamma(X, \Omega^\bullet_{/U}) \overset{\cat{L}}{\tensor_{\mathcal{O}(U)}} \mathbf{R}\Gamma(Y, \Omega^\bullet_{/U})\\
+    &=\mathbf{R}\mathrm{dR}_U(X) \overset{\cat{L}}{\tensor_{\mathcal{O}(U)}} \mathbf{R}\mathrm{dR}_U(Y)
+    \end{align*}
+  $$
+  が成り立つ．ここで (1) は $\Omega^\bullet_{/U}$ が（$\cat{Ho}_{\mathrm{Nis}}\cat{Cpl}(\cat{PShv}(\cat{Cor}/U))$ において）$\mathbb{A}^1$-local であること（[Ayo14a, 2.88]）を用いており，(2) は代数的 de Rham コホモロジーに対する Künneth 公式を用いている．また，$\mathbf{R}\mathrm{dR}_U$ が monoidal になる対象全体のなす部分圏は直和で閉じた三角圏を為すので，表現可能なモチーフに対して $\mathbf{R}\mathrm{dR}_U$ が monoidal であれば全てのモチーフに対しても monoidal である．また，$\mathbf{R}\mathrm{dR}_U$ は Tate object を tensor invertible な対象に移す為，$\cat{DM}(U)$ を経由する．従って，もしも $M \in \cat{DM}^\mathrm{eff}(U)$ が $\cat{DM}(U)$ において dualisable であれば，$\mathbf{R}\mathrm{dR}_U(M)$ は $\cat{D}(\mathcal{O}(U))$ における dualisable object 即ち perfect complex になる．特に，この複体の各々のコホモロジーは $\mathcal{O}(U)$ 加群として有限生成である．また，これらの加群は $\mathcal{D}(U)$ 作用を持っていたので，自動的に射影的となる．
+- Théorème 4.11 の証明の (143) の最後の同型は
+  $$
+  \begin{align*}
+  &E^{p,q}_2 = \mathbf{R}^p\mathrm{Hom}_{\cat{Shv}(U^\mathrm{an})}(\mathcal{H}^q(\mathcal{O}_{U^\mathrm{an}} \tensor_{\mathbb{Q}} \mathrm{Bti}_U^\ast(M)), \mathcal{O}_{U^\mathrm{an}})\\
+  &\quad \Rightarrow \mathbf{R}^{p+q}\mathrm{Hom}_{\cat{Cpl}(\cat{Shv}(U^\mathrm{an}))}(\mathcal{O}_{U^\mathrm{an}} \tensor_{\mathbb{Q}} \mathrm{Bti}_U^\ast(M), \mathcal{O}_{U^\mathrm{an}})
+  \end{align*}
+  $$
+  というスペクトル系列を考えている．これは $F=\mathrm{Hom}_{\cat{Shv}(U^\mathrm{an})}(-, \mathcal{O}_{U^\mathrm{an}})$ という関手に対する hypercohomology spectral sequence
+  $$
+    E^{p,q}_2 = \cat{R}^pF(\mathcal{H}^q C^\bullet) \Rightarrow \cat{R}^{p+q}F(C^\bullet)
+  $$
+  である．
+- $\mathcal{M}$ が有限階数の局所自由 $\mathcal{O}_U$ 加群であれば，
+  $$
+    \hom_{\mathcal{O}_{U^\mathrm{an}}}(\mathcal{M},-) = \Gamma(U^\mathrm{an}, \mathcal{M}^\vee \otimes -)
+  $$
+  であり，今 $U^\mathrm{an}$ は Stein 多様体なので $\Gamma(U^\mathrm{an}, -)$ は完全，また $ \mathcal{M}^\vee \otimes - $ も完全なので，それらの合成も完全である．従って，
+  $$
+    \ext_{\mathcal{O}_{U^\mathrm{an}}}^{p}(\mathcal{M}, -) = 0\quad (p \geq 1)
+  $$
+  である．
+- 推移射が単射であるような $U^\mathrm{an}$ 上の局所系の帰納系 $(L_\lambda)_{\lambda \in \Lambda}$ に対して，$\mathcal{M}_\lambda := \mathcal{O}_{U^\mathrm{an}} \tensor_{\mathbb{Q}} L_\lambda$ とすると，$(\hom_{\mathcal{O}_{U^\mathrm{an}}}(\mathcal{M}_\lambda, \mathcal{O}_{U^\mathrm{an}}))_{\lambda \in \Lambda}$ は Mittag-Leffler 系になる．これは，次のようにして示される．各々の推移射 $\varphi_{\lambda\mu} \colon L_\lambda \to L_\mu$ に対して，それの余核を $L'$ とすると，これも局所系になる．従って，$\mathcal{M}' =\mathcal{O}_{U^\mathrm{an}} \tensor_{\mathbb{Q}} L'$　とすれば有限階数局所自由 $\mathcal{O}_{U^\mathrm{an}}$ 加群の完全列
+  $$
+    0 \to \mathcal{M}_\lambda \to \mathcal{M}_\mu \to \mathcal{M}' \to 0
+  $$
+  が得られる．ここで，先ほどと同様の理由によって $\ext_{\mathcal{O}_{U^\mathrm{an}}}^1(\mathcal{M}', \mathcal{M}_\lambda) = 0$ なので，この完全列は分裂する．従って 
+  $$
+    \hom_{\mathcal{O}_{U^\mathrm{an}}}(\mathcal{M}_\mu, \mathcal{O}_{U^\mathrm{an}}) \to \hom_{\mathcal{O}_{U^\mathrm{an}}}(\mathcal{M}_\lambda, \mathcal{O}_{U^\mathrm{an}})
+  $$
+  は全射である．
+- $\mathrm{dR}_U^{\mathrm{GM}}(\hocolim_{i\in I}M_i) \cong \lim_{i\in I}\mathrm{dR}_U^{\mathrm{GM}}(M_i)$ を示すには次のようにすれば良い．まず，導来版は homotopy colimit と可換なので，
+  $$
+    \cat{R}\mathrm{dR}_U^{\mathrm{GM}}(\hocolim_{i\in I}M_i) \cong \holim_{i\in I}\cat{R}\mathrm{dR}_U^{\mathrm{GM}}(M_i)
+  $$
+  が成立する．ここで spectral sequence
+  $$
+  \begin{align*}
+    &E^{p,q}_2 = \cat{R}^p\lim_{i \in I} \cat{R}^q\mathrm{dR}_U^{\mathrm{GM}}(M_i)\\
+    &\quad\Rightarrow \mathrm{H}^{p+q}(\holim_{i\in I}\cat{R}\mathrm{dR}_U^{\mathrm{GM}}(M_i)) \cong \cat{R}^{p+q}\mathrm{dR}_U^{\mathrm{GM}}(\hocolim_{i\in I}M_i)
+  \end{align*}
+  $$
+  の $p+q=0$ となるところを考えると，$(\cat{R}^q\mathrm{dR}_U^{\mathrm{GM}}(M_i))_{i \in I}$ が Mittag-Leffler 系である（このことは $\cat{R}^q\mathrm{dR}_U^{\mathrm{GM}}(M_i)$ が $\mathcal{D}(U^\mathrm{an})$ 加群として artinian であることから分かる）ことから，$\cat{R}^p\lim_{i \in I}$ は $q \neq 0$ で消える．これによって求める同型が得られる．
+- $\mathbb{C}$ 上の affine 多様体 $X$ と，$X$ 上の連接層 $\mathcal{F}$ に対して，
+  $$
+  \begin{align*}
+    \Gamma(X, \mathcal{F}) \tensor_{\mathcal{O}_X} \mathcal{O}_{X^\mathrm{an}} \cong \Gamma(X^\mathrm{an}, \mathcal{F}^\mathrm{an})
+  \end{align*}
+  $$
+  が成立する．特に，$\mathcal{F} = \underline{\hom}_{\mathcal{O}_X}(\mathcal{M}, \mathcal{N})$（$\mathcal{M}$, $\mathcal{N}$ は連接層）とすれば，
+  $$
+    \hom_{\mathcal{O}_X}(\mathcal{M}, \mathcal{N}) \tensor_{\mathcal{O}_U} \mathcal{O}_{U^\mathrm{an}} \cong \hom_{\mathcal{O}_{X^\mathrm{an}}}(\mathcal{M}^\mathrm{an}, \mathcal{N}^\mathrm{an}) 
+  $$
+  が成立する．
+
+  $\mathcal{F}$ は連接的なので，完全列
+  $$
+    \mathcal{O}_X^{\oplus p} \to \mathcal{O}_X^{\oplus q} \to \mathcal{F} \to 0
+  $$
+  が存在する．$X$ は affine なので，大域切断を取る関手は完全であり，しかも $\mathcal{O}(X^\mathrm{an})$ は $\mathcal{O}(X)$ 上平坦なので，
+  $$
+    \mathcal{O}(X^\mathrm{an})^{\oplus p} \to \mathcal{O}(X^\mathrm{an})^{\oplus q} \to \mathcal{F}(X) \tensor_{\mathcal{O}(X)} \mathcal{O}({X^\mathrm{an}}) \to 0
+  $$
+  も完全である．ここで，最初の完全列を analytify してから大域切断を取る（$X^\mathrm{an}$ は Stein 多様体なので，Cartan の定理 B より大域切断を取る関手は完全である）と，完全列
+  $$
+    \mathcal{O}(X^\mathrm{an})^{\oplus p} \to \mathcal{O}(X^\mathrm{an})^{\oplus q} \to \mathcal{F}^\mathrm{an}(X^\mathrm{an})  \to 0
+  $$
+  が得られる．二つの完全列を比較すれば望む結果が得られる．
 ## 参考文献
 
 <table class="ref-table">
