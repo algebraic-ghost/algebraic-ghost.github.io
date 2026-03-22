@@ -245,16 +245,16 @@ period map $\displaystyle \int_{[0,1]^\infty} \colon \sheaf{O}_{\mathbb{C}\text{
 $$
 \begin{align*}
   \sheaf{O}_{k\text{-alg}}^\dagger(\overline{\mathbb{D}}^n)
-  \lra \mathbf{R}^{\varpi}(F,\sigma) \lra \mathcal{A}^\text{rs}_{F \tensor_{k} \mathbb{C}}
+  \lra \mathbf{R}^{\varpi}_{/k}(F,\sigma) \lra \mathcal{A}^\text{rs}_{F \tensor_{k} \mathbb{C}}
 \end{align*}
 $$
-という二つの射に分解している（$k$ は状況に応じて適切に選ばれた $\mathbb{C}$ の部分体）．途中に現れる $\mathbf{R}^{\varpi}(F,\sigma)$ というのは概ね formal period のようなもので，一つ目の射はモチーフの世界で完結しているので殆ど formal な議論のみで（といっても結構大変ではあるのだが）その kernel を求めることができ，それが既に所望の kernel になっていることがわかる．二つ目の射は実際に積分を実行してモチーフの世界から本物の関数を得るところで，ここでは period map の像として得られる関数が確定特異点を持つ微分方程式を満たす為に基本群によるモノドロミー作用を持つということを利用している．これによって $\mathcal{A}^\text{rs}_{F \tensor_{k} \mathbb{C}}$ が $\displaystyle \pi^\varpi_1(\mathbb{C}\setminus \overline{k}) = \lim_{\emptyset \neq U \subseteq \mathbb{A}^1_k} \pi^\varpi_1(U^\text{an})$ による作用を持ち，さらには $\spec F\tensor_k \mathbb{C}$ 上の $ \pi^\varpi_1(\mathbb{C}\setminus \overline{k})$-torsor になっているということまで示せる．また，重要なのが dualisable なモチーフの Betti 実現として局所系（正確に言うと，$U^\mathrm{an}$ 上の層の導来圏の対象であって，各々の次数のコホモロジーが局所系の filtered colimit になっているもの）が現れるので，これに Ayoub の weak Tannakian formalism を適用すれば $\pi^\varpi_1(U^\text{an})$ の pro-$\mathbb{Q}$-algebraic completion（即ち $\cat{LS}(U^\text{an}) \cong \pi^\varpi_1(U^\text{an})\cat{-Rep}^\mathrm{f}_\mathbb{Q}$ の淡中基本群）から relative motivic Galois group への射が得られ，しかもこれが全射であるということが分かる（これが大切な事実）．あとは $\mathbf{R}^{\varpi}(F,\sigma)$ や $\mathcal{A}^\text{rs}_{F \tensor_{k} \mathbb{C}}$ が適切な群の torsor になっていることや諸々の作用の整合性から
+という二つの射に分解している（$k$ は状況に応じて適切に選ばれた $\mathbb{C}$ の部分体）．途中に現れる $\mathbf{R}^{\varpi}_{/k}(F,\sigma)$ というのは概ね formal period のようなもので，一つ目の射はモチーフの世界で完結しているので殆ど formal な議論のみで（といっても結構大変ではあるのだが）その kernel を求めることができ，それが既に所望の kernel になっていることがわかる．二つ目の射は実際に積分を実行してモチーフの世界から本物の関数を得るところで，ここでは period map の像として得られる関数が確定特異点を持つ微分方程式を満たす為に基本群によるモノドロミー作用を持つということを利用している．これによって $\mathcal{A}^\text{rs}_{F \tensor_{k} \mathbb{C}}$ が $\displaystyle \pi^\varpi_1(\mathbb{C}\setminus \overline{k}) = \lim_{\emptyset \neq U \subseteq \mathbb{A}^1_k} \pi^\varpi_1(U^\text{an})$ による作用を持ち，さらには $\spec F\tensor_k \mathbb{C}$ 上の $ \pi^\varpi_1(\mathbb{C}\setminus \overline{k})$-torsor になっているということまで示せる．また，重要なのが dualisable なモチーフの Betti 実現として局所系（正確に言うと，$U^\mathrm{an}$ 上の層の導来圏の対象であって，各々の次数のコホモロジーが局所系の filtered colimit になっているもの）が現れるので，これに Ayoub の weak Tannakian formalism を適用すれば $\pi^\varpi_1(U^\text{an})$ の pro-$\mathbb{Q}$-algebraic completion（即ち $\cat{LS}(U^\text{an}) \cong \pi^\varpi_1(U^\text{an})\cat{-Rep}^\mathrm{f}_\mathbb{Q}$ の淡中基本群）から relative motivic Galois group への射が得られ，しかもこれが全射であるということが分かる（これが大切な事実）．あとは $\mathbf{R}^{\varpi}_{/k}(F,\sigma)$ や $\mathcal{A}^\text{rs}_{F \tensor_{k} \mathbb{C}}$ が適切な群の torsor になっていることや諸々の作用の整合性から
 $$
-\spec \mathcal{A}^\text{rs}_{F \tensor_{k} \mathbb{C}} \lra \spec \mathbf{R}^{\varpi}(F,\sigma)
+\spec \mathcal{A}^\text{rs}_{F \tensor_{k} \mathbb{C}} \lra \spec \mathbf{R}^{\varpi}_{/k}(F,\sigma)
 $$
 の全射性が半ば自動的に従うので，これから
 $$
-\mathbf{R}^{\varpi}(F,\sigma) \lra \mathcal{A}^\text{rs}_{F \tensor_{k} \mathbb{C}}
+\mathbf{R}^{\varpi}_{/k}(F,\sigma) \lra \mathcal{A}^\text{rs}_{F \tensor_{k} \mathbb{C}}
 $$
 の単射性が分かるという仕組みになっているようだ．
 
