@@ -82,7 +82,7 @@ Latin Wordle 79 6/6
 
 $\mathcal{D}$ 加群に関する事実として，analytification functor 
 $$
-(-)^{\mathrm{an}} = - \tensor_{\mathcal{O}_{X}} \mathcal{O}_{X^\mathrm{an}}\colon \mathcal{O}\cat{-Coh}(\mathcal{D}_{X})\to \mathcal{O}\cat{-Coh}(\mathcal{D}_{X^\mathrm{an}})
+(-)^{\mathrm{an}} = - \tensor_{\mathcal{O}_{X}} \mathcal{O}_{X^\mathrm{an}}\colon \mathcal{O}\cat{-Coh}(\mathcal{D}_{X})\lra \mathcal{O}\cat{-Coh}(\mathcal{D}_{X^\mathrm{an}})
 $$
 は圏同値にはならないが，$\mathcal{O}\cat{-Coh}(\mathcal{D}_{X})$ を確定特異点を持つ $\mathcal{D}_X$ 加群の圏 $\mathcal{O}\cat{-Coh}_{\mathrm{rs}}(\mathcal{D}_{X})$ に制限すると $(-)^{\mathrm{an}}$ が圏同値になるというものがあり，一見すると $\mathcal{O}\cat{-Coh}(\mathcal{D}_{X^\mathrm{an}})$ の方が大きそうな気がするのに，寧ろ $\mathcal{O}\cat{-Coh}(\mathcal{D}_{X})$ の方を制限しないと同値にならないというのはどういうことなのかと思っていただのが，これはつまり $\mathcal{O}_{X^\mathrm{an}}$ の方が多くの関数を持っているので，より多くの $\mathcal D$ 加群が自明化されてしまう所為だということを先生に教えてもらった．例えば $\mathcal{D}_{\mathbb{A}^1}/(\partial - 1)\mathcal{D}_{\mathbb{A}^1}$ は $\mathcal{O}_{\mathbb{C}}$ において $\exp$ という解を持つので解析的な状況では自明化されてしまうが，他方で $\exp$ は代数的ではないので代数的な状況ではこれは非自明であり，確定特異点に制限するというのはこのような例を除くことにあたる（実際，$\exp$ は無限遠点で真性特異点を持つ）．
 
@@ -181,7 +181,7 @@ $$
 $$
 が $\sheaf{O}_U$ 加群として射影的であると言っているのだが，これがよく分からない．この de Rham 実現の導来版を
 $$
-\mathbf{R}\mathrm{dR}_U := \mathbf{R}\mathrm{Hom}_{\cat{DM}^\mathrm{eff}(U)}(-, \Omega^\bullet_{/U}) \colon \cat{DM}^\mathrm{eff}(U) \to \cat{D}(\sheaf{O}(U))^\opp
+\mathbf{R}\mathrm{dR}_U := \mathbf{R}\mathrm{Hom}_{\cat{DM}^\mathrm{eff}(U)}(-, \Omega^\bullet_{/U}) \colon \cat{DM}^\mathrm{eff}(U) \lra \cat{D}(\sheaf{O}(U))^\opp
 $$
 などとすれば，algebraic de Rham cohomology に対する Künneth formula からこれが monoidal functor になることが言えて（変数を一つ固定したものは三角関手なので，表現可能な対象について調べれば良い），しかも Tate object の像が invertible なのでこれは $\mathbf{R}\mathrm{dR}_U$ は $\cat{DM}(U)$ を経由し，従って $M \in \cat{DM}^\mathrm{eff}(U)$ が $\cat{DM}(U)$ において dualisable ならば $\mathbf{R}\mathrm{dR}_U(M)$ は $ \cat{D}(\sheaf{O}(U))$ の dualisable object 即ち perfect complex であることがわかるのだが，元々考えていた de Rham 実現というのはこれの 0 次コホモロジーなので，それが projective かどうかはすぐには分からないと思う．smooth な場合の relative algebraic de Rham の locally freeness のような類の話だとは思うのだが……　あるいは何か思い違いをしているのだろうか？
 
@@ -231,9 +231,31 @@ Gemini が体上 smooth なスキームに対しては cancellation theorem が�
 
 今年の Abel 賞は Faltings だったらしい．
 
-Ayoub の Web ページを見たら [$\mathbb{A}^1$-algebraic topology](https://user.math.uzh.ch/ayoub/PDF-Files/PCMI.pdf) のノートが追加されていた．[Déglise のノート](https://arxiv.org/abs/2510.17778v1) ので言及されていたものかしら．少し覗いてみたら最初から $\infty$ 圏この言葉を話していたのでまだ読めなそうだ．
+Ayoub の Web ページを見たら [$\mathbb{A}^1$-algebraic topology](https://user.math.uzh.ch/ayoub/PDF-Files/PCMI.pdf) のノートが追加されていた．[Déglise のノート](https://arxiv.org/abs/2510.17778v1) ので言及されていたものかしら．少し覗いてみたら最初から $\infty$ 圏の言葉を話していたのでまだ読めなそうだ．
 
 Ayoub の論文を少し読み進めた．4.3 節は結構 formal な話が続きそうだ．
 
 ## 3/20（金）
 『豊饒の海』を読み終えた．第四巻は面白かったので終わりまで一気に読んでしまった．これを読んで三島由紀夫が本当に好きになってきた．いつか感想などを書きたい．
+
+## 3/21（土）
+Ayoub の Une relative version … の主定理の証明を読み終えた．あとは，抽象的な構成をした evaluation map が積分で表せるという事実の証明が残っている（が，これがあと 10 頁ほどあるので意外と長くて大変そうだ）．気が付いたら所望の結果が証明されていてなんとも不思議な証明だった．
+
+period map $\displaystyle \int_{[0,1]^\infty} \colon \sheaf{O}_{\mathbb{C}\text{-alg}}^\dagger(\overline{\mathbb{D}}^n) \lra \mathbb{C}((\varpi))$ の kernel を求めるために，これを
+$$
+\begin{align*}
+  \sheaf{O}_{k\text{-alg}}^\dagger(\overline{\mathbb{D}}^n)
+  \lra \mathbf{R}^{\varpi}(F,\sigma) \lra \mathcal{A}^\text{rs}_{F \tensor_{k} \mathbb{C}}
+\end{align*}
+$$
+という二つの射に分解している（$k$ は状況に応じて適切に選ばれた $\mathbb{C}$ の部分体）．途中に現れる $\mathbf{R}^{\varpi}(F,\sigma)$ というのは概ね formal period のようなもので，一つ目の射はモチーフの世界で完結しているので殆ど formal な議論のみで（といっても結構大変ではあるのだが）その kernel を求めることができ，それが既に所望の kernel になっていることがわかる．二つ目の射は実際に積分を実行してモチーフの世界から本物の関数を得るところで，ここでは period map の像として得られる関数が確定特異点を持つ微分方程式を満たす為に基本群によるモノドロミー作用を持つということを利用している．これによって $\mathcal{A}^\text{rs}_{F \tensor_{k} \mathbb{C}}$ が $\displaystyle \pi^\varpi_1(\mathbb{C}\setminus \overline{k}) = \lim_{\emptyset \neq U \subseteq \mathbb{A}^1_k} \pi^\varpi_1(U^\text{an})$ による作用を持ち，さらには $\spec F\tensor_k \mathbb{C}$ 上の $ \pi^\varpi_1(\mathbb{C}\setminus \overline{k})$-torsor になっているということまで示せる．また，重要なのが dualisable なモチーフの Betti 実現として局所系（正確に言うと，$U^\mathrm{an}$ 上の層の導来圏の対象であって，各々の次数のコホモロジーが局所系の filtered colimit になっているもの）が現れるので，これに Ayoub の weak Tannakian formalism を適用すれば $\pi^\varpi_1(U^\text{an})$ の pro-$\mathbb{Q}$-algebraic completion（即ち $\cat{LS}(U^\text{an}) \cong \pi^\varpi_1(U^\text{an})\cat{-Rep}^\mathrm{f}_\mathbb{Q}$ の淡中基本群）から relative motivic Galois group への射が得られ，しかもこれが全射であるということが分かる（これが大切な事実）．あとは $\mathbf{R}^{\varpi}(F,\sigma)$ や $\mathcal{A}^\text{rs}_{F \tensor_{k} \mathbb{C}}$ が適切な群の torsor になっていることや諸々の作用の整合性から
+$$
+\spec \mathcal{A}^\text{rs}_{F \tensor_{k} \mathbb{C}} \lra \spec \mathbf{R}^{\varpi}(F,\sigma)
+$$
+の全射性が半ば自動的に従うので，これから
+$$
+\mathbf{R}^{\varpi}(F,\sigma) \lra \mathcal{A}^\text{rs}_{F \tensor_{k} \mathbb{C}}
+$$
+の単射性が分かるという仕組みになっているようだ．
+
+微分方程式の理論は矢張り大事で面白そうだ．relative version の解決も微分方程式の理論が使えるからというのが大きいのだろう．

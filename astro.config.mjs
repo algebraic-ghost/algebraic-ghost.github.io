@@ -19,6 +19,8 @@ const macros = {
   "\\sheaf": "\\mathcal{#1}",
   "\\id": "\\mathrm{id}",
   "\\eff": "\\mathrm{eff}",
+  "\\lra": "\\longrightarrow",
+  "\\lmapsto": "\\\longmapsto",
   "\\uncommon": "\\textsuperscript{\\textdagger}",
   "\\opp": "\\mathrm{op}",
   "\\epsilon": "\\varepsilon",
