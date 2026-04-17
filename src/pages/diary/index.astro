@@ -1,10 +1,94 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import fs from 'node:fs'; // ファイルの中身を直接読み込むための標準モジュール
 
 const allPosts = await Astro.glob("../diary/*.md*");
 const pageTitle = "日記";
+
+// 文字数を集計し、描画に必要なデータを配列としてまとめる
+const postsWithStats = allPosts.map((post: any) => {
+  // ファイルの絶対パスから中身のテキストを直接取得
+  const fileContent = fs.readFileSync(post.file, 'utf-8');
+  
+  // 先頭のFrontmatter（---で囲まれたタイトルなどの設定部分）を除外
+  const bodyOnly = fileContent.replace(/^---[\s\S]*?---\n/, '');
+  
+  // 空白と改行を除外して、純粋な本文の文字数をカウント
+  let plainText = bodyOnly.replace(/\s+/g, '');
+  
+  // ※数式（$$...$$ や $...$）を文字数から除外したい場合は、以下のコメントアウトを外してください
+  // plainText = plainText.replace(/\$\$.*?\$\$/g, '').replace(/\$.*?\$/g, '');
+
+  const charCount = plainText.length;
+
+  return {
+    url: post.url,
+    title: post.frontmatter.title,
+    charCount: charCount
+  };
+});
+
+// バーの長さを計算するため、全月の中での最大文字数を取得
+const maxCount = Math.max(...postsWithStats.map(p => p.charCount));
 ---
+
 <BaseLayout pageTitle={pageTitle}>
-  全く推敲していない文章です．勿読！（内容にはたくさんの誤りなどが含まれると思います．ご指摘やご意見は歓迎いたします）
-  <ul>{allPosts.map((post: any) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}</ul>
+  <p>全く推敲していない文章です．勿読！（内容にはたくさんの誤りなどが含まれると思います．ご指摘やご意見は歓迎いたします）　各々の月の下の線の長さはその月の日記の文字数を表しています．</p>
+
+  <ul class="diary-list">
+    {postsWithStats.map((post) => {
+      // 最大文字数を100%とした時のパーセンテージを計算
+      const percentage = maxCount > 0 ? (post.charCount / maxCount) * 100 : 0;
+      
+      return (
+        <li class="diary-item" style={`--percent: ${percentage}%;`}>
+          <a href={post.url} class="diary-link">
+            <span>{post.title}</span>
+          </a>
+        </li>
+      );
+    })}
+  </ul>
 </BaseLayout>
+
+<style>
+  /* 前回の背景色変数を活用する場合、ここで読み込んでもOKです */
+  :root {
+    /* 背景塗りつぶしよりも、線の場合は少し不透明度を高く（濃く）した方が綺麗に見えます */
+    --accent-line-color: rgba(100, 150, 220, 0.8); 
+  }
+
+  .diary-list {
+    list-style-type: none; 
+    padding-left: 1.5rem;
+  }
+  
+  .diary-item {
+    position: relative; /* 下線の基準位置にするため追加 */
+    margin-bottom: 0rem; /* 線が追加される分、項目間の余白を少し広げる */
+    margin-top: 0.3rem;
+    padding-bottom: -0.2rem; /* 文字と下線の間の「隙間」 */
+    max-width: 400px;
+  }
+
+  /* 疑似要素を使って下線を描画する */
+  .diary-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px; /* 下線の太さ（お好みで 1px や 3px に変更してください） */
+    width: var(--percent); /* HTML側から渡されたパーセンテージを幅に適用 */
+    background: linear-gradient(to right, oklch(0.60 0.1 280), oklch(0.20 0.1 280));
+    border-radius: 2px; /* 線の両端を少し丸くする */
+  }
+
+  .diary-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: oklch(0.80 0.1 250);
+  }
+</style>
