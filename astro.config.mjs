@@ -62,6 +62,7 @@ const macros = {
   "\\lie": "\\mathop{\\mathrm{Lie}}\\nolimits",
   "\\colie": "\\mathop{\\mathrm{coLie}}\\nolimits",
   "\\tensor": "\\mathop{\\otimes}\\limits",
+  "\\vect": "\\overrightarrow",
 };
 
 
