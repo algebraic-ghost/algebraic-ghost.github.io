@@ -1,0 +1,58 @@
+---
+layout: "../../../layouts/MarkdownPostLayout.astro"
+title: "準 Abel 多様体の完全列はその torus/Abelian part の完全列を導く"
+pubDate: 2025-10-14
+tags: ["数学", "代数幾何学", "代数群", "メモ"]
+---
+
+$k$ を標数 0 の代数閉体とする（もしかしたらもう少し緩められるかもしれないが，取り敢えずこの設定で考える）．$k$ 上の可換代数群の圏は Abel 圏である（この事実は一般の体上で成立する [Mil, 5.62]）．以下，完全列などは全てこの圏において考えることとする．**準 Abel 多様体** (semi-abelian variety) とは Abel 多様体をトーラスによって拡大したもの，即ち代数群 $G$ であって，
+$$
+\begin{align*}
+0 \to T \to G \to A \to 0
+\end{align*}
+$$
+が完全列となるようなトーラス $T$ と Abel 多様体 $A$ が存在するものである．$T$ は $G$ の極大トーラスであり，$T$ と $A$ は $G$ から一意的に定まる．$T$ を $G$ の torus part，$A$ を $G$ の abelian part と呼ぶ．次の命題を示したい．
+
+<div class="thm">
+#### 命題
+準 Abel 多様体からなる完全列
+$$
+\begin{align*}
+0\to G_1 \to G_2 \to G_3 \to 0
+\end{align*}
+$$
+が与えられたとする．$G_i$ の torus part と abelian part をそれぞれ $T_i$，$A_i$ とすると，（適切に射を定めると）図式
+$$
+\begin{CD}
+@. 0 @. 0 @. 0 \\
+@. @VVV @VVV @VVV\\
+0 @>>> T_1 @>>> G_1 @>>> A_1 @>>> 0\\
+@. @VVV @VVV @VVV\\
+0 @>>> T_2 @>>> G_2 @>>> A_2 @>>> 0\\
+@. @VVV @VVV @VVV\\
+0 @>>> T_3 @>>> G_3 @>>> A_3 @>>> 0\\
+@. @VVV @VVV @VVV\\
+@. 0 @. 0 @. 0 
+\end{CD}
+$$
+の全ての行と列は完全であり，全ての四角形は可換である．
+</div>
+<div class="proof">
+#### 証明
+一般に，トーラスから Abel 多様体への代数群としての射の像は，Abel 多様体の閉部分群なので proper だが，トーラスの商なので affine かつ連結でもある [Mil, 5.29, 5.59]．このような代数群は 0 しか存在しないので，トーラスから Abel 多様体への射は零射以外存在しない．従って $T_i \to G_i \to G_{i+1} \to A_{i+1}$ は零射であるので，核と余核の普遍性から上の図式を可換にする $T_i \to T_{i+1}$ 及び $A_i \to A_{i+1}$ が存在する．
+
+$T_1 \to T_2$ が単射であることと $A_2 \to A_3$ が全射であること，$T_1 \to T_2 \to T_3$ が零射であることは明らか．従って $T_1 \subseteq \ker(T_2\to T_3) = G_1 \cap T_2$ である．非自明な unipotent subgroup を含まない代数群はトーラスであるので [Mil, 17.25]，$T_2$ がトーラスであることから $G_1 \cap T_2$ もトーラスであることがわかる．$T_1$ は $G_1$ に含まれる極大トーラスであるので，$T_1 =  G_1 \cap T_2$ である．従って左の列は $T_2$ において完全である．
+
+下の 2 行に対して蛇の補題を適用すると，完全列
+$$
+\begin{align*}
+A_1 \to \coker(T_2 \to T_3) \to 0
+\end{align*}
+$$
+が得られる．ここで $\coker(T_2 \to T_3)$ は affine であるが，proper variety から affine variety への射は定数しかないので，$A_1 \to \coker(T_2 \to T_3)$ は零射である．従って $\coker(T_2 \to T_3)=0$，即ち $T_2 \to T_3$ は全射である．
+
+左の 2 列に対して蛇の補題を適用すれば右の列の完全性も得られる．
+</div>
+
+## 参考文献
+* [Mil] Milne, J. S. *Algebraic Groups*.

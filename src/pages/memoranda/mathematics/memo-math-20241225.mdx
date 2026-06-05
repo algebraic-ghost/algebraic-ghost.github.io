@@ -1,0 +1,165 @@
+---
+layout: "../../../layouts/MarkdownPostLayout.astro"
+title: "圏上の前層に関する備忘録"
+pubDate: 2024-12-25
+tags: ["数学", "圏論", "層論", "メモ"]
+---
+
+本記事の状況設定は概ね Fu, <cite>Etale Cohomology Theory</cite> の第 5 章に則っている．また，前層は全て Abel 群に値を取るものとする．
+
+$\cat{C}$ を任意の小圏とする．このとき，$\cat{PSh}(\cat{C})$ で $\cat{C}$ 上の前層の圏を表すこととする．これは Abel 圏である．関手 $f \colon \cat{C} \to \cat {C}'$ が与えられたとき，前層圏の間の加法的関手
+$$
+\begin{align*}
+&f^p \colon \cat{PSh}(\cat{C}') \to \cat{PSh}(\cat{C})\\
+&f_p \colon \cat{PSh}(\cat{C}) \to \cat{PSh}(\cat{C}')\\
+\end{align*}
+$$
+を次のようにして定める．
+  
+まず，$\cat{C}'$ 上の前層 $\sheaf{F}'$ に対して $f^p\sheaf{F}'$ を
+$$
+\begin{align*}
+  f^p\sheaf{F}'(U) = \sheaf{F}'(fU) \quad (U \in \obj\cat{C})
+\end{align*}
+$$
+となる前層とする．
+  
+$\cat{C}'$ の対象 $U'$ に対して，圏 $\cat{I}_{f, U'}$ を，対象が $(U \in \obj\cat{C}, (\varphi \colon U' \to f(U)) \in \mor\cat{C}')$ という組であり，二つの対象 $(U, \varphi)$, $(V, \psi)$ の間の射が $\xi \colon U \to V$ で $f(\xi)\varphi = \psi$ を満たすものであるような圏とする．このとき，$\cat{C}$ 上の前層 $\sheaf{F}$ に対して $f_p\sheaf{F}$ を
+$$
+\begin{align*}
+  f_p\sheaf{F}(U') = \colim_{(U, \varphi) \in \cat{I}_{f, U'}^\opp} \sheaf{F}(U) \quad (U' \in \obj\cat{C})
+\end{align*}
+$$
+となる前層とする．
+  
+以上の二つの関手が加法的であることは定義からすぐに分かる．
+  
+  
+<div class="thm">
+#### 命題
+$f_p$ は $f^p$ の左随伴関手である．即ち，$\cat{C}$ 上の前層 $\sheaf{F}$ と $\cat{C}'$ 上の前層 $\sheaf{F}'$ に対して，自然な全単射
+$$
+\begin{align*}
+\hom_{\cat{PSh}(\cat{C}')}(f_p\sheaf{F}, \sheaf{F}') \cong \hom_{\cat{PSh}(\cat{C})}(\sheaf{F}, f^p\sheaf{F}')
+\end{align*}
+$$
+が存在する．更に，この全単射は $\cat{Ab}$ 値前層圏の射集合に自然に入る群構造と両立する．
+</div>
+
+<div class="proof">
+#### 証明  
+随伴関手の一般論 (例えば [CWM, IV.2]) より，単位 $\eta \colon \id_{\cat{PSh}(\cat{C})} \to f^pf_p$ 及び余単位 $\epsilon \colon f_pf^p \to \id_{\cat{PSh}(\cat{C}')}$ が定まって，それらが三角等式を満たす，即ち $\cat{C}$ 上の前層 $\sheaf{F}$ と $\cat{C}'$ 上の前層 $\sheaf{F}'$ に対して $\eta_{f^p\sheaf{F'}} \circ f^p\epsilon_{\sheaf{F}'} = \id_{f^p\sheaf{F}}$，$f_p\eta_{\sheaf{F}} \circ \epsilon_{f_p\sheaf{F}} = \id_{f_p\sheaf{F}}$ であることを示せば良い．
+
+$\cat{C}$ 上の前層 $\sheaf{F}$ と $U \in \obj\cat{C}$ に対して
+$$
+\begin{align*}
+f^pf_p\sheaf{F}(U)
+&= f_p\sheaf{F}(fU)
+= \colim_{(V, \varphi) \in \cat{I}_{f, fU}^\opp} \sheaf{F}(V)
+\end{align*}
+$$
+であり，$\cat{I}_{f, fU}$ はその対象として $(U, \id_{fU})$ を持つので，それによって定まる標準的包含射 
+$$
+\begin{align*}
+  i_{(U, \id_{fU})} \colon \sheaf{F}(U) \to \colim_{(V, \varphi) \in \cat{I}_{f, fU}^\opp} \sheaf{F}(V)
+\end{align*}
+$$
+を $\eta_{\sheaf{F}}(U)$ とすれば，これは前層の射 $\eta_\sheaf{F} \colon \sheaf{F} \to f^pf_p\sheaf{F}$ を定める．これによって自然変換 $\eta \colon \id_{\cat{PSh}(\cat{C})} \to f^pf_p$ が定まる．
+  
+$\cat{C}'$ 上の前層 $\sheaf{F}'$ と $U' \in \obj\cat{C}'$ に対して
+$$
+\begin{align*}
+f_pf^p\sheaf{F}'(U')
+&= \colim_{(U,\varphi) \in \cat{I}_{f, U'}^\opp} f^p\sheaf{F}'(U)
+= \colim_{(U,\varphi) \in \cat{I}_{f, U'}^\opp} \sheaf{F}'(fU)
+\end{align*}
+$$
+であり，$\cat{I}_{f, U'}$ の各々の対象 $(U, \varphi)$ に対して射 $\sheaf{F}(\varphi) \colon \sheaf{F}'(fU) \to \sheaf{F}'(U')$ が定まり，それらは $\cat{I}_{f, U'}^\opp$ 上の余錐をなすので，余極限の普遍性より射 $\epsilon_{\sheaf{F}'}(U') \colon f_pf^p\sheaf{F}'(U') \to \sheaf{F}'(U')$ が定まる．これによって前層の射 $\epsilon_{\sheaf{F}'} \colon f_pf^p\sheaf{F}' \to \sheaf{F}'$ が定まり，更に自然変換 $\epsilon \colon f_pf^p \to \id_{\cat{PSh}(\cat{C}')}$ が定まる．
+
+如上の自然変換が三角等式を満たすことを示そう．$\cat{C}'$ 上の前層 $\sheaf{F}'$ と $U \in \obj \cat{C}$ に対して
+$$
+\begin{align*}
+\eta_{f^p\sheaf{F}}(U) \colon f^p\sheaf{F}'(U) = \sheaf{F}'(fU) \to f^pf_pf^p\sheaf{F}'(U) = \colim_{(V, \varphi) \in \cat{I}_{f, fU}^\opp} \sheaf{F}'(fV)
+\end{align*}
+$$
+は余極限の標準的包含射 $i_{(U, \id_{fU})}$ であり，
+$$
+\begin{align*}
+f^p\epsilon_{\sheaf{F}'}(U) \colon \colim_{(V, \varphi) \in \cat{I}_{f, fU}^\opp} \sheaf{F}'(fV) \to \sheaf{F}'(fU)
+\end{align*}
+$$
+は余極限の普遍性から定まる射なので，これらの合成は $\id_{\sheaf{F}'(fU)}$ である．
+  
+また，$\cat{C}$ 上の前層 $\sheaf{F}$ と $U \in \obj \cat{C}'$ に対して，
+$$
+\begin{align*}
+f_p\eta_{\sheaf{F}}(U') \colon f_p\sheaf{F}(U') = \colim_{(U, \varphi) \in \cat{I}_{f, U'}^\opp} \sheaf{F}(U) \to f_pf^pf_p\sheaf{F}(U') = \colim_{(U, \varphi) \in \cat{I}_{f, U'}^\opp} \colim_{(V, \psi) \in \cat{I}_{f, fU}^\opp} \sheaf{F}(V)
+\end{align*}
+$$
+は標準的包含射の族 $\displaystyle \left\{i_{(U, \id_{fU})} \colon \sheaf{F}(U) \to \colim_{(V, \psi) \in \cat{I}_{f, fU}^\opp} \sheaf{F}(V)\right\}_{(U, \varphi) \in \cat{I}_{f, U'}^\opp}$ の余極限であり，
+$$
+\begin{align*}
+\epsilon_{f_p\sheaf{F}}(U') \colon \colim_{(U, \varphi) \in \cat{I}_{f, U'}^\opp} \colim_{(V, \psi) \in \cat{I}_{f, fU}^\opp} \sheaf{F}(V) \to \colim_{(U, \varphi) \in \cat{I}_{f, U'}^\opp}  \sheaf{F}(U)
+\end{align*}
+$$
+は余極限の普遍性から定まる射の族 $\displaystyle \left\{\colim_{(V, \psi) \in \cat{I}_{f, fU}^\opp} \sheaf{F}(V) \to \sheaf{F}(U)\right\}_{(U, \varphi) \in \cat{I}_{f, U'}^\opp}$ の余極限であるので，これらの合成は $\id_{f_p\sheaf{F}(U')}$ である．
+
+以上の議論によって定まる随伴が射集合の間の演算と両立することは，$f^p$ と $f_p$ が加法的であることから従う (例えば [志甫2016, 2.175])．
+</div>
+  
+$X \in \obj \cat{C}$ に対して，$\{X\}$ を一点圏とし，$i^X \colon \{X\} \to \cat{C}$ を包含関手とする．Abel 群 $M$ に対して，$X \mapsto M$ で定まる $\{X\}$ 上の前層を $M_{\{X\}}$ で表し，$M_X := i^X_p M_{\{X\}}$ とする．このとき，$U \in \obj \cat{C}$ に対して圏 $\cat{I}_{i^X, U}$ は，$\obj\cat{C} = \{(X, \varphi) \mid \varphi \in \hom_\cat{C}(U, X)\}$ であり，恒等射以外の射を持たない圏である．従って，
+$$
+\begin{align*}
+  M_X(U) = \colim_{(X, \varphi) \in \cat{I}_{i^X, U}^\opp} M 
+  = \bigoplus_{\hom_\cat{C}(U, X)} M
+\end{align*}
+$$
+である．
+  
+　上述の命題より，$\cat{C}$ 上の前層 $\sheaf{F}$ に対して Abel 群としての同型
+$$
+\begin{align*}
+  \hom_{\cat{PSh}(\cat{C})}(\mathbb{Z}_X, \sheaf{F})
+  &\cong \hom_{\cat{PSh}(\{X\})}(\mathbb{Z}_{\{X\}}, (i^X)^p\sheaf{F}) \\
+  &\cong \hom_{\cat{Ab}}(\mathbb{Z}, \sheaf{F}(X)) \\
+  &\cong \sheaf{F}(X)
+\end{align*}
+$$
+が存在する．この同型射を具体的に書き下してみよう．
+  
+$\cat{C}$ 上の前層の射 $\varphi \colon \mathbb{Z}_X \to \sheaf{F}$ が与えられたとき，上述の随伴を通して対応する射は
+$$
+\begin{align*}
+  \mathbb{Z}_{\{X\}} \xrightarrow{\eta_{\mathbb{Z}_{\{X\}}}} (i^X)^pi^X_p \mathbb{Z}_{\{X\}} \xrightarrow{(i^X)^p\varphi} (i^X)^p\sheaf{F}
+\end{align*}
+$$
+である ($\eta_{\mathbb{Z}_{\{X\}}}$ は命題の証明中に定めた随伴の単位)．これの $X$ での切断は
+$$
+\begin{array}{c}
+\mathbb{Z} & \to & \displaystyle \bigoplus_{\hom_\cat{C}(X, X)} \mathbb{Z} & \to & \sheaf{F}(X)\\
+1 & \mapsto & e_{\id_X} & \mapsto & \varphi(X)(e_{\id_X})
+\end{array}
+$$
+である．ここで $e_{\id_X}$ は $\id_X$ 成分のみが $1$ であり，他の成分は全て $0$ であるような元である．従って，$\varphi \colon \mathbb{Z}_X \to \sheaf{F}$ に対応する $\sheaf{F}(X)$ の元は $\varphi(X)(e_{\id_X})$ である．
+  
+逆に，$\sheaf{F}(X)$ の元 $s$ が与えられたとき，それに対応する射 $\varphi \colon \mathbb{Z}_X \to \sheaf{F}$ を具体的に与えよう．先ず，これに対応する $\hom_{\cat{PSh}(\{X\})}(\mathbb{Z}_{\{X\}}, (i^X)^p\sheaf{F})$ の元は $1 \in \mathbb{Z} = \mathbb{Z}_{\{X\}}(X)$ を $s$ に送ることで定まる射である．この射を $\psi \colon \mathbb{Z}_{\{X\}} \to (i^X)^p\sheaf{F}$ とすると，上述の命題を通して $\psi$ に対応する射は
+$$
+\begin{align*}
+  \mathbb{Z}_X = i^X_p\mathbb{Z}_{\{X\}} \xrightarrow{i^X_p\psi} i^X_p(i^X)^p\sheaf{F} \xrightarrow{\epsilon_{\sheaf{F}}} \sheaf{F}
+\end{align*}
+$$
+である ($\epsilon_{\sheaf{F}}$ は命題の証明中に定めた随伴の余単位)．これの $U \in \obj\cat{C}$ での切断は
+$$
+\begin{array}{c}
+  \displaystyle \bigoplus_{\hom_\cat{C}(U, X)} \mathbb{Z} & \to & \displaystyle \bigoplus_{\hom_\cat{C}(U, X)} \sheaf{F}(X) & \xrightarrow{\sum_{\varphi\in\hom_\cat{C}(U, X)}\sheaf{F}(\varphi)} & \sheaf{F}(U)\\
+  e_\varphi & \mapsto & s_\varphi & \mapsto & \sheaf{F}(\varphi)(s) 
+\end{array}
+$$
+である．ここで $s_\varphi$ は $\varphi$ 成分のみが $s$ であり，他の成分は全て $0$ であるような元である．
+  
+## 参考文献
+  
+* [CWM] Mac Lane, S. <cite>Categories for the working mathematician</cite>. GTM <b>5</b>, Springer Science & Business Media. 2013.
+* [志甫2016] 志甫淳．層とホモロジー代数，共立出版．2016年．
+
+  

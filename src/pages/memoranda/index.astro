@@ -1,10 +1,22 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-const allCats = Object.values(import.meta.glob("./index-*.astro", { eager: true }))
+const allCats = Object.values(import.meta.glob("./*", { eager: true }))
+const pages = await Astro.glob('./*/index.{astro,md,mdx}');
 const pageTitle = "メモ";
 ---
 <BaseLayout pageTitle={pageTitle}>
   <ul>
-    {allCats.map((cat: any) => <li><a href={cat.url}>{cat.category}</a></li>)}
+  {pages.map((page) => {
+    // 【ここがポイント】export const category の値を直接取得できます
+    // 設定されていない場合のフォールバック（デフォルト値）も用意しておくと安全です
+    const category = page.category || "未分類";
+    return (
+      <li>
+        <a href={page.url}>
+          {category}
+        </a>
+      </li>
+    );
+  })}
   </ul>
 </BaseLayout>

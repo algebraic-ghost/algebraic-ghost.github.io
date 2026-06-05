@@ -1,18 +1,32 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 const pageTitle="タグ一覧";
-const allPosts = Object.values(import.meta.glob('../posts/*.{md,mdx}', { eager: true }));
-const tags = [...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat())];
+// 1. memoranda フォルダ配下のすべての階層にある md / mdx ファイルを取得
+const allMemos = Object.values(
+  import.meta.glob(['../memoranda/**/*.{md,mdx}', '../cetera/**/*.{md,mdx}'], { eager: true })
+);
+
+// 2. 各ファイルの frontmatter から tags を抽出し、フラットな配列にする
+const rawTags = allMemos.flatMap((memo: any) => memo.frontmatter?.tags || []);
+
+// 3. Set を使って重複を排除する
+const uniqueTags = [...new Set(rawTags)];
+
+// (任意) 見やすいようにソートする
+const sortedTags = uniqueTags.sort();
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <ul>
-    {tags.map((tag) => (<li><p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p></li>))}
-  </ul>
+  {sortedTags.map((tag) => (
+    <li>
+      <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
+    </li>
+  ))}
+</ul>
 </BaseLayout>
 
 <style>
   li{
     list-style:none;
   }
-</style>

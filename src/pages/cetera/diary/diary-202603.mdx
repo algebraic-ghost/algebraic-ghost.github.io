@@ -1,0 +1,346 @@
+---
+layout: "../../../layouts/MarkdownSeminarLayout.astro"
+title: "2026 年 3 月"
+pubYear: 2026
+pubMonth: 3
+tags: ["日記"]
+showToc: True
+---
+import MusicXmlScore from '../../../components/MusicXmlScore.astro';
+
+
+## 3/1（日）
+Carlson–Müller-Stach–Peters の *Period Mappings and Period Domains* の冒頭を読んでいた．$y^2 = (x^2-s)(x-1)$ の local monodromy action が Dehn twist であるということを初めて知った．考えてみれば確かにそうだ．こういう話は楽しい．
+
+イランのハメネイ師が殺されたらしい．本当に大変なことになってきた．一体これから世界はどうなってしまうのだろう？
+
+[Operation Epic Fury](https://www.centcom.mil/MEDIA/PRESS-RELEASES/Press-Release-View/Article/4418396/us-forces-launch-operation-epic-fury/) というのはアキレウス気取りなのか？
+
+日曜日なので今日も体調が悪かったが，幾らかマシだった．
+
+日記の文字数が月毎に単調減少している．今月はどれくらい書けるかしら？
+
+## 3/3（火）
+色々な言語の Wordle をやった．多分日本語が一番難しい．
+
+【日本語】  
+#WordleJapanese 1493 6/8  
+⬜⬜⬜⬜⬜  
+⬜🟨⬜🟩🟨  
+⬜⬜⬜🟩⬜  
+⬜🟨🟩🟩⬜  
+🟩⬜🟩🟩🟩  
+🟩🟩🟩🟩🟩  
+https://wordle.mottox2.com/
+
+【英語】  
+Wordle 1,718 5/6*  
+⬛🟩⬛🟩⬛  
+🟩🟩⬛🟩⬛  
+🟩🟩🟩🟩⬛  
+🟩🟩🟩🟩⬛  
+🟩🟩🟩🟩🟩  
+
+【ドイツ語】  
+WortSuchSpiel.de #1511 - 4/6  
+⬜⬜⬜🟨⬜  
+⬜🟩⬜⬜⬜  
+⬜🟩🟩🟩🟩  
+🟩🟩🟩🟩🟩  
+
+【フランス語】  
+Le Mot (@WordleFR) #1514 5/6  
+⬛⬛⬛⬛🟨  
+🟨⬛⬛🟨⬛  
+🟨🟨🟨⬛⬛  
+🟨🟨🟨🟨🟨  
+🟩🟩🟩🟩🟩  
+https://wordle.louan.me/
+
+【ロシア語】  
+Вордли дня #1517 4/6  
+⬜⬜⬜⬜🟨  
+⬜🟩⬜⬜🟨  
+🟩🟩⬜⬜🟨  
+🟩🟩🟩🟩🟩  
+#вордли  
+Отгадайте слово на https://wordle.belousov.one/
+
+【ラテン語】  
+Latin Wordle 79 6/6  
+⬜⬜🟨⬜⬜  
+⬜🟨🟨⬜🟨  
+🟨🟨🟨⬜🟨  
+🟨⬜🟨🟨🟩  
+⬜🟩🟩🟩🟩  
+🟩🟩🟩🟩🟩  
+
+明日はセミナーなのだが，こんなことをしていたら，準備が少々大変なことになってしまった．埋まらない行間があって困った．
+
+## 3/4（水）
+今日は朝から先生とのセミナーがあった．セミナーが始まる直前に予習の誤りに気が付いたが，ギリギリで修正できた．3.7 節を終わらせた後，4.1 節も終わらせた．$\mathcal{D}$ 加群の話は真面目に勉強している暇はなかったのである程度 fact として認めざるを得なかった（そこまで深い話ではないと思うが）．一つ pro-object に関する議論で怪しいところがあったので，後で考えなければならない．昨日埋まらなかった行間は結局埋まらなかった．
+
+$\mathcal{D}$ 加群に関する事実として，analytification functor 
+$$
+(-)^{\mathrm{an}} = - \tensor_{\mathcal{O}_{X}} \mathcal{O}_{X^\mathrm{an}}\colon \mathcal{O}\cat{-Coh}(\mathcal{D}_{X})\lra \mathcal{O}\cat{-Coh}(\mathcal{D}_{X^\mathrm{an}})
+$$
+は圏同値にはならないが，$\mathcal{O}\cat{-Coh}(\mathcal{D}_{X})$ を確定特異点を持つ $\mathcal{D}_X$ 加群の圏 $\mathcal{O}\cat{-Coh}_{\mathrm{rs}}(\mathcal{D}_{X})$ に制限すると $(-)^{\mathrm{an}}$ が圏同値になるというものがあり，一見すると $\mathcal{O}\cat{-Coh}(\mathcal{D}_{X^\mathrm{an}})$ の方が大きそうな気がするのに，寧ろ $\mathcal{O}\cat{-Coh}(\mathcal{D}_{X})$ の方を制限しないと同値にならないというのはどういうことなのかと思っていただのが，これはつまり $\mathcal{O}_{X^\mathrm{an}}$ の方が多くの関数を持っているので，より多くの $\mathcal D$ 加群が自明化されてしまう所為だということを先生に教えてもらった．例えば $\mathcal{D}_{\mathbb{A}^1}/(\partial - 1)\mathcal{D}_{\mathbb{A}^1}$ は $\mathcal{O}_{\mathbb{C}}$ において $\exp$ という解を持つので解析的な状況では自明化されてしまうが，他方で $\exp$ は代数的ではないので代数的な状況ではこれは非自明であり，確定特異点に制限するというのはこのような例を除くことにあたる（実際，$\exp$ は無限遠点で真性特異点を持つ）．
+
+昼は Cisinski のゼミがあった．細かい議論が大変な印象だった．その後さらにヴァイオリンのレッスンがあった．一応一通りヴィヴァルディの g-moll の協奏曲の第三楽章の譜読みを終えた．172 小節以下の部分は見た目の割に意外と弾きやすいので楽しい．
+
+<MusicXmlScore scoreUrl="/scores/20260304_1.musicxml"/>
+
+寧ろ 68 小節（など）に現れる
+
+<MusicXmlScore scoreUrl="/scores/20260304_2.musicxml"/>
+
+というフレーズの方が弾きにくい．
+
+以前から web ページで楽譜を表示させるにはどうすれば良いのか気になっていたので，Gemini に聞きながら（というよりほぼ丸投げだが）試してみたのだが，どうだろうか？　当然ながら，楽譜のデータを入力するのはかなり面倒な作業なのであまりやりたくない．メモ：[MusicXML で楽譜を出力する](https://algebraic-ghost.github.io/posts/memo-web-20260304_musicxml/)
+
+卒業が確定したらしい．良かった！　あとは大学院入学手続きで失敗さえしなければ……
+
+## 3/5（木）
+[没後40年 タルコフスキー特集2026 超域の映像](http://www.pan-dora.co.jp/?cat=114)というものが渋谷のユーロスペースで開催されるらしい．とても嬉しい．《サクリファイス》が上映されないのは聊か残念だが．
+
+## 3/6（金）
+入学手続きを終わらせた．証明写真を取る度に思っているが，ただの BB 素材を作るためだけに 1000 円以上取られるのは不満だ．
+
+## 3/7（土）
+<div style="text-align:center;">
+<iframe class="responsive-iframe" width="560" height="315" src="https://www.youtube.com/embed/2ddbt_1jS_I?si=-FxxUBMLv96VmZl2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+ヘアピンまみれさんの新しい動画が面白かった．[東京美術紙工協業組合](https://www.tobi.or.jp/sljp/)というところが行なっている製本研修というものでは本の作り方に関する座学や工場見学，製本体験ができるそうで，私も参加してみたいと思った．
+
+ところで，[2 月 21 日の日記](https://algebraic-ghost.github.io/diary/diary-202602/#221%E5%9C%9F)で言及した Grappin の *Histoire de la flexion du nom en polonais* と Decaux の *Morphologie des enclitiques polonais* は，やけに粗悪で安っぽい装丁だなあと思っていたのだが，よくよく考えてみるとこれはいわゆる仮綴本というもので，購入者が改めて想定し直すことを想定して作られたものだったのかもしれない．
+
+<img src="/images/20260307_Grappin_cover.jpg" alt="Cover of Grappin's Histoire de la flexion du nom en polonais" />
+<img src="/images/20260307_Grappin_spine.jpg" alt="Spine of Grappin's Histoire de la flexion du nom en polonais" />
+
+『ボヴァリー夫人』にも「『医学辞典』の全巻が，ページは切られていないものの，次から次へと売られて人手に渡って仮綴はいたんでいて……」（芳川訳 p. 57）という箇所があり，そこに付けられた注釈には「当時，本は仮綴で売られ，購入者が装丁した」と書かれていた．上の本と『ボヴァリー夫人』とでは時代が異なるが，似たようなものなのだろうか？
+
+アルバイトの今年度の授業が終わった．
+
+## 3/8（日）
+今日は日曜にしては珍しく体調が良かった．この調子で来週以降も快適な日曜日ライフを送れたら嬉しい．
+
+アルバイトの会議があった．それなりに大きめの仕事が生じそうだ．モチベーションはそれなりに高い．
+
+## 3/9（月）
+昔は Čech コホモロジーが 1 次以下の層コホモロジーしか計算できないのが中途半端で気持ち悪いと思っていたが，よく考えてみると Čech 脈体は 1 単体しか見ていないのだからこれが 1 次以上のコホモロジーを計算できない（こともある）のは確かに納得できる．全ての次数のコホモロジーを計算するには hypercover を見なければならない（例えば Artin–Mazur の *Etale homotopy* の定理 8.16）．
+
+[Minimal good cover of the torus](https://mathoverflow.net/questions/357620/minimal-good-cover-of-the-torus)　2次元トーラスの good cover のうち最小のものは 7 つの開集合からなるものらしい．よくこんなものが見つかるなぁ．一般に，与えられた空間の最小の good cover は何かという問題は難しいらしい．
+
+## 3/10（火）
+朝起きたら雪が降っていた．午後には融けた．
+
+折り紙の川崎敏和先生が亡くなったらしい（[日本折紙学会の発表](https://origami.jp/m_kawasaki/)）．
+
+Brown の [Motivic periods and $\mathbb{P}^1\setminus\{0,1,\infty\}$](https://www.ihes.fr/~brown/MotivicPeriodsandP1minus3pointsv3.pdf) を（雑に）読んだ．$\mathbb{Z}$ 上の混合 Tate モチーフに関する Brown の仕事は多重ゼータ値への応用（Hoffman 予想の解決）が取り上げられることが多いし，私もその程度しか知らなかったのだが，モチーフ論的観点からは寧ろ motivic MZV の明示的な基底の決定によって $\mathbf{MTM}(\mathbb{Z})$ が motivic fundamental group によって生成されることを証明したことの方が重要そうだ．これによって Deligne–Ihara 予想なども導出されるらしい．Brown の証明の中には，Zagier によって証明された多重ゼータ値に関する公式を motivic version に持ち上げる箇所があり，それが鍵となっているそうだが，直接寄与している訳ではないにせよ，Zagier の公式のような純粋に多重ゼータ値の文脈で導かれたであろう公式が Brown の定理のようにモチーフ論的にも意義深い結果に影響を与えているのは非常に面白い．いつかは [Mixed Tate motives over $\mathbb{Z}$](https://annals.math.princeton.edu/wp-content/uploads/annals-v175-n2-p10-p.pdf) も読んでみたいものだ．
+
+そもそも $\mathbb{Z}$ 上の混合 Tate モチーフに関する深い考察が可能な理由の一つは，Borel によって数体の $K$ 群が計算されているお陰で数体に対しては Beilinson–Soulé 予想の成立が分かっており，それによって補償される motivic $t$-structure から $\mathbb{Z}$ 上の混合 Tate モチーフの圏を本当の淡中圏として抽出することができるということなので，人類が示し得るギリギリを攻めている感じがしてとてもスリリングだ．
+
+[The motivic Galois group of mixed Tate motives over $\mathbb{Z}[1/2]$ and its action on the fundamental group of $\mathbb{P}^1\setminus\{0,\pm1,\pm\infty\}$](https://arxiv.org/abs/2007.04288)という論文も同様に多重ゼータ値に関する公式が motivic Galois group の計算に役立ったものだということを Twitter で教えてもらった．
+
+最近は正標数の motivic Galois group に興味が出てきているのだが，motivic Galois group と真面目に向き合うのであれば Waterhouse の *Introduction to Affine Group Schemes* などは読んだ方が良いのだろうか．それから $p$ 進 Hodge 理論にも関心がある．この頃になって漸く $p$ 進 Hodge 理論が何の為に作られた理論なのかということが分かるようになってきたというのもある．
+
+## 3/12（木）
+[第26回整数論サマースクール報告集「多重ゼータ値」](https://www.math.kindai.ac.jp/laboratory/tasaka/ss2018/proceedings/%E5%85%A8ver.pdf)にはモチーフに関することも書いてあるので，暇な時に読んでみようと思う．
+
+今日はヴァイオリンのレッスンがあった．五月末に試演会があり，そこでは例のヴィヴァルディの g-moll の協奏曲の第三楽章を弾くことになった．
+
+今月末にエーコの[『フーコーの振り子』](https://www.chuko.co.jp/bunko/2026/03/207774.html)の訳（新訳ではない）が中公文庫から出るらしい．一月に読んだ『薔薇の名前』がたいそう面白かったので，これも読みたい．
+
+Carlson–Müller-Stach–Peters は読んでいて楽しい．混合 Hodge 構造というものが何を表しているのかが漸く分かってきた．
+
+[逆井先生の Dehn twist のゲーム](https://www.ms.u-tokyo.ac.jp/~sakasai/MCG/teruaki.html )，面白い．
+
+## 3/13（金）
+最近気が付いた（というか Ayoub の論文に似たようなものが出てきた）のだが，$\mathrm{Spec}(\mathbb{Q}(x)\tensor_{\mathbb{Q}}\mathbb{C})$ は $\mathbb{C}$ から代数的な点を除いた残りのような姿をしている．
+
+ultraproduct を用いて標数 0 の体上の Galois 表現を作るということは（多分）最初に Serre が [Propriétés conjecturales des groupes de Galois motiviques et des représentations $\ell$-adiques](https://www.scilit.com/publications/3c0bda162ca2c88621175e5043f6ed75) という論文の中で書いていたらしい．Serre がその後このアイデアを発展させたのかは分からないが（特に何もしていなさそう？）．
+
+## 3/15（日）
+ハーバーマスが亡くなったらしい．失礼な話だが，ハーバーマスの訃報を聞いて初めてハーバーマスがまだご存命だったことを知った．
+
+昨日で今年度のアルバイトが終了した（筈）．来年も頑張ろう．
+
+Ayoub の論文が急に難しい（というか行間が多く）なってきたような気がする．あとちょっとなので頑張りたいが．一応そろそろ主定理の証明は読めそうで，それを示すために必要な補題が主定理の後に 10 ページほど続くという，心理的に少し辛そうな構成になっているようだ．
+
+[3 月 4 日の日記](https://algebraic-ghost.github.io/diary/diary-202603/#34%E6%B0%B4)で言及した pro-object に関することを考えた．つまり symmetric rigid tensor category の ind-object の dual を pro-object として定めた時，$\hom(E, F) \cong \hom(F^\vee, E^\vee)$ に相当する duality が成立するかという話なのだが，少なくとも $\mathrm{Ind}(\mathrm{Pro}(\mathcal{C}))$ でこれらを考えれば成り立つはずだ（これ自体は全く formal な話）．Ayoub の論文で使う上でこれで十分なのかは判然としてないが．しかし ind-object や pro-object に関してはどのような文献を見るのが良いのだろうか．あまりよく分からない．
+
+複素解析は意外と冪級数論だけでも（即ち，線積分やそれに関する定理を導入しなくても）色々なことができる．思い返してみると，B2 の時に受けた坂井先生の複素解析の授業は最初にずっと冪級数論のようなことをやっており，それなりに後の方になってから正則関数が冪級数展開可能であることを示していたような気がする．代数幾何との比較で言うと，基本的に代数での議論では積分に依存した議論は使えないわけだから，代数幾何で言えるようなことは複素解析側でも積分なしに言えて然るべきではあるのだが．
+
+## 3/16（月）
+$f(0)=0$, $f'(0) \neq 0$ となる収束冪級数 $f(z)$ が与えられた時，それの合成に関する逆を形式的に構成するのは単純な計算でできるのだが，それが正の収束半径を持つということを示そうとすると（私が試してみた限りでは）係数の評価が一筋縄ではいかず，普通は陰関数定理なりに訴えて証明しているのだが，Cartan の *Théorie élémentaire des fonctions analytiques* には冪級数論だけで完結した巧みな証明が載っている（Proposition 9.1）．即ち，係数が一番大きくなりうる場合が適当な正則関数の平方根で与えられる場合であることを示し，それの展開は（一般二項定理などを使えば）具体的に分かるから評価できるというように証明している．このことは Gemini に教えてもらった．
+
+Ayoub の論文は少し分かりかけて再び別の分からない箇所に行き当たった．地の文でサラッと $M \in \cat{DM}^\mathrm{eff}(U)$ が $\cat{DM}(U)$ において dualisable ならばその de Rham 実現
+$$
+\mathrm{dR}_U(M) := \hom_{\cat{DM}^\mathrm{eff}(U)}(M, \Omega^\bullet_{/U}) \in \cat{Mod}(\sheaf{O}(U))
+$$
+が $\sheaf{O}_U$ 加群として射影的であると言っているのだが，これがよく分からない．この de Rham 実現の導来版を
+$$
+\mathbf{R}\mathrm{dR}_U := \mathbf{R}\mathrm{Hom}_{\cat{DM}^\mathrm{eff}(U)}(-, \Omega^\bullet_{/U}) \colon \cat{DM}^\mathrm{eff}(U) \lra \cat{D}(\sheaf{O}(U))^\opp
+$$
+などとすれば，algebraic de Rham cohomology に対する Künneth formula からこれが monoidal functor になることが言えて（変数を一つ固定したものは三角関手なので，表現可能な対象について調べれば良い），しかも Tate object の像が invertible なのでこれは $\mathbf{R}\mathrm{dR}_U$ は $\cat{DM}(U)$ を経由し，従って $M \in \cat{DM}^\mathrm{eff}(U)$ が $\cat{DM}(U)$ において dualisable ならば $\mathbf{R}\mathrm{dR}_U(M)$ は $ \cat{D}(\sheaf{O}(U))$ の dualisable object 即ち perfect complex であることがわかるのだが，元々考えていた de Rham 実現というのはこれの 0 次コホモロジーなので，それが projective かどうかはすぐには分からないと思う．smooth な場合の relative algebraic de Rham の locally freeness のような類の話だとは思うのだが……　あるいは何か思い違いをしているのだろうか？
+
+Gemini が体上 smooth なスキームに対しては cancellation theorem が成立すると言っていた．これは流石に嘘だと思う．
+
+## 3/18（水）
+一昨日書いた projectivity に関する話は，ただ単に $\mathcal{O}_X$ 加群として連接的な $\mathcal{D}_X$ 加群は自動的に局所自由になるというだけだった．$\mathcal{D}$ 加群に慣れていないからこのような話がすぐに分からない．$\mathcal{D}_X$ が作用しているというだけで（有限生成ならば）自動的に局所自由になってしまうというのは聊か不思議な感じがする．因みに，これと同じ理由によって $\mathrm{dR}_U(M)$ のみならず，全ての $\mathbf{R}^q\mathrm{dR}_U(M)$ も projective になるということが分かる（論文には明示的に書かれていなかったが，証明の途中でこの事実が必要な箇所がある）．
+
+今日は午前中に先生とのセミナーがあった．Théorème 4.11 まで終わらせた．
+
+[メモ](http://algebraic-ghost.github.io/posts/memo-math-20251119#42-r%C3%A9alisation-de-betti-et-connexions-de-gaussmanin)を加筆した．
+
+明日は古典アルメニア語の読書会があるので，予習をした．数に関する半ば牽強付会の説を展開していてよく分からない（文自体は読みやすいが）．
+
+来学期のシラバスが授業カタログで見られるようになっていたので，気になる講義を調べて取り敢えず書き出してみた．
+- 春学期
+  - [大域幾何学概論「最適輸送理論を介した幾何解析」（高津先生，月 2）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-12&year=2026)
+  - [数物先端科学 V「層理論の幾何学への応用」（池先生，火 2）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-113&year=2026)
+  - [数物先端科学 VII「Deligne–Lusztig 理論」（今井先生，水 2）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-115&year=2026)
+  - [リー環論「Springer 対応」（阿部先生，木 3）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-21&year=2026)
+  - [代数幾何学「代数的サイクル」（Kelly 先生，木 4）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-01&year=2026)
+  - [応用数理特別講義 V "Topics on q-Whittaker polynomials and representation theory"（小寺先生，集中）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-54&year=2026)
+  - [数理科学特別講義 II「Clifford–Klein 形の幾何学」（森田先生，集中）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-56&year=2026)
+  - [数理科学特別講義 VI「多重ゼータ値」（山本先生，集中）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-60&year=2026)
+  - [数理科学特別講義 IX「量子アフィン代数の表現論の進展」（大矢先生，集中）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-63&year=2026)
+- 秋学期
+  - [基礎数理特別講義 II「3 次元トポロジーにおけるの量子不変量について」（葉廣先生，月 2）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-43&year=2026)
+  - [数理構造概論「離散可積分系」（Willox 先生，月 3）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-25&year=2026)
+  - [基礎数理特別講義 IV「量子アフィン代数と q-Whittaker 関数」（白石先生，火 3）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-45&year=2026)
+  - [基礎数理特別講義 III「Nevanlinna 理論の微分方程式への応用」（坂井先生，水 2）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-44&year=2026)
+  - [数物先端科学 VIII「傾理論概論」（伊山先生，水 2）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-116&year=2026)
+  - [基礎数理特別講義VIII（小木曽先生，木 2）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-49&year=2026)
+  - [基礎数理特別講義 VI「楕円曲線」（毛塚先生，木 3）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-47&year=2026)
+  - [微分幾何学 I「リー群の基礎」（大島先生，木 3）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-152&year=2026)
+  - [複素多様体「非可換代数幾何学」（植田先生，金 2）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-10&year=2026)
+  - [数理科学特別講義 III「写像の特異点論と数え上げ幾何学」（大本先生，集中）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-57&year=2026)
+  - [数理科学特別講義 IV「Teichmüller 空間の Thurston 距離（大鹿先生，集中）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-58&year=2026)
+  - [数理科学特別講義 X「極小モデル理論に関する特異点の不変量」（中村先生，集中）](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-64&year=2026)
+  - [数理科学特別講義 XII「箙 Heisenberg 代数とその周辺」(源先生，集中)](https://catalog.he.u-tokyo.ac.jp/detail?code=45901-66&year=2026)
+
+松浦先生の秋学期の[イタリア地中海言語文化論](https://catalog.he.u-tokyo.ac.jp/detail?code=08C2509&year=2026)は本文批判を扱うらしい．それから，前期教養の[乗松先生の授業](https://catalog.he.u-tokyo.ac.jp/detail?code=31097&year=2026)はロシア宇宙主義だ．私が 1 年生の頃受講しそびれた授業かしら？
+
+廣中平祐先生が亡くなったらしい．謦咳に接することこそなかったが，数理の翼の参加者としては大きな恩があるし，何よりモチーフを勉強している以上は特異点解消定理にもお世話になっている．
+
+## 3/19（木）
+数日前にアダプタを買って PC と家にあるスピーカーを繋げるようになった．音が良いので嬉しい．
+
+今年の Abel 賞は Faltings だったらしい．
+
+Ayoub の Web ページを見たら [$\mathbb{A}^1$-algebraic topology](https://user.math.uzh.ch/ayoub/PDF-Files/PCMI.pdf) のノートが追加されていた．[Déglise のノート](https://arxiv.org/abs/2510.17778v1) ので言及されていたものかしら．少し覗いてみたら最初から $\infty$ 圏の言葉を話していたのでまだ読めなそうだ．
+
+Ayoub の論文を少し読み進めた．4.3 節は結構 formal な話が続きそうだ．
+
+## 3/20（金）
+『豊饒の海』を読み終えた．第四巻は面白かったので終わりまで一気に読んでしまった．これを読んで三島由紀夫が本当に好きになってきた．いつか感想などを書きたい．
+
+## 3/21（土）
+Ayoub の Une relative version … の主定理の証明を読み終えた．あとは，抽象的な構成をした evaluation map が積分で表せるという事実の証明が残っている（が，これがあと 10 頁ほどあるので意外と長くて大変そうだ）．気が付いたら所望の結果が証明されていてなんとも不思議な証明だった．
+
+period map $\displaystyle \int_{[0,1]^\infty} \colon \sheaf{O}_{\mathbb{C}\text{-alg}}^\dagger(\overline{\mathbb{D}}^n) \lra \mathbb{C}((\varpi))$ の kernel を求めるために，これを
+$$
+\begin{align*}
+  \sheaf{O}_{k\text{-alg}}^\dagger(\overline{\mathbb{D}}^n)
+  \lra \mathbf{R}^{\varpi}_{/k}(F,\sigma) \lra \mathcal{A}^\text{rs}_{F \tensor_{k} \mathbb{C}}
+\end{align*}
+$$
+という二つの射に分解している（$k$ は状況に応じて適切に選ばれた $\mathbb{C}$ の部分体）．途中に現れる $\mathbf{R}^{\varpi}_{/k}(F,\sigma)$ というのは概ね formal period のようなもので，一つ目の射はモチーフの世界で完結しているので殆ど formal な議論のみで（といっても結構大変ではあるのだが）その kernel を求めることができ，それが既に所望の kernel になっていることがわかる．二つ目の射は実際に積分を実行してモチーフの世界から本物の関数を得るところで，ここでは period map の像として得られる関数が確定特異点を持つ微分方程式を満たす為に基本群によるモノドロミー作用を持つということを利用している．これによって $\mathcal{A}^\text{rs}_{F \tensor_{k} \mathbb{C}}$ が $\displaystyle \pi^\varpi_1(\mathbb{C}\setminus \overline{k}) = \lim_{\emptyset \neq U \subseteq \mathbb{A}^1_k} \pi^\varpi_1(U^\text{an})$ による作用を持ち，さらには $\spec F\tensor_k \mathbb{C}$ 上の $ \pi^\varpi_1(\mathbb{C}\setminus \overline{k})$-torsor になっているということまで示せる．また，重要なのが dualisable なモチーフの Betti 実現として局所系（正確に言うと，$U^\mathrm{an}$ 上の層の導来圏の対象であって，各々の次数のコホモロジーが局所系の filtered colimit になっているもの）が現れるので，これに Ayoub の weak Tannakian formalism を適用すれば $\pi^\varpi_1(U^\text{an})$ の pro-$\mathbb{Q}$-algebraic completion（即ち $\cat{LS}(U^\text{an}) \cong \pi^\varpi_1(U^\text{an})\cat{-Rep}^\mathrm{f}_\mathbb{Q}$ の淡中基本群）から relative motivic Galois group への射が得られ，しかもこれが全射であるということが分かる（これが大切な事実）．あとは $\mathbf{R}^{\varpi}_{/k}(F,\sigma)$ や $\mathcal{A}^\text{rs}_{F \tensor_{k} \mathbb{C}}$ が適切な群の torsor になっていることや諸々の作用の整合性から
+$$
+\spec \mathcal{A}^\text{rs}_{F \tensor_{k} \mathbb{C}} \lra \spec \mathbf{R}^{\varpi}_{/k}(F,\sigma)
+$$
+の全射性が半ば自動的に従うので，これから
+$$
+\mathbf{R}^{\varpi}_{/k}(F,\sigma) \lra \mathcal{A}^\text{rs}_{F \tensor_{k} \mathbb{C}}
+$$
+の単射性が分かるという仕組みになっているようだ．
+
+微分方程式の理論は矢張り大事で面白そうだ．relative version の解決も微分方程式の理論が使えるからというのが大きいのだろう．
+
+## 3/23（月）
+[『神谷哲史折り紙作品集4』](https://www.origamihouse.jp/book/original/kamiya4/kamiya4.html)が発売されるらしい．私はこれの二冊目を小学生の頃に買ったのでまだ持っている．折り紙は，折り図に従って折るという作業は（紙の十分な大きさと十分な忍耐力さえあれば）大して難しくないだが，折り上げたものを最後に仕上げて作品にするのが非常に難しい．一頃の私の部屋には，折り図の最後の工程までは終えたものの結局技量不足でうまく仕上げられなかった怪物が陳列されていた時期があった．当時の私はどちらかというと審美的な側面よりも指示に従って紙を折るという作業が好きだった（これは多分数学と部分的に似ている）ので，それで満足していたし，確か神谷さんの赤い本の中でもかなりの紙面を割いて折り紙の仕上げに関して書かれていたような気がするのだが，その頃の私はあまり気に留めていなかったと思う．
+
+[Ayoub の foliated topology に関する講演の動画](https://www.youtube.com/watch?v=K9k4CubSXMI)を見た．冒頭 Ayoub は「応用するつもりでこの理論を作ったが，後にこの応用ができないことが分かったので，それ以来このようなことは扱っていない」と言っていたが，Ayoub はもう foliated topology に関する研究をするつもりはないのだろうか．私は論文を真面目に読んだわけではないが，興味深い応用はできそうだし，埋もれてしまうのは勿体無いような気もする．
+
+今日は頭が痛かった．お腹も痛かった．
+
+## 3/24（火）
+Ayoub の Une version relative … の Corollaire 4.7（$\spec \mathcal{A}^\mathrm{rs}_{U}$ は $U$ 上の $\pi^\varpi_1(U)^{\text{pro-}\mathbb{C}\text{-alg}}$-torsor）の証明はまだよく分からない（二，三週間前に読んでよく分からず放置していたことを今日思い出した）．しかし主定理の証明のためにはこれよりも弱い主張で十分であることに気がついた．結局最後に言いたいのは
+$$
+\spec \mathcal{A}^\mathrm{rs}_{F\tensor_k \mathbb{C}} \to \spec\mathbf{R}^{\varpi}_{/k}(F,\sigma)
+$$
+が全射であるということだけなので，勿論 $\spec \mathcal{A}^\mathrm{rs}_{U}$ が torsor なら十分なのだが，それより弱く $\spec F \tensor_k \mathbb{C}$ の各々の点上に base change したときに torsor になるという程度の条件で十分だから，それを示せば良い．これは，論文に書いてある通り fiber functor の一意性から分かる．
+
+取り敢えず主定理の証明までをセミナーで話せる程度には準備をしたので，久しぶりに Fu を読んだ．改めて読んでみると非常に読みやすい．
+
+[中国大使館への侵入容疑、陸自隊員逮捕　刃物も所持「大使に意見を」](https://www.asahi.com/articles/ASV3S2VPFV3SUTIL01WM.html)　本当にどうしたものか．これから日中関係はどうなってしまうのか？　高市に適切な対応ができるのかしら？
+
+## 3/25（水）
+引き続き Fu を読んだ．曲線の duality まで読んだ．一般の duality は更に色々と頑張って曲線の duality から導くのだろうが，曲線のコホモロジーは 0, 1, 2 次しか出てこないから気合いで色々と分かるので，うまい具合にできているものだなあと思った．
+
+岩波『科学』4 月号[「【特集】音楽の科学はどこまできたか」](https://www.iwanami.co.jp/book/b10161223.html)は気になる．
+
+[Ivan Tomašić, Behrang Noohi. Galois theory of differential schemes](https://arxiv.org/abs/2407.21147) 気になる．Janelidze の categorical Galois theory が使われているらしい．
+
+## 3/26（木）
+明日は駒場でセミナーがある予定だったので，そのついでに学位記を受け取って来ようと思ったのだが，セミナーがオンラインになってしまった．学位記は 30 日までに受け取らなければならないので，学位記を受け取るためだけに駒場に行く日が発生しそうだ．
+
+Ayoub の Une version relative … などで用いられているモチーフの実現関手は Weil コホモロジー毎に ad hoc に構成されているような感じがしていたのだが，一般の Weil コホモロジーに対して canonical に実現関手を作る方法というのは既に Ayoub が [Weil cohomology theories and their motivic Hopf algebroids](https://user.math.uzh.ch/ayoub/PDF-Files/motivic-connectivity.pdf) で書いていたようだ．こちらは $\infty$ 圏を使っているのですぐには読めないが．
+
+## 3/27（金）
+午前中にヴァイオリンがあった．カイザーの練習曲の 15 番は意外と譜読みが楽だった．
+
+午後はオンラインでセミナーをした．Ayoub の Une version relative … の主定理の証明までを話した．論文を読み終えたわけではないが，残りはただの計算というだけのようなので，ひとまずこれでセミナーは終わりということになった．ちょうど年度の最後にセミナーが終わったのでキリが良い．読み始めるときは躊躇していたが，セミナーで扱わない限り恐らく一人では読まなかっただろうし，良い勉強になったので読んで良かったと思う．そろそろ修論を見据えて論文を読んでいかないといけないが，今の時点では（複素数でも $p$ 進数でも）何か（広い意味で）周期とモチーフに関わることがやりたいと思っている．
+
+今回のセミナーのための発表資料は 161 ページになった．Ayoub を読み始める前に Huber–Wüstholtz と Huber–Müller-Stach を読んだ時の資料が 87 頁だったので，今学期は 248 頁の資料を作ったことになる．因みに先学期は 148 頁だったので，一年間では 396 頁（この値を出すために計算機を使ってしまった．情けない）になる．意外と沢山書いていたんだなあと思うが，例えば Grothendieck なんかはこれを遥かに上回る量の新しい結果を書いていただろうから本当に比較にならない．
+
+旧式の人間なので授業のノートや諸々の予習資料は全て手書きで作っており，それを（多分）去年度の秋学期からバインダーで保管し始めたのだが，それに Ayoub の予習を追加したらいっぱいになってしまった．新しいバインダーを買わなければならない（或いは古いノートは何処かに仕舞っておいても良いのだが）．
+
+<img src="/images/20260327_notes.jpg" alt="handwritten notes" />
+
+Ancona, Frățilă の [Algebraic classes in mixed characteristic and André's $p$-adic periods](https://arxiv.org/abs/2207.09213) という論文を教えてもらった．
+
+高校生の頃，何かの本で「希求法」に「ケグホウ」とルビが振られていたのを見て，爾来大学に入学してから古代ギリシア後の授業を受けて「希求法」が「キキュウホウ」と読まれているのを実際に耳にするまでずっと「ケグホウ」と読んでいたものの，このルビの出典を失念してしまってモヤモヤしていたのだが，今日遂に泉井久之助の『ヨーロッパの言語』（p. 126）であることが判明した．
+
+数日前から UTAS が使えなくなっており，来学期の授業が開講される教室が確認できなくて困っていたのだが，今日見たら UTAS が使えるようになっていた．私の属性が既に大学院生になっていた．シラバスは見ることができたが，まだお気に入り登録ができないので少し不便だ．
+
+## 3/28（土）
+昨日教えてもらった論文に目を通していた．generic fiber の de Rham cohomology と special fiber の crystalline cohomology の比較（Berthelot）を通して algebraic cycle から André の $p$-adic period という概念が定義される（$p$ 進 Hodge 理論に現れるものとは無関係）そうで，それに関して Grothendieck の周期予想の類似などを考えているらしい．
+
+crystalline cohomology に関しては定義くらいしか分からない．B1 の頃に辻先生の crystalline cohomology や prismatic cohomology を扱う授業に潜っていたことがあって，当然ながら当時は全然わからなかったのだが，今その時の板書を見返してみると，そういうことだったのかと思うところも多い．
+
+Illusie の [Cohomologie cristalline](https://www.numdam.org/item/SB_1974-1975__17__53_0/) も少し目を通した．たった 10 頁しかないから本当に最小限という感じだが，簡潔で短いという点においては気が楽で読みやすい．
+
+別に文字数を目標にして日記を書いているわけではないが，今月の日記は 20000 字を超えた．尤も諸々のコードなども含めて 20000 字なので，実質的な文章はこれより幾らか少ないのだろうが．
+
+Tannakian formalism というものは強力すぎる．
+
+## 3/29（日）
+午前中は久しぶりに Cisinski のゼミがあった．
+
+学生証が駒場図書館のゲートを通過できなくなっていた．受付の人に言えば通してもらえるが．
+
+午後は上野に行った．晴天・日曜日・桜という好条件が重なっているためか上野公園はものすごく混雑していた．国立西洋美術館の[チュルリョーニス展](https://2026ciurlionis.nmwa.go.jp/)を観た．学生証をまだ返却していなかったので，大学生料金で入れた．チュルリョーニス（Mikalojus Konstantinas Čiurlionis）という人物は画家としても作曲家としても活動していたそうだが，寡聞にしてそのどちらとしても私は知らなかった．少々不気味な夢の中にいるような，不思議な色彩感を持っているのだが，それと同時に妙に整然とした（俗にいう「幾何学的」？　私はあまりこの言葉が好きではないのだが）構成感も備えた絵を描く人だなあと思ったのだが，これには作曲家としての側面も影響を与えているのだろうか．
+
+気になる本：
+- 小林登志子，[楔形文字が語る古代オリエント——都市と文明の興亡史——](https://www.shinchosha.co.jp/book/603943/)
+- 高橋康也，高橋迪訳[『完訳 ニーベルングの指環』](https://www.kadokawa.co.jp/product/322511000918/)
+
+## 3/30（月）
+学位記を取りに行った．想像していたよりも大きかった．今日は新入生の諸手続きだったようで，初々しい人々がたくさん居た．私が諸手続きに行ったのもついこの間のような気がするのだが，もう 4 年経ってしまったということが俄には信じ難い．こうやって時の流れの速さを飽きもせずに何度も何度も言ってしまうのは老人仕草なのかもしれない．
+
+Zagier の [Arithmetic and Topology of Differential Equations](https://people.mpim-bonn.mpg.de/zagier/files/tex/ECMHirzebruchLecture/ECMHirzebruchLectureCorrected.pdf) がとても面白い．こういう数学をたくさん知りたい．
+
+Fu を少し読んだ．$\cat{R}f^!$ の構成を追った．Godement 分解が出てきていたので面倒そうだと思ったが，Godement 分解を使って良い性質を持つ（$f_!$ を複体上に上手い具合に持ち上げるような）関手が作れて仕舞えば後は全て formal な議論なので楽だった．
+
+本屋に行って[周藤芳幸『ミケーネ文明』](https://www.iwanami.co.jp/book/b10159286.html)と[加藤喜之『福音派―終末論に引き裂かれるアメリカ社会』](https://www.chuko.co.jp/shinsho/2025/09/102873.html)を買った．
+
+## 3/31（火）
+[LANA プロジェクト発表にあたって](https://zen.ac.jp/zmc/topics/jwz-o8xr3v6f)という会見があったらしい．[ZEN数学センター・新プロジェクト「LANA」の発表](https://live.nicovideo.jp/watch/lv350105847)でも読める．文元先生のお話を聞く限りではそれなりに有意義な進展がありそうだ．
+
+Ayoub の [Nouvelles cohomologies de Weil en caractéristique positive](https://user.math.uzh.ch/ayoub/PDF-Files/New-Weil.pdf) に軽く目を通した．etale homotopy type を使ったモチーフの $\ell$ 進実現の作り方（Exemple 2.12）を初めて知り，なるほどなあと思った．
+
+Anderson の $t$-motive は定義があまりにも代数的すぎて何が motive なのかよくわからなかったからあまり興味を持ってこなかったのだが，Gemini と色々話しているとこれも面白そうだと思った（cf. [Brownawell, Papanikolas, Transcendence in Positive Characteristic](https://swc-math.github.io/aws/2008/08PapanikolasSlides3.pdf)）．$t$-motive に関しては Grothendieck の予想（周期の超越次元 = motivic Galois group の次元）が成立することが Papanikolas によって示されているらしい．どのようにして示されているのだろうか？　AI の言うことは大体話半分に聞くべきだが，こういうふうに緩く調べ物をする際にはとても助かる．

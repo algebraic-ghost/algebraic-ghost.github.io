@@ -1,0 +1,76 @@
+---
+// src/components/Breadcrumbs.astro
+
+const pathname = Astro.url.pathname;
+// トップページ('/')の場合、paths は空の配列 [] になります
+const paths = pathname.split('/').filter((path) => path !== '');
+
+const labelMap: Record<string, string> = {
+  'about': '会社概要',
+  'services': 'サービス',
+  'blog': 'ブログ',
+  'contact': 'お問い合わせ',
+};
+---
+
+{/* ↓ paths.length が 0 より大きい（＝下層ページである）場合のみ、<nav> をレンダリングする */}
+{paths.length > 0 && (
+  <nav aria-label="Breadcrumb" class="breadcrumbs">
+    <ol>
+      <li>
+        <a href="/">ホーム</a>
+      </li>
+
+      {paths.map((path, index) => {
+        const href = `/${paths.slice(0, index + 1).join('/')}`;
+        const isLast = index === paths.length - 1;
+        const label = labelMap[path] || path;
+
+        return (
+          <li aria-current={isLast ? "page" : undefined}>
+            <span class="separator" aria-hidden="true">/</span>
+            {isLast ? (
+              <span class="current-page">{label}</span>
+            ) : (
+              <a href={href}>{label}</a>
+            )}
+          </li>
+        );
+      })}
+    </ol>
+  </nav>
+)}
+<style>
+  /* 基本的なスタイリング（お好みで調整してください） */
+  .breadcrumbs {
+    font-size: 0.9rem;
+    padding: 1rem 0;
+  }
+  .breadcrumbs ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .breadcrumbs li {
+    display: flex;
+    align-items: center;
+  }
+  .separator {
+    margin: 0 0.5rem;
+    color: #888;
+  }
+  .current-page {
+    color: #333;
+    font-weight: bold;
+  }
+  a {
+    color: #0056b3;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+</style>
