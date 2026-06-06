@@ -3,7 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 const pageTitle="タグ一覧";
 // 1. memoranda フォルダ配下のすべての階層にある md / mdx ファイルを取得
 const allMemos = Object.values(
-  import.meta.glob(['../memoranda/**/*.{md,mdx}', '../cetera/**/*.{md,mdx}'], { eager: true })
+  import.meta.glob(['../memoranda/**/*.{md,mdx}', '../miscellanea/**/*.{md,mdx}'], { eager: true })
 );
 
 // 2. 各ファイルの frontmatter から tags を抽出し、フラットな配列にする

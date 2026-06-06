@@ -2,29 +2,43 @@
 // src/components/Breadcrumbs.astro
 
 const pathname = Astro.url.pathname;
-// トップページ('/')の場合、paths は空の配列 [] になります
 const paths = pathname.split('/').filter((path) => path !== '');
 
-const labelMap: Record<string, string> = {
-  'about': '会社概要',
-  'services': 'サービス',
-  'blog': 'ブログ',
-  'contact': 'お問い合わせ',
-};
+// 1. pages ディレクトリ内のすべてのページ（astro, md, mdx）の情報を取得
+const allPages = await Astro.glob('/src/pages/**/*.{astro,md,mdx}');
+
+// 2. [URLパス : 表示名] のマップを自動作成
+const pageLabels: Record<string, string> = {};
+
+allPages.forEach((page) => {
+  if (page.url) {
+    // URLの末尾のスラッシュを消して統一（例: "/blog/" -> "/blog"）
+    const cleanUrl = page.url.replace(/\/$/, '');
+    
+    // frontmatter の breadcrumb、なければ title を取得
+    const label = page.frontmatter?.breadcrumb || page.frontmatter?.title;
+    
+    if (label) {
+      pageLabels[cleanUrl] = label;
+    }
+  }
+});
 ---
 
-{/* ↓ paths.length が 0 より大きい（＝下層ページである）場合のみ、<nav> をレンダリングする */}
 {paths.length > 0 && (
   <nav aria-label="Breadcrumb" class="breadcrumbs">
     <ol>
       <li>
-        <a href="/">ホーム</a>
+        <a href="/">home</a>
       </li>
 
       {paths.map((path, index) => {
+        // 現在の階層までのURLを合成（例: "/blog" や "/blog/my-post"）
         const href = `/${paths.slice(0, index + 1).join('/')}`;
         const isLast = index === paths.length - 1;
-        const label = labelMap[path] || path;
+
+        // 3. マップにあればそれを、なければファイル名（path）を表示
+        const label = pageLabels[href] || path;
 
         return (
           <li aria-current={isLast ? "page" : undefined}>
@@ -40,6 +54,8 @@ const labelMap: Record<string, string> = {
     </ol>
   </nav>
 )}
+
+
 <style>
   /* 基本的なスタイリング（お好みで調整してください） */
   .breadcrumbs {
@@ -63,12 +79,7 @@ const labelMap: Record<string, string> = {
     color: #888;
   }
   .current-page {
-    color: #333;
     font-weight: bold;
-  }
-  a {
-    color: #0056b3;
-    text-decoration: none;
   }
   a:hover {
     text-decoration: underline;

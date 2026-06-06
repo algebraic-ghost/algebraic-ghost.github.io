@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 export async function getStaticPaths() {
   // 1. 取得元のパスを memoranda 配下のすべてのフォルダ (**) に変更
-  const allPosts = Object.values(import.meta.glob(['../memoranda/**/*.{md,mdx}', '../cetera/**/*.{md,mdx}'], { eager: true }));
+  const allPosts = Object.values(import.meta.glob(['../memoranda/**/*.{md,mdx}', '../miscellanea/**/*.{md,mdx}'], { eager: true }));
   
   // 2. tagsの抽出を flatMap とオプショナルチェーン (?.) でより安全に
   const uniqueTags = [...new Set(allPosts.flatMap((post: any) => post.frontmatter?.tags || []))];
