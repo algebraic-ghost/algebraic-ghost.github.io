@@ -116,3 +116,16 @@ Springer 対応の授業では generalized Springer correspondence というも�
 ある site 上の simplicial presheaf の圏を（その位相から自然に定まる射のクラスで；例えば Ayoub の Les six opérations … の定義 4.4.28 などに書かれている）Bousfield 局所化した時の local object は単なる sheaf ではなくて hypersheaf（全ての hypersheaf に対する descent が成立する前層）になるということが Dugger, Hollander, Isaksen. [Hypercovers and simplicial presheaves](https://arxiv.org/abs/math/0205027) に書いてあった．確かに，Bousfield 局所化の定義を考えれば，そのホモトピー圏では Whitehead の定理が成立しそうなので，これが hypercompletion になっているというのは納得できる話ではある．因みに同様の理由で $\infty$ 圏として $\mathbb{A}^1$-homotopy 圏を定義するときにも Nisnevich hypersheaf の圏を $\mathbb{A}^1$ 局所化しなければならないらしい（Ohrt のノートを参照）．Ayoub の論文を読んでいたときに付け焼き刃で Voevodsky の $\cat{DM}$ の構成を勉強して，そのときに前層圏を Nisnevich localization した時の local object が何になるかが良く分かっていなかったので気になっていた．
 
 混合 Tate モチーフの Hodge 実現は忠実充満だから，motivic fundamental group に関しても，その構成はさておき，とにかくそのような対象がモチーフから来ているということさえ分かっていればあとは実現を見て色々と議論をすれば良いということなのだろうか．当たり前のようだが，ずっと見落としていた．然らば数日前の日記で述べた Deligne の $\mathbb{P}^1\setminus\{0,1,\infty\}$ の論文が今なお重要性を保っているということもさして不思議なことではないのかもしれない．
+
+## 6/12（金）
+底スキームに有限次元性を課しておけば Nisnevich sheaf は自動的に hypersheaf になるらしいので，$\mathbb{A}^1$-homotopy 圏の構成では hypercompletion を取る必要はないらしい：
+- Lurie. [Derived Algebraic Geometry XI: Descent Theorems](https://people.math.harvard.edu/~lurie/papers/DAG-XI.pdf) Corollary 2.25.
+- Clausen, Matthew. [Hyperdescent and étale $K$-theory](https://arxiv.org/abs/1905.06611) Theorem 1.7.
+
+Deligne の $\mathbb{P}^1\setminus\{0,1,\infty\}$ の 16 章を少し読んだ．$\displaystyle \mathrm{Lie}(U) \cong \mathbb{Q}(1) \ltimes \prod_{n\geq 1} \mathbb{Q}(n)$ という同型の意味が分かった．これに伴って Dan-Cohen–Wewers の続きが読めるようになった．ずっとここが分からなくて詰まっていたので嬉しい．この節だけで一週間以上を費やしてしまったが，良い勉強になったし，セミナーで扱わなければここまで粘らなかっただろうから良しとしよう．もっと丁寧に書いてくれよと思ったものの，よく読むと結局必要なことは一応全て書いてあった．
+
+これで Книжник–Замолодчиков 接続（偶には意味もなく衒学仕草をしてみよう…… 偶にでもないか？）が出てくる必然性（というよりは，motivic な背景）も少し明らかになった（と思う）．この辺りは議論の詳細を忘れないうちに纏めておきたい．
+
+今日はヴァイオリンがあった．エア・ヴァリエはだんだん楽しくなってきた．カイザーの練習曲は 16 番を始めた．嫌がらせのような練習曲ばかり書いているカイザーにしては珍しく弾きやすい（気がする）．
+
+16 日と 30 日の数学講究 XB （[日程一覧](https://www.ms.u-tokyo.ac.jp/kyoumu/1ec92b6b09e904abc01f24f0b02dcdaf0a132cbc.pdf)）は気になるので時間があれば（それから，教室に十分なキャパシティがあれば）潜ってみたい．ところで，私の指導教員は去年度も今年度も数学講究 XB を担当していない（一昨年はしていたらしい）が，担当したらどのようなことを話すのか気になる．来年度にでもないかしら？
