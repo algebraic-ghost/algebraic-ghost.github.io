@@ -1,0 +1,25 @@
+---
+layout: "../../../layouts/MarkdownPostLayout.astro"
+title: "Lurie. Higher Algebra."
+pubDate: 2026-06-20
+tags: ["数学", "無限圏論", "読書メモ"]
+showToc: true
+---
+Lurie の [*Higher Algebra*](https://www.math.ias.edu/~lurie/papers/HA.pdf) を読み進める上での（自分の為の）記録．かなり場当たり的かつ付け焼き刃的な勉強でやっていくことになると思います．取り敢えずは 1 章を読むことが目標．
+
+
+
+## 参考文献
+<table class="ref-table">
+  <tr>
+    <th>[Gep19]</th>
+    <td>Gepner, D. An Introduction to Higher Categorical Algebra.  
+    https://arxiv.org/abs/1907.02904</td>
+  </tr>
+
+  <tr>
+    <th>[Lur17]</th>
+    <td>Lurie, J. *Higher Algebra*.
+    https://www.math.ias.edu/~lurie/papers/HA.pdf</td>
+  </tr>
+</table>
