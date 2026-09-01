@@ -1,0 +1,74 @@
+---
+layout: "../../../layouts/MarkdownPostLayout.astro"
+title: "三点抜き射影直線って何が面白いの？"
+pubDate: 2026-09-00
+tags: ["数学", "メモ"]
+showToc: true
+---
+
+## 有理数体の絶対 Galois 群の埋め込み
+### エタール基本群
+エタール基本群の定義は割愛するが，定義を知らない方は適当な文献を参照して頂くか，或いは以下に挙げるような性質を持つ何らかの副有限群が存在するものだと認めて頂ければ問題ない．
+
+(1) 連結 Noether スキーム $X$ とその幾何学的点（即ち分離閉体が定めるアフィンスキームからの射）$\bar{x}$ の組に対して**エタール基本群**（étale fundamental group）と呼ばれる副有限群 $\pi_1^\text{ét}(X, \bar{x})$ が関手的に割り当てられる．
+
+(2) 体の絶対 Galois 群はエタール基本群の特殊な場合として現れる．$K$ を体としたとき，$\spec K$ の幾何学的点とは，分離閉体 $\Omega$ とそれへの埋め込み $\bar{x} \colon K \lra \Omega$ のことに他ならない．$\Omega$ における $K$ の分離閉包を $K^\text{sep}$ とすると，
+$$
+  \pi_1^\text{ét}(\spec K, \bar{x}) \cong G_K := \gal(K^\text{sep}/K)
+$$
+が成り立つ．この事実は，体のエタール被覆が分離代数の有限直積であることとエタール基本群の定義から簡単に分かる．
+
+(3) 代数多様体のエタール基本群は通常の意味での基本群（エタール基本群と区別する為に，ここでは位相的基本群と呼ぶことにする）と以下のような関連を持っている．$k$ を $\C$ に含まれる分離閉体とし，$X$ を $k$ 上の代数多様体，$\bar{x}$ を $X$ の幾何学的点とする．また，$X^\text{an}$ を $X$ の複素解析化とする．$\bar{x}$ に対応する $X^\text{an}$ の点を $x$ で表すこととすると，位相的基本群 $\pi^\text{top}(X^\text{an}, x)$ が定まる．このとき，標準的な同型
+  $$
+    \pi_1^\text{ét}(X, \bar{x}) \cong \pi^\text{top}(X^\text{an}, x)^\text{prof}  
+  $$
+が存在する．ここで，$(-)^\text{prof}$ は副有限完備化を表す．
+
+(4) ある体の上で定義された代数多様体のエタール基本群には定義体の絶対 Galois 群が作用する．$k$ を体，$k^\text{sep}$ を $k$ の分離閉包，$X$ を $k$ 上の連結 Noether スキームとする．$x$ を $X$ の $k$ 有理点とし，これが誘導する $X_{k^\text{sep}} := X \fibprod_{\spec k} \spec k^\text{sep}$ の幾何学的点（$k^\text{sep}$ 有理点）を $\bar{x}$ とする．即ち，以下のような cartesian diagram を考える．
+
+$$
+\begin{CD}
+{\spec k^\text{sep}} @>{\overline{x}}>> X_{k^\text{sep}} @>>> {\spec k^\text{sep}} \\
+@VVV @VVV @VVV\\
+{\spec k} @>{x}>> X @>>> {\spec k} \\
+\end{CD}
+$$
+
+$G_k$ は $\spec k^\text{sep}$ に作用しているので，この作用の基底変換として $X_{k^\text{sep}}$ にも作用する．また，$\bar{x}$ は $G_k$ 作用で不変なので，$G_k$ は点付きスキーム $(X_{k^\text{sep}}, \bar{x})$ に作用している．従って，エタール基本群の関手性から $G_k$ の $\pi_1^\text{ét}(X_{k^\text{sep}}, \bar{x})$ への作用
+$$
+  \phi_x \colon G_k \lra \aut(\pi_1^\text{ét}(X_{k^\text{sep}}, \bar{x}))
+$$
+が得られる．
+
+{/*
+(4) エタール基本群が持つもう一つの重要な性質はホモトピー完全列の存在である．$k$ を体，$k^\text{sep}$ を $k$ の分離閉包，$X$ を $k$ 上の連結有限型スキームとする．$X_{k^\text{sep}} = X \fibprod_{\spec k} \spec k^\text{sep}$ とし，$\bar{x}$ を $X_{k^\text{sep}}$ の幾何学的点とすると，自然な点付きスキームの射の列
+  $$
+    (X_{k^\text{sep}},\bar{x}) \lra (X,\bar{x}') \lra (\spec k, \bar{x}'')
+  $$
+が誘導され，これは群の完全列
+  $$
+    1 \lra \pi_1^\text{ét}(X_{k^\text{sep}}, \bar{x}) \lra \pi_1^\text{ét}(X,\bar{x}') \lra \pi_1^\text{ét}(\spec k, \bar{x}'') \lra 1
+  $$
+を誘導する．この完全列を**ホモトピー完全列**（homotopy exact sequence）と呼ぶ．
+
+(5) 特に，幾何学的点 $\bar{x}$ が $X$ の $k$ 有理点 $x$ から来ているとき（即ち，$\bar{x} \colon \spec \Omega \lra X_{k^\text{sep}}$ が $x \colon \spec k \lra X$ の $X_{k^\text{sep}} \lra X$ に沿った基底変換 $\bar{x} \colon \spec k^\text{sep} \lra X_{k^\text{sep}}$ を経由するとき），$x$ が誘導する射
+  $$
+    x_\ast \colon G_k \cong \pi_1^\text{ét}(\spec k, \bar{x}'') \lra \pi_1^\text{ét}(X,\bar{x}')
+  $$
+はホモトピー完全列の分裂を与える．$\pi_1^\text{ét}(X_{k^\text{sep}}, x)$ は $\pi_1^\text{ét}(X, x')$ の正規部分群と見做せるので，$G_k$ の元の $x_\ast$ による像の共役作用は $G_k$ の $\pi_1^\text{ét}(X_{k^\text{sep}}, \bar{x})$ への作用
+$$
+  \phi_x \colon G_k \lra \aut(\pi_1^\text{ét}(X_{k^\text{sep}}, \bar{x}))
+$$
+が誘導される．
+*/}
+
+### 三点抜き射影直線の場合
+以上の構成を $k= \Q$ と $X = \projsp^1_{\Q}\setminus\{0,1,\infty\}$，及び $\Q$ 上の適当な基点 $x$ に対して適用しよう．$X^\text{an} = \C \setminus\{0,1\}$ の位相的基本群は，0 の周りを回る閉路 $\gamma_0$ と 1 の周りを回る閉路 $\gamma_1$ が生成する自由群であるので，$X$ のエタール基本群は 2 元生成の自由副有限群（自由群の副有限完備化）$\widehat{F}(2)$ と同型である．従って $G_\Q$ の $\widehat{F}(2)$ への作用
+$$
+  \phi_x \colon G_\Q \lra \aut(\widehat{F}(2))
+$$
+が導かれる．**Belyi の定理**の帰結として，この作用の忠実性，即ち $\phi_x$ の単射性が得られる．
+
+すると，自然な疑問は，$\phi_x$ の像はどのようにして特徴付けられるのかというものである．最も理想的な回答は $\aut(\widehat{F}(2))$ の明示的な部分群として $G_\Q$ を特定することだが，それが出来なくとも $G_\Q$ の像が $\aut(\widehat{F}(2))$ より真に小さい部分群に含まれていることが分かるだけでも有意義である．この問いに回答を与える試みの一つとして **Grothendieck–Teichmüller 理論**と呼ばれるものがある．
+
+非負整数 $g,\ n$ に対して，$n$ 点付きの種数 $g$ の曲線のモジュライスタックを $\mathcal{M}_{g,n}$ とする（なお，以下の内容を理解する上でスタックの定義を理解している必要はない）．まずは最も簡単な $g=0$ の場合を考えよう．$\projsp^1$ の自己同型群 $\mathrm{PGL}_2$ は $\projsp^1$ 上に三重推移的に作用するので，$\mathcal{M}_{0,3}$ は 1 点である．同様の理由で，$\projsp^1$ 上に 4 点を指定する時，3つの点は初めから $0,\ 1,\ \infty$ に固定してしまっても問題ない．従って， $\mathcal{M}_{0,4}$ の点を定めることは $0,\ 1,\ \infty$ 以外の残りの 1 点を定めることと同じなので，$\mathcal{M}_{0,4} \cong \projsp^1\setminus\{0,1,\infty\}$ である（つまり，この場合 $\mathcal{M}_{0,4}$ は実は単なるスキームである）．
