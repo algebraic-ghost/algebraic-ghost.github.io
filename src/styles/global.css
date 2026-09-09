@@ -234,6 +234,9 @@ h3:hover .heading-anchor {
   padding-bottom: 0pt;
 }
 
+p{
+  text-indent: 1rem;
+}
 .ref-table {
   width: 100%;
   table-layout: fixed;       /* ★重要：列幅を固定計算モードにする */
