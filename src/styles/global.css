@@ -237,6 +237,17 @@ h3:hover .heading-anchor {
 p{
   text-indent: 1rem;
 }
+
+p.no-indent {
+  text-indent: 0;
+}
+
+/* 特定のエエリア全体（複数のpタグ）のインデントを解除したい場合 */
+.no-indent-wrapper p {
+  text-indent: 0;
+}
+
+
 .ref-table {
   width: 100%;
   table-layout: fixed;       /* ★重要：列幅を固定計算モードにする */

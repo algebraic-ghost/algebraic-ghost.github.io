@@ -15,6 +15,8 @@ showToc: true
 * Достоевский, М. Ф. [*Сон смешного человека*](https://ilibrary.ru/text/4207/index.html), Интернет-библиотека
 * ———. [*The Dream of a Ridiculous Man*](https://www.gutenberg.org/cache/epub/40745/pg40745-images.html#THE_DREAM_OF_A_RIDICULOUS_MAN) (translation by Constance Garnett), Project Gutenberg
 
+<div className="no-indent-wrapper">
+
 ## 第 0 回 ［2025/4/8（火）］
 
 扱うテクストの決定．
@@ -92,3 +94,4 @@ M: Я поднял руки ... только разными дорогами. [1
 F: Старая это истина, ... на тысячу лет. [152]  
 H: Знаете, я хотел ... моего потерял слова. [49]  
 A: По крайней мере, ... пойду! И пойду! [174]
+</div>
