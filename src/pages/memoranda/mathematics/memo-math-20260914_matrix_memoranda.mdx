@@ -1,0 +1,40 @@
+---
+layout: "../../../layouts/MarkdownPostLayout.astro"
+title: "行列演算に関する備忘録"
+pubDate: 2026-09-14
+tags: ["数学", "行列", "メモ"]
+showToc: true
+---
+係数体は $k$ とする．特別に断らない限り，$k$ に対して特に条件は課さない．
+
+### 簡単な行列の対象冪
+$k$ を標数が 0 の体とする．$V = \langle e_0, e_1\rangle$ を $k$ 上の 2 次元線型空間とし，適当な $\alpha \in k$ を取って $\varphi :=  \begin{pmatrix} 1 & 0 \\ \alpha & 1 \end{pmatrix} \in \mathrm{GL}(V)$ とする．正整数 $N$ に対し，$\varphi$ の $N$ 次対称冪 $\sym^N \varphi$ の 行列表示を求める．
+
+$\sym^N V = \langle e_0^pe_1^{N-p} \mid 0 \leq p \leq N\rangle$ であり，
+$$
+\sym^N \varphi(e_0^pe_1^{N-p}) = (e_0 + \alpha e_1)^pe_1^{N-p} = \sum_{i=0}^p \binom{p}{i}\alpha^i e_0^i e_1^{N-i}
+$$
+<p class="no-indent">であるので，</p>
+$$
+\begin{align*}
+&\sym^N \varphi = \left(\binom{N-j}{i-j}\alpha^{i-j}\right)_{0\leq i,\ j \leq N} \\
+&\quad= \begin{pmatrix}
+\binom{N}{0} & 0 &&  &  & \\
+\binom{N}{1}\alpha & \binom{N-1}{0} &\ddots&  &  &\\
+\binom{N}{2}\alpha^2 & \binom{N-1}{1}\alpha & \ddots&  \ddots&  &\\
+\vdots & \vdots &&  \ddots&0 & \\
+\binom{N}{N-1}\alpha^{N-1} & \binom{N-1}{N-2}\alpha^{N-2} &\cdots& \cdots & \binom{1}{0} &0\\
+\binom{N}{N}\alpha^N & \binom{N-1}{N-1}\alpha^{N-1} &\cdots& \cdots & \binom{1}{1}\alpha &\binom{0}{0}\\
+\end{pmatrix}\\
+&\quad = \mathrm{diag}(N!, \dots, 0!)^{-1} \exp \begin{pmatrix} 0 & & & \\ \alpha & \ddots &  & \\ & \ddots & 0& \\ 0 & & \alpha & 0 \end{pmatrix}\mathrm{diag}(N!, \dots, 0!)
+\end{align*}
+$$
+<p class="no-indent">が成り立つ．実際，$\mathrm{diag}(N!, \dots, 0!)(\sym^N \varphi)\mathrm{diag}(N!, \dots, 0!)^{-1}$ の $(p,q)$ 成分は</p>
+$$
+\sum_{i,\ j} (N-p)!\delta_{p,i}\cdot \binom{N-j}{i-j}\alpha^{i-j}\cdot (N-j)!^{-1}\delta_{j,q} = \frac{\alpha^{p-q}}{(p-q)!}
+$$
+<p class="no-indent">と計算できるので，</p>
+$$
+\mathrm{diag}(N!, \dots, 0!)(\sym^N \varphi)\mathrm{diag}(N!, \dots, 0!)^{-1} = \exp \begin{pmatrix} 0 & & & \\ \alpha & \ddots &  & \\ & \ddots & 0& \\ 0 & & \alpha & 0 \end{pmatrix}
+$$
+<p class="no-indent">が得られる．</p>
