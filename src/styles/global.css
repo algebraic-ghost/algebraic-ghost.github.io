@@ -8,11 +8,19 @@ body {
   margin: 0 auto;
   width: 100%;
   max-width: 80ch;
+  min-height: 100vh;
   padding: 1rem;
   line-height: 1.5;
   font-size: large;
 }
 
+footer {
+    margin-top: auto;
+    font-family: "Cormorant Garamond", palatino;
+    text-align: center;
+    align-content: center;
+}
+  
 * {
   box-sizing: border-box;
 }
@@ -102,33 +110,132 @@ h3:hover .heading-anchor {
 }
 
 /* ナビゲーションのスタイル */
+.logo {
+  position: fixed; /* 追加：固定する */
+  top: 0;          /* 追加：一番上に配置 */
+  left: 0;         /* 追加：左端から配置 */
+  right: 10pt;
+  width: 100%;     /* 追加：画面幅いっぱいに広げる */
+  z-index: 80;     /* 追加：メニューより下に設定 */
+
+  font-family: "Cormorant Garamond", palatino;
+  font-size: 3em;
+  text-align: center;
+  margin-top: 0pt;
+  padding-top: 0pt;
+
+  background-color: oklch(0.20 0.1 280); /* サイトの背景色に合わせて調整 */
+
+
+}
+
+.header {
+  position: fixed; /* 追加：固定する */
+  top: 0;          /* 追加：一番上に配置 */
+  left: 0;         /* 追加：左端から配置 */
+  right: 0;
+  width: 100%;     /* 追加：画面幅いっぱいに広げる */
+  z-index: 80;     /* 追加：メニューより下に設定 */
+
+  display: flex;
+  justify-content: space-between; /* 両端揃え */
+  align-items: center; /* 縦の中央揃え */
+  padding: 20px; /* 画面端からの余白 */
+
+  background-color: oklch(0.20 0.1 280 / .55); /* サイトの背景色に合わせて調整 */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  /* 下に向かってグラデーションで透過（数値を短めに設定） */
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
+  padding-bottom: 20px; /* グラデーション用の余白 */
+}
+
 .hamburger {
-  padding-right: 20px;
+  /* タップしやすいように上下左右に余白を持たせるのがおすすめです */
+  padding: 10px; 
   cursor: pointer;
+
+  position: fixed; /* 自由な位置に配置する命令 */
+  top: 25px;   /* 上からの距離（ロゴの高さに合わせて調整してください） */
+  right: 20px; /* 右からの距離 */
+  z-index: 100; /* 他の要素より上に表示させる（重なり順） */
 }
 
 .hamburger .line {
   display: block;
-  width: 40px;
-  height: 5px;
-  margin-bottom: 10px;
+  width: 30px;  /* 40pxから少し短く */
+  height: 2px;  /* 5pxから細くしてシャープに */
+  margin-bottom: 7px; /* 10pxから間隔を狭く */
   background-color: rgb(220, 220, 220);
+  transition: all 0.3s ease; /* アニメーション用（後述） */
 }
+
+/* 最後の線の下の余白を消す */
+.hamburger .line:last-child {
+  margin-bottom: 0;
+}
+/* メニューが開いた時（.active クラスが付いた時）の動き */
+.hamburger.active .line:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.active .line:nth-child(2) {
+  opacity: 0; /* 真ん中の線を消す */
+}
+
+.hamburger.active .line:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
 
 .katex-display { overflow: auto hidden }
 
-.nav-links {
-  width: 100%;
-  top: 5rem;
-  left: 48px;
-  display: none;
-  margin: 0;
-  margin-left: 0;
-  text-align: center;
+nav {
+  align-self: flex-start;
+  padding: 0;        /* 内側の余白をゼロにする */
+  margin: 0;         /* 外側の余白をゼロにする（必要に応じて） */
+  line-height: 1.5;
 }
 
-.expanded {
-  display: unset;
+.nav-links {
+  /* 浮遊（オーバーレイ）配置の基本設定 */
+  position: fixed;
+  top: 80px;         /* ロゴの下あたりの高さに調整してください */
+  left: 0;
+  width: 100%;
+  z-index: 90;       /* ボタン(.hamburger)の z-index: 100 より下に設定 */
+  background-color: oklch(0.20 0.1 280 / .55);
+  /* レイアウト */
+  margin: 0;
+  text-align: center;
+  padding-bottom: 100px;
+
+  backdrop-filter: blur(10px); 
+-webkit-mask-image: linear-gradient(to bottom, 
+      rgba(0,0,0,1) 0%,   /* 上端：完全に表示 */
+      rgba(0,0,0,1) 70%,  /* 70%の位置まで：完全に表示 */
+      rgba(0,0,0,0) 100%  /* 下端：完全に透明（フェードアウト） */
+  );
+  mask-image: linear-gradient(to bottom, 
+      rgba(0,0,0,1) 0%, 
+      rgba(0,0,0,1) 70%, 
+      rgba(0,0,0,0) 100%
+  );
+
+  /* アニメーション（連続的な表示）の設定 */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px); /* 10px上から下がってくる演出 */
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+/* メニューが開いた時（JSで .expanded が付与された時） */
+.nav-links.expanded {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0); /* 通常位置に戻る */
 }
 
 .nav-links a {
@@ -156,26 +263,113 @@ h3:hover .heading-anchor {
   transition: transform .3s;
 }
 
+.wrap{
+  display: flex;
+  flex-direction: column;
+  min-height: 95vh;
+  padding-top: 60px;
+  box-sizing: border-box;
+}
 
 @media screen and (min-width: 636px) {
-  .nav-links {
-    display: block;
-    position: static;
-    width: auto;
-    background: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .nav-links a {
-    display: inline-block;
-    padding: 15px 10px;
-  }
-
-  .hamburger {
-    display: none;
-  }
+  .wrap{
+  display: flex;
+  flex-direction: column;
+  min-height: 95vh;
+  padding-top: 130px;
+  box-sizing: border-box;
 }
+
+  .logo {
+    position: absolute;
+    font-family: "Cormorant Garamond", palatino;
+    font-size: 5em;
+    text-align: center;
+
+    background-color: oklch(0.20 0.1 280 / .8); /* サイトの背景色に合わせて調整 */
+  }
+.nav-links {
+  /* 1. 画面の右端に固定し、高さを画面全体（100vh）にする */
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  left: auto;
+  
+  /* 2. 横幅の設定：見出し＋グラデーションが消える余白分 */
+  width: 250px;        /* ★ 見出しの長さに合わせて 250px〜400px 程度で調整してください */
+  padding-right: 25px; /* 右端から文字までの余白 */
+  padding-top: 100px;  /* 上部のハンバーガーメニューを避けるための余白 */
+  
+  z-index: 90;
+  background-color: oklch(0.20 0.1 280 / .55);
+  margin: 0;
+  text-align: left;
+  padding-left: 40pt;
+
+  /* 3. すりガラス効果 */
+  backdrop-filter: blur(10px); 
+
+  /* 4. ★ 右から左へフェードアウトするグラデーション */
+  -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);
+  mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);
+
+  /* 5. アニメーション（右から少しだけスライドインさせると自然です） */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(20px); 
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+/* メニューが開いた時の動き */
+.nav-links.expanded {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.nav-links a {
+  display: block;
+  width: fit-content; /* ★追加：要素の幅を「文字の長さ」にピッタリ合わせる */
+  text-align: left;   /* ★変更：right から left に変更 */
+  
+  padding: 10px 0;
+  text-decoration: none;
+  font-size: 2.0rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .2s cubic-bezier(0.45, 0, 0.55, 1);
+  font-family: "Cormorant Garamond";
+  font-variant-caps: small-caps;
+}
+}
+
+
+  /* 基本的なスタイリング（お好みで調整してください） */
+  .breadcrumbs {
+    font-size: 0.9rem;
+    padding-top: 10pt;
+  }
+  .breadcrumbs ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .breadcrumbs li {
+    display: flex;
+    align-items: center;
+  }
+  .separator {
+    margin: 0 0.5rem;
+    color: #888;
+  }
+  .current-page {
+    font-weight: bold;
+  }
+
 
 .responsive-iframe {
   /* ① 希望する最大の幅と高さを指定 */
@@ -218,11 +412,6 @@ h3:hover .heading-anchor {
   list-style: circle;
 }
 
-.wrap{
-  display: flex;
-  flex-direction: column;
-  min-height: 95vh;
-}
 
 
 .proof{
@@ -360,3 +549,4 @@ details pre.astro-code {
   font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
   font-size: 0.85em;
 }
+
