@@ -8,13 +8,14 @@ showToc: true
 
 ### 2 次冪単行列の対称冪
 <div class="thm">
-$k$ を標数が 0 の体とする．$V = \langle e_0, e_1\rangle$ を $k$ 上の 2 次元線型空間とし，適当な $\alpha \in k$ を取って $\varphi :=  \begin{pmatrix} 1 & 0 \\ \alpha & 1 \end{pmatrix} \in \mathrm{GL}(V)$ とする．正整数 $N$ に対し，$\varphi$ の $N$ 次対称冪 $\sym^N \varphi$ の 行列表示は
+$k$ を標数 0 の体とする．適当な $\alpha \in k$ を取って $\varphi :=  \begin{pmatrix} 1 & 0 \\ \alpha & 1 \end{pmatrix} \in \mathrm{GL}_2(k)$ とする．正整数 $N$ に対し，$\varphi$ の $N$ 次対称冪 $\sym^N \varphi$ の 行列表示は
 $$
 \begin{pmatrix} N! & & \\  & \ddots & \\ & & 0! \end{pmatrix}^{-1} \exp \begin{pmatrix} 0 & & & \\ \alpha & \ddots &  & \\ & \ddots & 0& \\ 0 & & \alpha & 0 \end{pmatrix}\begin{pmatrix} N! & & \\  & \ddots & \\ & & 0! \end{pmatrix}
 $$
 <p class="no-indent">によって与えられる．</p>
 </div>
-$\sym^N V = \langle e_0^pe_1^{N-p} \mid 0 \leq p \leq N\rangle$ であり，
+
+$V=\langle e_0, e_1\rangle$ とすると $\sym^N V = \langle e_0^pe_1^{N-p} \mid 0 \leq p \leq N\rangle$ であり，
 $$
 \sym^N \varphi(e_0^pe_1^{N-p}) = (e_0 + \alpha e_1)^pe_1^{N-p} = \sum_{i=0}^p \binom{p}{i}\alpha^i e_0^i e_1^{N-i}
 $$
