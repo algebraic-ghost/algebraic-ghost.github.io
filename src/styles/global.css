@@ -87,6 +87,11 @@ figure{
   text-align: center;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  /* ヘッダーの高さ（例: 70px）＋ 少しの余白を持たせる */
+  scroll-margin-top: 90px; 
+}
+
 h1 {
   margin: 1rem 0;
   font-size: 2rem;
@@ -279,6 +284,12 @@ nav {
   padding-top: 130px;
   box-sizing: border-box;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  /* ヘッダーの高さ（例: 70px）＋ 少しの余白を持たせる */
+  scroll-margin-top: 20px; 
+}
+
 
   .logo {
     position: absolute;
