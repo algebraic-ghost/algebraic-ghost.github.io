@@ -10,6 +10,13 @@ const allPages = await Astro.glob('/src/pages/**/*.{astro,md,mdx}');
 // 2. [URLパス : 表示名] のマップを自動作成
 const pageLabels: Record<string, string> = {};
 
+const { currentPageLabel } = Astro.props;
+
+
+interface Props {
+  currentPageLabel?: string; // 動的ページなどのラベルを外から渡せるようにする
+}
+
 allPages.forEach((page) => {
   if (page.url) {
     // URLの末尾のスラッシュを消して統一（例: "/blog/" -> "/blog"）
@@ -37,8 +44,13 @@ allPages.forEach((page) => {
         const href = `/${paths.slice(0, index + 1).join('/')}`;
         const isLast = index === paths.length - 1;
 
+        // URLエンコードされた文字をデコードする
+        const decodedPath = decodeURIComponent(path);
+
+        // 優先順位: マップのラベル > propsで渡されたラベル > デコードしたパス名
+        const label = pageLabels[href] || (isLast && currentPageLabel) || decodedPath;
         // 3. マップにあればそれを、なければファイル名（path）を表示
-        const label = pageLabels[href] || path;
+        // const label = pageLabels[href] || path;
 
         return (
           <li aria-current={isLast ? "page" : undefined}>
