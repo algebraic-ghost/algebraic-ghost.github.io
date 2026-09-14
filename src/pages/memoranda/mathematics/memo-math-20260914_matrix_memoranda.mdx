@@ -8,41 +8,41 @@ showToc: true
 
 ### 2 次冪単行列の対称冪
 <div class="thm">
-$k$ を標数 0 の体とする．適当な $\alpha \in k$ を取って $\varphi :=  \begin{pmatrix} 1 & 0 \\ \alpha & 1 \end{pmatrix} \in \mathrm{GL}_2(k)$ とする．正整数 $N$ に対し，$\varphi$ の $N$ 次対称冪 $\sym^N \varphi$ の 行列表示は
+$k$ を標数 0 の体とする．適当な $\alpha \in k$ を取って $\varphi :=  \begin{pmatrix} 1 & 0 \\ \alpha & 1 \end{pmatrix} \in \mathrm{GL}_2(k)$ とする．正整数 $n$ に対し，$\varphi$ の $n$ 次対称冪 $\sym^n \varphi$ の 行列表示は
 $$
-\begin{pmatrix} N! & & \\  & \ddots & \\ & & 0! \end{pmatrix}^{-1} \exp \begin{pmatrix} 0 & & & \\ \alpha & \ddots &  & \\ & \ddots & 0& \\ 0 & & \alpha & 0 \end{pmatrix}\begin{pmatrix} N! & & \\  & \ddots & \\ & & 0! \end{pmatrix}
+\begin{pmatrix} n! & & \\  & \ddots & \\ & & 0! \end{pmatrix}^{-1} \exp \begin{pmatrix} 0 & & & \\ \alpha & \ddots &  & \\ & \ddots & 0& \\ 0 & & \alpha & 0 \end{pmatrix}\begin{pmatrix} n! & & \\  & \ddots & \\ & & 0! \end{pmatrix}
 $$
 <p class="no-indent">によって与えられる．</p>
 </div>
 
-$V=\langle e_0, e_1\rangle$ とすると $\sym^N V = \langle e_0^pe_1^{N-p} \mid 0 \leq p \leq N\rangle$ であり，
+$V=\langle e_0, e_1\rangle$ とすると $\sym^n V = \langle e_0^pe_1^{n-p} \mid 0 \leq p \leq n\rangle$ であり，
 $$
-\sym^N \varphi(e_0^pe_1^{N-p}) = (e_0 + \alpha e_1)^pe_1^{N-p} = \sum_{i=0}^p \binom{p}{i}\alpha^i e_0^i e_1^{N-i}
+\sym^n \varphi(e_0^pe_1^{n-p}) = (e_0 + \alpha e_1)^pe_1^{n-p} = \sum_{i=0}^p \binom{p}{i}\alpha^i e_0^i e_1^{n-i}
 $$
 <p class="no-indent">であるので，</p>
 $$
 \begin{align*}
-&\sym^N \varphi = \left(\binom{N-j}{i-j}\alpha^{i-j}\right)_{0\leq i,\ j \leq N} \\
+&\sym^n \varphi = \left(\binom{n-j}{i-j}\alpha^{i-j}\right)_{0\leq i,\ j \leq n} \\
 &\quad= \begin{pmatrix}
-\binom{N}{0} & 0 &&  &  & \\
-\binom{N}{1}\alpha & \binom{N-1}{0} &\ddots&  &  &\\
-\binom{N}{2}\alpha^2 & \binom{N-1}{1}\alpha & \ddots&  \ddots&  &\\
+\binom{n}{0} & 0 &&  &  & \\
+\binom{n}{1}\alpha & \binom{n-1}{0} &\ddots&  &  &\\
+\binom{n}{2}\alpha^2 & \binom{n-1}{1}\alpha & \ddots&  \ddots&  &\\
 \vdots & \vdots &&  \ddots&0 & \\
-\binom{N}{N-1}\alpha^{N-1} & \binom{N-1}{N-2}\alpha^{N-2} &\cdots& \cdots & \binom{1}{0} &0\\
-\binom{N}{N}\alpha^N & \binom{N-1}{N-1}\alpha^{N-1} &\cdots& \cdots & \binom{1}{1}\alpha &\binom{0}{0}\\
+\binom{n}{n-1}\alpha^{n-1} & \binom{n-1}{n-2}\alpha^{n-2} &\cdots& \cdots & \binom{1}{0} &0\\
+\binom{n}{n}\alpha^n & \binom{n-1}{n-1}\alpha^{n-1} &\cdots& \cdots & \binom{1}{1}\alpha &\binom{0}{0}\\
 \end{pmatrix}\\
-&\quad = \begin{pmatrix} N! & & \\  & \ddots & \\ & & 0! \end{pmatrix}^{-1}
+&\quad = \begin{pmatrix} n! & & \\  & \ddots & \\ & & 0! \end{pmatrix}^{-1}
 \exp \begin{pmatrix} 0 & & & \\ \alpha & \ddots &  & \\ & \ddots & 0& \\ 0 & & \alpha & 0 \end{pmatrix}
-\begin{pmatrix} N! & & \\  & \ddots & \\ & & 0! \end{pmatrix}
+\begin{pmatrix} n! & & \\  & \ddots & \\ & & 0! \end{pmatrix}
 \end{align*}
 $$
-<p class="no-indent">が成り立つ．実際，$\mathrm{diag}(N!, \dots, 0!)(\sym^N \varphi)\mathrm{diag}(N!, \dots, 0!)^{-1}$ の $(p,q)$ 成分は</p>
+<p class="no-indent">が成り立つ．実際，$\mathrm{diag}(n!, \dots, 0!)(\sym^n \varphi)\mathrm{diag}(n!, \dots, 0!)^{-1}$ の $(p,q)$ 成分は</p>
 $$
-\sum_{i,\ j} (N-p)!\delta_{p,i}\cdot \binom{N-j}{i-j}\alpha^{i-j}\cdot (N-j)!^{-1}\delta_{j,q} = \frac{\alpha^{p-q}}{(p-q)!}
+\sum_{i,\ j} (n-p)!\delta_{p,i}\cdot \binom{n-j}{i-j}\alpha^{i-j}\cdot (n-j)!^{-1}\delta_{j,q} = \frac{\alpha^{p-q}}{(p-q)!}
 $$
 <p class="no-indent">と計算できるので，</p>
 $$
-\begin{pmatrix} N! & & \\  & \ddots & \\ & & 0! \end{pmatrix}\left(\sym^N \varphi\right)\begin{pmatrix} N! & & \\  & \ddots & \\ & & 0! \end{pmatrix}^{-1}
+\begin{pmatrix} n! & & \\  & \ddots & \\ & & 0! \end{pmatrix}\left(\sym^n \varphi\right)\begin{pmatrix} n! & & \\  & \ddots & \\ & & 0! \end{pmatrix}^{-1}
 = \exp \begin{pmatrix} 0 & & & \\ \alpha & \ddots &  & \\ & \ddots & 0& \\ 0 & & \alpha & 0 \end{pmatrix}
 $$
 <p class="no-indent">が得られる．</p>
