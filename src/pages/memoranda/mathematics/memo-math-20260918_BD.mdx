@@ -99,8 +99,8 @@ $$
 \right)\\
 &= -\frac{aT}{e^{aT}-1}A(T)-\frac{aTe^{aT}}{e^{aT}-1}\overline{A(-T)}\\
 &= -\frac{aT}{e^{aT}-1}A(T)+\frac{-aT}{e^{-aT}-1}\overline{A(-T)}\\
-&= -\left(\sum_{p \geq 1} \frac{B_p a^p}{p!}T^p\right)\left(\sum_{q \geq 1}\li_q(z)T^q\right)\\
-&\qquad+\left(\sum_{p \geq 1} \frac{B_p (-a)^p}{p!}T^p\right)\left(\sum_{q \geq 1}(-1)^q\overline{\li_q(z)}T^q\right)  \\
+&= -\left(\sum_{p \geq 0} \frac{B_p a^p}{p!}T^p\right)\left(\sum_{q \geq 1}\li_q(z)T^q\right)\\
+&\qquad+\left(\sum_{p \geq 0} \frac{B_p (-a)^p}{p!}T^p\right)\left(\sum_{q \geq 1}(-1)^q\overline{\li_q(z)}T^q\right)  \\
 &= \sum_{n \geq 1} \left(\sum_{p=0}^n \left(-\frac{B_p a^p}{p!}\li_{n-p}(z) + (-1)^n\frac{B_p a^p}{p!}\overline{\li_{n-p}(z)}\right)\right)T^n
 \end{align*}
 $$
@@ -109,7 +109,7 @@ $$
 \begin{align*}
 D_k(z) = \begin{cases}
 \displaystyle i\sum_{\ell = 0}^k \frac{B_\ell}{\ell!}(\log\lvert z\rvert^2)^\ell \im(\li_{k-\ell}(z)) & \text{（$k$ が偶数の場合）}\\
-\displaystyle \sum_{\ell = 0}^k \frac{B_\ell}{\ell!}(\log\lvert z\rvert^2)^\ell \re(\li_{k-\ell}(z)) & \text{（$k$ が偶数の場合）}\\
+\displaystyle \sum_{\ell = 0}^k \frac{B_\ell}{\ell!}(\log\lvert z\rvert^2)^\ell \re(\li_{k-\ell}(z)) & \text{（$k$ が奇数の場合）}\\
 \end{cases}
 \end{align*}
 $$
@@ -142,16 +142,16 @@ $$
 $$
 \begin{align*}
 &\log\left(\exp\left(\sum_{\ell \geq 1}\mu_\ell E_\ell\right)\exp(ae_0)\right) \\
-&= \sum_{n \geq 1}\frac{1}{n}\left(\sum_{\ell \geq 1} \mu_\ell E_\ell + \sum_{\ell \geq 1} \frac{a^\ell}{\ell!}e_0^\ell\right)^n\\
-&= \sum_{n \geq 1}\frac{1}{n}\left(\left(\sum_{\ell \geq 1}\frac{a^\ell}{\ell!}e_0^\ell\right)^n + \left(\sum_{\ell \geq 1}\frac{a^\ell}{\ell!}e_0^\ell\right)^{n-1}\left(\sum_{\ell \geq 1} \mu_\ell E_\ell\right) \right)
+&= \sum_{n \geq 1}\frac{(-1)^{n-1}}{n}\left(\sum_{\ell \geq 1} \mu_\ell E_\ell + \sum_{\ell \geq 1} \frac{a^\ell}{\ell!}e_0^\ell\right)^n\\
+&= \sum_{n \geq 1}\frac{(-1)^{n-1}}{n}\left(\left(\sum_{\ell \geq 1}\frac{a^\ell}{\ell!}e_0^\ell\right)^n + \left(\sum_{\ell \geq 1}\frac{a^\ell}{\ell!}e_0^\ell\right)^{n-1}\left(\sum_{\ell \geq 1} \mu_\ell E_\ell\right) \right)
 \end{align*}
 $$
 が成り立つ．第 1 項は $\log(\exp(ae_0)) = ae_0$ である．第 2 項を計算する．第 2 項を $E_i$ に関して展開した時の係数の母関数は
 $$
 \begin{align*}
-&\sum_{n \geq 1}\frac{1}{n}\left(\sum_{\ell \geq 1}\frac{a^\ell}{\ell!}T^\ell\right)^{n-1}\left(\sum_{\ell \geq 1} \mu_\ell T^\ell\right)\\
-&= \left(\sum_{n \geq 1}\frac{1}{n}(e^{aT}-1)^{n-1}\right)\left(\sum_{\ell \geq 1} \mu_\ell T^\ell\right)\\
-&= \frac{1}{e^{aT}-1}\left(\sum_{n \geq 1}\frac{1}{n}(e^{aT}-1)^{n}\right)\left(\sum_{\ell \geq 1} \mu_\ell T^\ell\right)\\
+&\sum_{n \geq 1}\frac{(-1)^{n-1}}{n}\left(\sum_{\ell \geq 1}\frac{a^\ell}{\ell!}T^\ell\right)^{n-1}\left(\sum_{\ell \geq 1} \mu_\ell T^\ell\right)\\
+&= \left(\sum_{n \geq 1}\frac{(-1)^{n-1}}{n}(e^{aT}-1)^{n-1}\right)\left(\sum_{\ell \geq 1} \mu_\ell T^\ell\right)\\
+&= \frac{1}{e^{aT}-1}\left(\sum_{n \geq 1}\frac{(-1)^{n-1}}{n}(e^{aT}-1)^{n}\right)\left(\sum_{\ell \geq 1} \mu_\ell T^\ell\right)\\
 &= \frac{aT}{e^{aT}-1}\sum_{\ell \geq 1} \mu_\ell T^\ell\\
 \end{align*}
 $$
