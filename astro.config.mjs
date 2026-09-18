@@ -66,7 +66,7 @@ const macros = {
   "\\vect": "\\overrightarrow",
   "\\sym": "\\mathop{\\mathrm{Sym}}",
   "\\li": "\\mathop{\\mathrm{Li}}",
-  "\\int": "\\mathop{\\mathrm{int}}",
+  "\\grpint": "\\mathop{\\mathrm{int}}",
   "\\re": "\\mathop{\\mathrm{Re}}",
 };
 

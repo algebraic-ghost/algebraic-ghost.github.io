@@ -60,15 +60,15 @@ $$
 と表せるので，$B(z)$ は
 $$
 \begin{align*}
-&B(z) := L(z) \int(\tau(-1))(\overline{L(z)}^{-1})\\
+&B(z) := L(z) \grpint(\tau(-1))(\overline{L(z)}^{-1})\\
 &= \exp\left(\sum_{\ell \geq 1} -\li_\ell(z) E_\ell\right)\exp(\log\lvert z \rvert^2 e_0)\exp\left(\sum_{\ell \geq 1} (-1)^{\ell-1}\overline{\li_\ell(z)} E_\ell\right)
 \end{align*}
 $$
 となる．$a = \log\lvert z \rvert^2$ と置き，中心の項を右端に移動させると，
 $$
 \begin{align*}
-&= \exp\left(\sum_{\ell \geq 1} -\li_\ell(z) E_\ell\right)\int(\exp(ae_0))\left(\exp\left(\sum_{\ell \geq 1} (-1)^{\ell-1}\overline{\li_\ell(z)} E_\ell\right)\right)\exp(a e_0)\\
-&=\exp\left(\sum_{\ell \geq 1} -\li_\ell(z) E_\ell\right)\exp\left(\sum_{\ell \geq 1} (-1)^{\ell-1}\overline{\li_\ell(z)} \int(\exp(ae_0))(E_\ell)\right)\exp(a e_0)\\
+&= \exp\left(\sum_{\ell \geq 1} -\li_\ell(z) E_\ell\right)\grpint(\exp(ae_0))\left(\exp\left(\sum_{\ell \geq 1} (-1)^{\ell-1}\overline{\li_\ell(z)} E_\ell\right)\right)\exp(a e_0)\\
+&=\exp\left(\sum_{\ell \geq 1} -\li_\ell(z) E_\ell\right)\exp\left(\sum_{\ell \geq 1} (-1)^{\ell-1}\overline{\li_\ell(z)} \grpint(\exp(ae_0))(E_\ell)\right)\exp(a e_0)\\
 &=\exp\left(\sum_{\ell \geq 1} -\li_\ell(z) E_\ell\right)\exp\left(\sum_{\ell \geq 1} (-1)^{\ell-1}\overline{\li_\ell(z)} 
 \sum_{i\geq 0} \frac{a^i}{i!}e_0^i E_\ell\right)\exp(a e_0)\\
 &=\exp\left(\sum_{\ell \geq 1} -\li_\ell(z) E_\ell+\sum_{\ell \geq 1} (-1)^{\ell-1}\overline{\li_\ell(z)} 
@@ -161,4 +161,4 @@ $$
 
 - 2.3 節 などで 2 次冪単行列の対称積の計算が必要になるが，それについては[行列演算に関する備忘録](https://algebraic-ghost.github.io/memoranda/mathematics/memo-math-20260914_matrix_memoranda/)を参照．
 
-- 2.5 節の具体例（後で書く）．
+- 2.5 節の具体例．
