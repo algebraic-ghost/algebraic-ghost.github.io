@@ -64,7 +64,10 @@ const macros = {
   "\\tensor": "\\mathop{\\otimes}\\limits",
   "\\fibprod": "\\mathop{\\times}\\limits",
   "\\vect": "\\overrightarrow",
-  "\\sym": "\\mathop{\\mathrm{Sym}}"
+  "\\sym": "\\mathop{\\mathrm{Sym}}",
+  "\\li": "\\mathop{\\mathrm{Li}}",
+  "\\int": "\\mathop{\\mathrm{int}}",
+  "\\re": "\\mathop{\\mathrm{Re}}",
 };
 
 
