@@ -23,7 +23,7 @@ const totalCount = postsWithStats.reduce((sum, p) => sum + p.charCount, 0);
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <p>勿読！</p>
+  <p>勿読！　コメントなどは<a href="https://docs.google.com/forms/d/e/1FAIpQLSewCRzlewZa7PRioj0dsl9BGngkjyxb0l538hsSeD3ACMl8_A/viewform?usp=dialog">こちらのコメントフォーム</a>まで．</p>
 
   <ul class="diary-list">
     {postsWithStats.map((post) => {
