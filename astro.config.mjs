@@ -68,6 +68,7 @@ const macros = {
   "\\li": "\\mathop{\\mathrm{Li}}",
   "\\grpint": "\\mathop{\\mathrm{int}}",
   "\\re": "\\mathop{\\mathrm{Re}}",
+  "\\gr": "\\mathop{\\mathrm{gr}}",
 };
 
 
