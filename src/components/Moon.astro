@@ -1,0 +1,49 @@
+---
+---
+
+<div class="moon"></div>
+<style>
+
+
+
+
+@keyframes moon-frames {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 0 -400px;
+  }
+}
+
+@media screen and (min-width: 636px) {
+  .moon {
+    width:280px;
+    height:70px;
+    background-image: url("/public/images/spritesheet.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 280px 560px;
+    image-rendering: pixelated;
+    animation: moon-frames 40s steps(8) infinite;
+
+    position: fixed; /* 自由な位置に配置する命令 */
+    top: 10px;   /* 上からの距離（ロゴの高さに合わせて調整してください） */
+    left: 20px; /* 右からの距離 */
+    z-index: 99; /* 他の要素より上に表示させる（重なり順） */
+  }
+
+  @keyframes moon-frames {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 0 -560px;
+  }
+}
+}
+
+
+</style>
