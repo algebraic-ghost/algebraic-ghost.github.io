@@ -12,6 +12,8 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeToc from 'rehype-toc';
 import remarkToc from 'remark-toc';
 
+import sitemap from "@astrojs/sitemap";
+
 const macros = {
   "\\cover": "\\mathfrak{#1}",
   "\\ideal": "\\mathfrak{#1}",
@@ -93,7 +95,7 @@ export default defineConfig({
         [rehypeToc, { headings: ["h2", "h3"], ordered: false }],
         [rehypeKatex, { macros }],
       ],
-  })], 
+  }), sitemap()], 
   markdown: {
     shikiConfig: {
       // 好きな組み込みテーマを指定します（例: 'dracula', 'github-dark', 'nord' など）
