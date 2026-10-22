@@ -1,9 +1,9 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 
-const allPosts = await Astro.glob("./memo-web-*.md*");
+const allPosts = await Astro.glob("./memo-computer-*.md*");
 const pageTitle = "メモ";
-export const category ="Web ページ作成";
+export const category ="コンピュータ";
 ---
 <BaseLayout pageTitle={pageTitle}>
   <ul>{allPosts.map((post: any) => <li><a href={post.url}>{post.frontmatter.title}［{post.frontmatter.pubDate.toString().slice(0,10).replace(/-0?/g, "/")}］</a></li>)}</ul>

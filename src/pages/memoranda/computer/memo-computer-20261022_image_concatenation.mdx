@@ -1,0 +1,13 @@
+---
+layout: "../../../layouts/MarkdownPostLayout.astro"
+title: "画像の連結"
+pubDate: 2026-10-22
+tags: ["画像編集", "コンピュータ", "メモ"]
+showToc: false
+---
+
+複数の画像を連結して一枚の画像にするには，`brew install imagemagick` で [ImageMagick](https://imagemagick.org/) をインストールし，コマンドラインで
+```
+magick input1.png input2.png -append output.png
+```
+<p class="no-indent">などとすれば良い．</p>
