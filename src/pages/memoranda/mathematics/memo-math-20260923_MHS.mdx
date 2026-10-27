@@ -1,0 +1,90 @@
+---
+layout: "../../../layouts/MarkdownPostLayout.astro"
+title: "混合 Hodge 構造"
+pubDate: 2026-09-23
+tags: ["数学", "混合 Hodge 構造", "メモ"]
+showToc: true
+---
+
+## 定義と例
+$K$ を $\C$ の部分体とする．
+<div class="def">
+#### 定義：Hodge 構造（[Del71, 1.1]）
+
+1. $K$ 上の荷重 $n \in \Z$ の**純粋 Hodge 構造**とは，
+    - 有限次元 $K$ 線型空間 $H$；
+    - $H_\C := H \tensor_{K} \C$ 上の Hodge 濾過[^1] $F^\bullet H_\C$（$F^{i}H_\C \supseteq F^{i+1}H_\C$）
+    
+    <p class="no-indent">の組 $(H, F^\bullet H_\C)$ であって，次の条件を満たすものである：</p>
+    - $p+q = n+1$ となる整数 $p, q$ に対して
+      $$
+        F^p H_\C \cap \overline{F^q H_\C} =0,\quad F^p H_\C + \overline{F^q H_\C} = H_\C
+      $$
+      が成り立つ．
+    
+2. $K$ 上の**混合 Hodge 構造**とは，
+    - 有限次元 $K$ 線型空間 $H$；
+    - $H$ 上の荷重濾過 $W_\bullet H$（$W_{i}H \subseteq W_{i+1}H$）；
+    - $H_\C$ 上の Hodge 濾過 $F^\bullet H_\C$（$F^{i}H \supseteq F^{i+1}H$）
+
+    <p class="no-indent">の組 $(H, W_\bullet H, F^\bullet H_\C)$ であって，全ての $n \in \Z$ に対して $(\gr^W_n H_\C, F^\bullet(\gr^W_n H_\C))$ が荷重 $n$ の純粋 Hodge 構造であるものである．ここで</p>
+    $$
+    F^i(\gr^W_n H_\C) = (F^iH_\C \cap W_nH_\C)/(F^iH_\C \cap W_{n-1})H_\C 
+    $$
+    <p class="no-indent">とする．</p>
+</div>
+
+[^1]: filtration の訳語．
+
+純粋 Hodge 構造 $(H, F^\bullet H_\C)$ に対して $H^{p,\ n-p} := F^pH_\C\cap\overline{F^{n-p}H_\C}$ とすると
+$$
+  H_\C = \bigoplus_{p \in \Z} H^{p,\ n-p},\quad \overline{H^{p,n-p}} = H^{n-p,\ p},\quad  F^qH_\C = \bigoplus_{p\geq q} H^{q,\ n-q}
+$$
+<p class="no-indent">が成立する．純粋 Hodge 構造の Hodge 濾過は斯様な直和分解の情報と等価である．</p>
+
+混合 Hodge 構造の圏は $K$ 上の中立淡中圏をなす．
+
+#### 純粋 Hodge–Tate 構造
+整数 $n$ に対して，$H= K$，$H_\C = H^{n,\ n} = \C$ という Hodge 分解によって定まる純粋 Hodge 構造を**荷重 $2n$ の 純粋 Hodge–Tate 構造**と呼び，$K(-n)$ と表す．
+
+#### 混合 Hodge–Tate 構造
+混合 Hodge 構造 $(H, W_\bullet H, F^\bullet H_\C)$ であって，全ての整数 $n$ に対して $\gr^W_{2n+1} H=0$ であり，かつ $\gr^W_{2n} H$ が荷重 $2n$ の純粋 Hodge–Tate 構造の直和であるようなものを**混合 Hodge–Tate 構造**と呼ぶ．
+
+#### Kummer 拡大
+——
+
+#### 2 点を抜いた楕円曲線
+——
+
+## 混合 Hodge–Tate 構造
+混合 Hodge–Tate 構造の一般的な構造を調べる．$(H, W_\bullet H, F^\bullet H_\C)$ を混合 Hodge–Tate 構造とする．$\gr^W_{-2k} H$ は荷重 $-2k$ の純粋 Hodge–Tate 構造 $K(k)$ の直和なので，その Hodge 濾過は $F^{-k}$ でのみ非自明な graded piece を持つ．従って
+$$
+  F^{-k}(\gr^W_{-2k} H_\C) =\gr^W_{-2k} H_\C,\quad F^{\ell}(\gr^W_{-2k} H_\C) =0\ (\ell > -k)
+$$
+<div class="no-indent-wrapper">
+即ち
+$$
+\frac{F^{-k}\cap W_{-2k}}{F^{-k} \cap W_{-2k-1}} = \frac{W_{-2k}}{W_{-2k-1}},\quad F^{\ell} \cap W_{-2k} = F^{\ell} \cap W_{-2k-1}
+$$
+が成立する．一つ目の等式より
+$$
+W_{-2k} = (F^{-k} \cap W_{-2k}) + W_{-2k-1} = (F^{-k} \cap W_{-2k}) + W_{-2k-2}
+$$
+であり，二つ目の等式を繰り返し用いれば（十分小さい $N$ に対して $W_N =0$ であることと合わせて）この和が直和であることが分かる．
+</div>
+
+以上の議論により，$H$ の荷重濾過は $H_\C$ において標準的な分裂を持つことが分かる．包含 $F^{-k} \cap W_{-2k} \subseteq H_\C$ が誘導する射によって $\C$ 線型空間としての同型
+$$
+H_\C \cong \gr^W H_\C = \bigoplus_{k \in \Z} (F^{-k}H_\C \cap W_{-2k}H_\C)
+$$
+<div class="no-indent-wrapper">
+が得られる．この同型を通して $W_{-2k}H_\C \subseteq H_\C$ は $\displaystyle \bigoplus_{2\ell \leq -2k} \gr^W_{2\ell}H_\C$
+</div>
+<table class="ref-table">
+  <tr>
+    <th>[Del71]</th>
+    <td>Deligne, P. Théorie de Hodge I, 1971.  
+    https://publications.ias.edu/book/export/html/359</td>
+  </tr>
+
+</table>
