@@ -20,11 +20,26 @@ const postsWithStats = allPosts.map((post: any) => {
 
 const maxCount = Math.max(...postsWithStats.map(p => p.charCount));
 const totalCount = postsWithStats.reduce((sum, p) => sum + p.charCount, 0);
+
+// ▼ 追加: URL（diary-202611 など）の降順でソートして最新の月を取得
+const latestPost = [...postsWithStats].sort((a, b) =>
+  b.url.localeCompare(a.url)
+)[0];
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <p>勿読！　コメントなどは<a href="https://docs.google.com/forms/d/e/1FAIpQLSewCRzlewZa7PRioj0dsl9BGngkjyxb0l538hsSeD3ACMl8_A/viewform?usp=dialog">こちらのコメントフォーム</a>まで．</p>
 
+
+  {/* ▼ 追加: 最新の日記へのボタン */}
+  {latestPost && (
+    <div class="latest-btn-wrapper">
+      <p>
+        <a href={`${latestPost.url}#bottom`} class="latest-btn">【最新の日記に飛ぶ】</a>
+      </p>
+    </div>
+  )}
+  
   <ul class="diary-list">
     {postsWithStats.map((post) => {
       const percentage = maxCount > 0 ? (post.charCount / maxCount) * 100 : 0;
