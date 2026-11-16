@@ -26,6 +26,18 @@ const {pageTitle} = Astro.props;
     <!-- To automatically render math in text elements, include the auto-render extension: -->
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.24/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"
         onload="renderMathInElement(document.body);"></script>
+    <script>
+    if (window.location.hash === '#latest') {
+    // 本文エリア（main）の中にあるすべてのタグを出現順に取得し、一番最後のものを選ぶ
+    // ※ <main> ではなく <article> などを使っている場合は 'article *' に変更してください
+    const allTags = document.querySelectorAll('main *');
+    const bottomTag = allTags[allTags.length - 1];
+
+    if (bottomTag) {
+      bottomTag.scrollIntoView({ behavior: 'instant' });
+    }
+    }
+    </script>
     <title>«psythea»</title>
   </head>
   <body>
